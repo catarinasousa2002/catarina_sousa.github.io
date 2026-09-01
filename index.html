@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
 
+<head>
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,10 @@
     <title>Catarina Carvalho de Sousa | Engenharia Eletrónica</title>
 
     <style>
+
+        /* =========================
+           CONFIGURAÇÃO GERAL
+        ========================= */
 
         * {
             margin: 0;
@@ -37,10 +41,9 @@
             top: 0;
             z-index: 1000;
 
-            height: 82px;
+            min-height: 82px;
 
             background: rgba(255, 255, 255, 0.97);
-
             border-bottom: 1px solid #e5e7ea;
 
             display: flex;
@@ -50,28 +53,28 @@
             padding: 0 6%;
         }
 
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
 
         .logos {
             display: flex;
             align-items: center;
-            gap: 20px;
-
-            height: 100%;
+            gap: 16px;
         }
 
-
         .logos img {
-            max-height: 50px;
-            max-width: 190px;
+            max-height: 48px;
+            max-width: 150px;
 
             width: auto;
             height: auto;
 
             object-fit: contain;
-
             display: block;
         }
-
 
         .logo-separator {
             width: 1px;
@@ -80,13 +83,31 @@
             background: #dfe2e6;
         }
 
+        .institution-name {
+            padding-left: 2px;
+
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.35;
+
+            color: #555b62;
+            white-space: nowrap;
+        }
+
+        .institution-name span {
+            color: #1769aa;
+        }
+
+
+        /* =========================
+           MENU
+        ========================= */
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 34px;
+            gap: 30px;
         }
-
 
         .nav-links a {
             text-decoration: none;
@@ -99,11 +120,24 @@
             transition: 0.2s;
         }
 
-
         .nav-links a:hover {
             color: #1769aa;
         }
 
+        .nav-links .contact-link {
+            border: 1px solid #1769aa;
+            color: #1769aa;
+
+            padding: 9px 16px;
+            border-radius: 4px;
+
+            font-weight: 600;
+        }
+
+        .nav-links .contact-link:hover {
+            background: #1769aa;
+            color: white;
+        }
 
 
         /* =========================
@@ -131,12 +165,10 @@
             overflow: hidden;
         }
 
-
         .hero-text {
             position: relative;
             z-index: 2;
         }
-
 
         .eyebrow {
 
@@ -152,15 +184,37 @@
         }
 
 
+        /* NOME */
+
         h1 {
 
-            font-size: clamp(44px, 5vw, 70px);
+            font-size: clamp(46px, 5vw, 72px);
 
-            line-height: 1.04;
+            line-height: 0.95;
 
-            letter-spacing: -2.5px;
+            letter-spacing: -2.8px;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+
+            font-weight: 700;
+        }
+
+        .first-name {
+            display: block;
+        }
+
+        .last-name {
+            display: block;
+
+            font-size: 0.68em;
+
+            letter-spacing: -1.8px;
+
+            font-weight: 500;
+
+            color: #4e535a;
+
+            margin-top: 8px;
         }
 
 
@@ -172,19 +226,8 @@
 
             max-width: 600px;
 
-            margin-bottom: 10px;
+            margin-bottom: 18px;
         }
-
-
-        .university {
-
-            font-size: 16px;
-
-            color: #777d84;
-
-            margin-bottom: 28px;
-        }
-
 
         .interests {
 
@@ -197,6 +240,8 @@
             margin-bottom: 35px;
         }
 
+
+        /* BOTÃO PRINCIPAL */
 
         .button {
 
@@ -219,7 +264,6 @@
             transition: 0.2s;
         }
 
-
         .button:hover {
 
             transform: translateY(-2px);
@@ -228,9 +272,8 @@
         }
 
 
-
         /* =========================
-           ROBÔ
+           IMAGEM DO ROBÔ
         ========================= */
 
         .hero-image {
@@ -245,7 +288,6 @@
 
             min-height: 500px;
         }
-
 
         .hero-image::before {
 
@@ -264,7 +306,6 @@
             z-index: 0;
         }
 
-
         .hero-image img {
 
             position: relative;
@@ -273,14 +314,16 @@
 
             width: 100%;
 
-            max-height: 580px;
+            max-width: 600px;
+
+            max-height: 560px;
 
             object-fit: contain;
 
             display: block;
 
+            transform: rotate(0deg);
         }
-
 
 
         /* =========================
@@ -296,7 +339,6 @@
             padding: 100px 6%;
         }
 
-
         .section-number {
 
             font-size: 13px;
@@ -310,7 +352,6 @@
             margin-bottom: 12px;
         }
 
-
         h2 {
 
             font-size: 40px;
@@ -319,7 +360,6 @@
 
             margin-bottom: 35px;
         }
-
 
 
         /* =========================
@@ -337,7 +377,6 @@
             align-items: start;
         }
 
-
         .about-text {
 
             font-size: 18px;
@@ -346,7 +385,6 @@
 
             max-width: 650px;
         }
-
 
 
         /* =========================
@@ -361,7 +399,6 @@
 
             gap: 15px;
         }
-
 
         .interest {
 
@@ -380,16 +417,14 @@
             transition: 0.25s;
         }
 
-
         .interest:hover {
 
             transform: translateY(-4px);
 
             border-color: #1769aa;
 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
         }
-
 
         .interest h3 {
 
@@ -397,7 +432,6 @@
 
             line-height: 1.25;
         }
-
 
 
         /* =========================
@@ -421,14 +455,12 @@
             transition: 0.25s;
         }
 
-
         .project:hover {
 
             transform: translateY(-3px);
 
-            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
         }
-
 
         .project-image {
 
@@ -443,7 +475,6 @@
             overflow: hidden;
         }
 
-
         .project-image img {
 
             width: 100%;
@@ -452,7 +483,6 @@
 
             object-fit: cover;
         }
-
 
         .project-info {
 
@@ -464,7 +494,6 @@
 
             justify-content: center;
         }
-
 
         .project-number {
 
@@ -479,14 +508,12 @@
             margin-bottom: 12px;
         }
 
-
         .project h3 {
 
             font-size: 28px;
 
             margin-bottom: 8px;
         }
-
 
         .project-category {
 
@@ -499,14 +526,12 @@
             margin-bottom: 18px;
         }
 
-
         .project p {
 
             color: #62676d;
 
             margin-bottom: 22px;
         }
-
 
         .tags {
 
@@ -516,7 +541,6 @@
 
             gap: 7px;
         }
-
 
         .tag {
 
@@ -528,7 +552,6 @@
 
             color: #555;
         }
-
 
 
         /* =========================
@@ -544,7 +567,6 @@
             gap: 10px;
         }
 
-
         .skill {
 
             background: white;
@@ -558,7 +580,6 @@
             transition: 0.2s;
         }
 
-
         .skill:hover {
 
             border-color: #1769aa;
@@ -566,6 +587,81 @@
             color: #1769aa;
         }
 
+
+        /* =========================
+           CONTACTOS
+        ========================= */
+
+        .contact-section {
+
+            border-top: 1px solid #e1e4e8;
+        }
+
+        .contact-content {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .contact-text {
+
+            font-size: 18px;
+
+            color: #555b62;
+
+            max-width: 500px;
+        }
+
+        .contact-details {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .contact-item {
+
+            background: white;
+
+            border: 1px solid #e0e4e8;
+
+            padding: 18px 20px;
+
+            text-decoration: none;
+
+            color: #15171a;
+
+            transition: 0.2s;
+        }
+
+        .contact-item:hover {
+
+            border-color: #1769aa;
+
+            transform: translateX(4px);
+        }
+
+        .contact-label {
+
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            color: #1769aa;
+
+            margin-bottom: 3px;
+        }
 
 
         /* =========================
@@ -578,11 +674,15 @@
 
             color: white;
 
-            padding: 55px 6%;
+            padding: 45px 6%;
 
             text-align: center;
         }
 
+        footer strong {
+
+            font-size: 16px;
+        }
 
         footer p {
 
@@ -593,6 +693,14 @@
             font-size: 14px;
         }
 
+        .footer-year {
+
+            margin-top: 18px;
+
+            font-size: 12px;
+
+            color: #747a81;
+        }
 
 
         /* =========================
@@ -605,17 +713,18 @@
                 padding: 0 25px;
             }
 
+            .institution-name {
+                display: none;
+            }
 
             .logos img {
                 max-height: 40px;
-                max-width: 150px;
+                max-width: 130px;
             }
-
 
             .nav-links {
                 gap: 15px;
             }
-
 
             .hero {
 
@@ -624,7 +733,6 @@
                 padding-top: 60px;
             }
 
-
             .hero-image {
 
                 order: -1;
@@ -632,12 +740,10 @@
                 min-height: 350px;
             }
 
-
             .hero-image img {
 
-                max-height: 400px;
+                max-height: 430px;
             }
-
 
             .about-section {
 
@@ -646,26 +752,28 @@
                 gap: 40px;
             }
 
+            .contact-content {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
 
             .interest-grid {
 
                 grid-template-columns: 1fr 1fr;
             }
 
-
             .project {
 
                 grid-template-columns: 1fr;
             }
 
-
             .project-image {
 
                 min-height: 280px;
             }
-
         }
-
 
 
         /* =========================
@@ -677,34 +785,31 @@
             nav {
 
                 height: 70px;
-            }
 
+                padding: 0 18px;
+            }
 
             .logos {
 
-                gap: 10px;
+                gap: 8px;
             }
-
 
             .logos img {
 
                 max-height: 34px;
 
-                max-width: 115px;
+                max-width: 105px;
             }
-
 
             .logo-separator {
 
                 height: 28px;
             }
 
-
             .nav-links {
 
                 display: none;
             }
-
 
             .hero {
 
@@ -715,42 +820,35 @@
                 padding-bottom: 70px;
             }
 
-
             h1 {
 
-                font-size: 43px;
+                font-size: 48px;
             }
-
 
             .degree {
 
                 font-size: 18px;
             }
 
-
             .interest-grid {
 
                 grid-template-columns: 1fr;
             }
-
 
             section {
 
                 padding: 75px 6%;
             }
 
-
             h2 {
 
                 font-size: 34px;
             }
 
-
             .project-info {
 
                 padding: 30px;
             }
-
         }
 
     </style>
@@ -761,34 +859,37 @@
 <body>
 
 
-
 <!-- =========================
      BARRA SUPERIOR
 ========================= -->
 
 <nav>
 
+    <div class="brand">
 
-    <div class="logos">
+        <div class="logos">
 
+            <img
+                src="assets/logoUM.jpg.jpg"
+                alt="Universidade do Minho"
+            >
 
-        <img
-            src="assets/logoUM.jpg.jpg"
-            alt="Universidade do Minho"
-        >
+            <div class="logo-separator"></div>
 
+            <img
+                src="assets/logoescolaengenharia.jpg.jpg"
+                alt="Escola de Engenharia da Universidade do Minho"
+            >
 
-        <div class="logo-separator"></div>
+        </div>
 
-
-        <img
-            src="assets/logoescolaengenharia.jpg.jpg"
-            alt="Escola de Engenharia da Universidade do Minho"
-        >
-
+        <div class="institution-name">
+            Universidade do Minho
+            <span>·</span>
+            Escola de Engenharia
+        </div>
 
     </div>
-
 
 
     <div class="nav-links">
@@ -805,8 +906,14 @@
             Competências
         </a>
 
-    </div>
+        <a
+            href="#contactos"
+            class="contact-link"
+        >
+            Contactos
+        </a>
 
+    </div>
 
 </nav>
 
@@ -828,18 +935,20 @@
 
 
         <h1>
-            Catarina<br>
-            Carvalho de Sousa
+
+            <span class="first-name">
+                Catarina
+            </span>
+
+            <span class="last-name">
+                Carvalho de Sousa
+            </span>
+
         </h1>
 
 
         <p class="degree">
             Licenciatura em Engenharia Eletrónica Industrial e Computadores
-        </p>
-
-
-        <p class="university">
-            Universidade do Minho
         </p>
 
 
@@ -862,12 +971,10 @@
 
     <div class="hero-image">
 
-
         <img
             src="assets/robot_original.jpg.jpg"
             alt="Robô desenvolvido no âmbito de um projeto académico"
         >
-
 
     </div>
 
@@ -932,7 +1039,6 @@
     <div class="section-number">
         ÁREAS DE INTERESSE
     </div>
-
 
 
     <div class="interest-grid">
@@ -1313,6 +1419,92 @@
 
 
 <!-- =========================
+     CONTACTOS
+========================= -->
+
+<section
+    id="contactos"
+    class="contact-section"
+>
+
+
+    <div class="section-number">
+        04 / CONTACTOS
+    </div>
+
+
+    <div class="contact-content">
+
+
+        <div>
+
+            <h2>
+                Contactos
+            </h2>
+
+            <p class="contact-text">
+
+                Para informações adicionais sobre este portfólio
+                académico ou sobre os projetos apresentados,
+                poderá contactar-me através do endereço de email
+                institucional.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="contact-details">
+
+
+            <a
+                href="mailto:a97259@uminho.pt"
+                class="contact-item"
+            >
+
+                <span class="contact-label">
+                    EMAIL INSTITUCIONAL
+                </span>
+
+                a97259@uminho.pt
+
+            </a>
+
+
+            <div class="contact-item">
+
+                <span class="contact-label">
+                    AUTORA
+                </span>
+
+                Catarina Sousa
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span class="contact-label">
+                    INSTITUIÇÃO
+                </span>
+
+                Universidade do Minho · Escola de Engenharia
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
      FOOTER
 ========================= -->
 
@@ -1320,14 +1512,23 @@
 
 
     <strong>
-        Catarina Carvalho de Sousa
+        Catarina Sousa
     </strong>
 
 
     <p>
-        Engenharia Eletrónica Industrial e Computadores
-        · Universidade do Minho
+        Portfólio Académico · Engenharia Eletrónica Industrial e Computadores
     </p>
+
+
+    <p>
+        Universidade do Minho · Escola de Engenharia
+    </p>
+
+
+    <div class="footer-year">
+        © 2026 Catarina Sousa
+    </div>
 
 
 </footer>
