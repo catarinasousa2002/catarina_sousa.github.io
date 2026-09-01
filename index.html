@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catarina Carvalho de Sousa | Engenharia Eletrónica</title>
@@ -25,8 +27,9 @@
             line-height: 1.6;
         }
 
+
         /* =========================
-           NAVBAR
+           BARRA SUPERIOR
         ========================= */
 
         nav {
@@ -34,10 +37,11 @@
             top: 0;
             z-index: 1000;
 
-            height: 78px;
-            background: rgba(255,255,255,0.95);
+            height: 82px;
 
-            border-bottom: 1px solid #e6e8eb;
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 1px solid #e5e7ea;
 
             display: flex;
             align-items: center;
@@ -46,34 +50,51 @@
             padding: 0 6%;
         }
 
+
         .logos {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 22px;
+            height: 100%;
         }
 
-        .logo-placeholder {
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            color: #30343a;
+
+        .logos img {
+            max-height: 48px;
+            width: auto;
+            object-fit: contain;
         }
+
+
+        .logo-separator {
+            height: 38px;
+            width: 1px;
+            background: #dfe2e6;
+        }
+
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            align-items: center;
+            gap: 34px;
         }
+
 
         .nav-links a {
             text-decoration: none;
-            color: #454950;
+            color: #44484e;
+
             font-size: 14px;
             font-weight: 500;
+
+            transition: 0.2s;
         }
+
 
         .nav-links a:hover {
             color: #1769aa;
         }
+
 
 
         /* =========================
@@ -81,64 +102,103 @@
         ========================= */
 
         .hero {
-            min-height: calc(100vh - 78px);
+
+            min-height: calc(100vh - 82px);
 
             display: grid;
+
             grid-template-columns: 1fr 1fr;
 
             align-items: center;
 
             max-width: 1250px;
+
             margin: auto;
 
-            padding: 70px 6%;
+            padding: 65px 6%;
+
             gap: 70px;
+
+            position: relative;
+
+            overflow: hidden;
         }
+
 
         .hero-text {
             position: relative;
+            z-index: 2;
         }
+
 
         .eyebrow {
+
             font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 2px;
+
+            font-weight: 700;
+
+            letter-spacing: 2.5px;
+
             color: #1769aa;
-            margin-bottom: 20px;
+
+            margin-bottom: 22px;
         }
+
 
         h1 {
-            font-size: clamp(42px, 5vw, 72px);
-            line-height: 1.05;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
+
+            font-size: clamp(44px, 5vw, 70px);
+
+            line-height: 1.04;
+
+            letter-spacing: -2.5px;
+
+            margin-bottom: 25px;
         }
+
 
         .degree {
+
             font-size: 21px;
+
             color: #4e535a;
+
             max-width: 600px;
-            margin-bottom: 12px;
+
+            margin-bottom: 10px;
         }
+
 
         .university {
+
             font-size: 16px;
+
             color: #777d84;
-            margin-bottom: 30px;
+
+            margin-bottom: 28px;
         }
 
+
         .interests {
+
             font-size: 15px;
+
             font-weight: 600;
+
             color: #30343a;
+
             margin-bottom: 35px;
         }
 
+
         .button {
+
             display: inline-block;
+
             text-decoration: none;
 
             background: #15171a;
+
             color: white;
 
             padding: 13px 25px;
@@ -146,128 +206,198 @@
             border-radius: 5px;
 
             font-size: 14px;
+
             font-weight: 600;
 
             transition: 0.2s;
         }
 
+
         .button:hover {
+
             transform: translateY(-2px);
+
             background: #1769aa;
         }
 
 
+
         /* =========================
-           ROBOT IMAGE
+           IMAGEM DO ROBÔ
         ========================= */
 
         .hero-image {
+
             position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
         }
 
+
         .hero-image::before {
+
             content: "";
 
             position: absolute;
 
-            width: 100%;
-            height: 100%;
+            width: 90%;
+
+            height: 90%;
 
             border: 1px solid #dce2e8;
 
-            top: 22px;
-            left: 22px;
+            top: 8%;
+
+            left: 8%;
 
             z-index: 0;
         }
 
+
         .hero-image img {
+
             position: relative;
+
             z-index: 1;
 
             width: 100%;
-            max-height: 600px;
+
+            max-height: 590px;
 
             object-fit: contain;
-
-            background: white;
 
             display: block;
         }
 
 
+
         /* =========================
-           GENERAL SECTIONS
+           SECÇÕES
         ========================= */
 
         section {
+
             max-width: 1150px;
+
             margin: auto;
-            padding: 110px 6%;
+
+            padding: 100px 6%;
         }
 
+
         .section-number {
+
             font-size: 13px;
+
             color: #1769aa;
+
             font-weight: 700;
+
             letter-spacing: 2px;
+
             margin-bottom: 12px;
         }
 
+
         h2 {
-            font-size: 42px;
+
+            font-size: 40px;
+
             letter-spacing: -1px;
+
             margin-bottom: 35px;
         }
 
 
+
         /* =========================
-           ABOUT
+           SOBRE MIM
         ========================= */
 
-        .about-text {
-            max-width: 800px;
-            font-size: 19px;
-            color: #555b62;
+        .about-section {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: start;
         }
 
 
+        .about-text {
+
+            font-size: 18px;
+
+            color: #555b62;
+
+            max-width: 650px;
+        }
+
+
+
         /* =========================
-           INTERESTS
+           ÁREAS DE INTERESSE
         ========================= */
 
         .interest-grid {
+
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
-            gap: 1px;
 
-            background: #dfe3e7;
-
-            border: 1px solid #dfe3e7;
+            gap: 15px;
         }
 
-        .interest {
-            background: white;
-            padding: 35px 25px;
 
-            min-height: 150px;
+        .interest {
+
+            background: white;
+
+            border: 1px solid #e0e4e8;
+
+            padding: 28px 22px;
+
+            min-height: 145px;
 
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+
+            align-items: flex-end;
+
+            transition: 0.25s;
+        }
+
+
+        .interest:hover {
+
+            transform: translateY(-4px);
+
+            border-color: #1769aa;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
 
 
         .interest h3 {
-            font-size: 18px;
+
+            font-size: 17px;
+
+            line-height: 1.25;
         }
 
 
+
         /* =========================
-           PROJECTS
+           PROJETOS
         ========================= */
 
         .project {
+
             background: white;
 
             margin-bottom: 35px;
@@ -275,91 +405,159 @@
             border: 1px solid #e2e5e8;
 
             display: grid;
+
             grid-template-columns: 45% 55%;
 
             min-height: 330px;
+
+            transition: 0.25s;
         }
 
+
+        .project:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+        }
+
+
         .project-image {
+
             background: #eef1f4;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             overflow: hidden;
         }
 
+
         .project-image img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
         }
 
+
         .project-info {
+
             padding: 45px;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
         }
 
+
         .project-number {
+
             font-size: 12px;
+
             color: #1769aa;
+
             font-weight: 700;
-            letter-spacing: 1px;
+
+            letter-spacing: 1.5px;
+
             margin-bottom: 12px;
         }
 
+
         .project h3 {
+
             font-size: 28px;
-            margin-bottom: 10px;
+
+            margin-bottom: 8px;
         }
 
+
         .project-category {
+
             color: #1769aa;
+
             font-size: 14px;
+
             font-weight: 600;
+
             margin-bottom: 18px;
         }
 
+
         .project p {
+
             color: #62676d;
+
             margin-bottom: 22px;
         }
 
+
         .tags {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 7px;
         }
 
+
         .tag {
+
             border: 1px solid #d9dde1;
+
             padding: 5px 9px;
+
             font-size: 12px;
+
             color: #555;
         }
 
 
+
         /* =========================
-           SKILLS
+           COMPETÊNCIAS
         ========================= */
 
         .skills {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 10px;
         }
 
+
         .skill {
+
             background: white;
+
             border: 1px solid #dfe3e7;
 
             padding: 11px 17px;
 
             font-size: 14px;
+
+            transition: 0.2s;
         }
+
+
+        .skill:hover {
+
+            border-color: #1769aa;
+
+            color: #1769aa;
+        }
+
 
 
         /* =========================
@@ -367,33 +565,44 @@
         ========================= */
 
         footer {
+
             background: #15171a;
+
             color: white;
 
-            padding: 60px 6%;
+            padding: 55px 6%;
 
             text-align: center;
         }
 
+
         footer p {
+
             color: #aeb3b9;
+
             margin-top: 8px;
+
+            font-size: 14px;
         }
 
 
+
         /* =========================
-           MOBILE
+           TELEMÓVEL
         ========================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
 
             nav {
-                height: auto;
-                padding: 20px;
+                padding: 0 25px;
+            }
+
+            .logos img {
+                max-height: 40px;
             }
 
             .nav-links {
-                display: none;
+                gap: 15px;
             }
 
             .hero {
@@ -401,8 +610,17 @@
                 padding-top: 60px;
             }
 
-            h1 {
-                font-size: 44px;
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-height: 400px;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
 
             .interest-grid {
@@ -414,32 +632,88 @@
             }
 
             .project-image {
-                min-height: 250px;
+                min-height: 280px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: 70px;
             }
 
+            .logos {
+                gap: 10px;
+            }
+
+            .logos img {
+                max-height: 34px;
+                max-width: 120px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 55px;
+                padding-bottom: 70px;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+
+            .degree {
+                font-size: 18px;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+
+            .project-info {
+                padding: 30px;
+            }
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-<!-- NAVBAR -->
+<!-- =========================
+     BARRA SUPERIOR
+========================= -->
 
 <nav>
 
     <div class="logos">
 
-        <!-- Vamos substituir estes placeholders pelos logótipos oficiais -->
-        <div class="logo-placeholder">
-            UNIVERSIDADE DO MINHO
-        </div>
+        <img
+            src="assets/logoUM.jpg.png"
+            alt="Universidade do Minho"
+        >
 
-        <div class="logo-placeholder">
-            ESCOLA DE ENGENHARIA
-        </div>
+        <div class="logo-separator"></div>
+
+        <img
+            src="assets/logoescolaengenharia.jpg.png"
+            alt="Escola de Engenharia da Universidade do Minho"
+        >
 
     </div>
 
@@ -452,17 +726,18 @@
 
         <a href="#competencias">Competências</a>
 
-        <a href="#contactos">Contactos</a>
-
     </div>
 
 </nav>
 
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
+
 
     <div class="hero-text">
 
@@ -470,92 +745,146 @@
             PORTFÓLIO ACADÉMICO
         </div>
 
+
         <h1>
             Catarina<br>
             Carvalho de Sousa
         </h1>
 
+
         <p class="degree">
             Licenciatura em Engenharia Eletrónica Industrial e Computadores
         </p>
 
+
         <p class="university">
-            Universidade do Minho 
+            Universidade do Minho
         </p>
+
 
         <p class="interests">
             Eletrónica de Potência · Sistemas Embebidos · Controlo · Automação
         </p>
 
-        <a class="button" href="#projetos">
+
+        <a
+            class="button"
+            href="#projetos"
+        >
             Ver projetos →
         </a>
 
     </div>
 
 
+
     <div class="hero-image">
 
-        <img src="assets/robot.jpg.png"
-             alt="Robô desenvolvido no âmbito de um projeto académico">
+        <img
+            src="assets/robot.jpg.png"
+            alt="Robô desenvolvido no âmbito de um projeto académico"
+        >
 
     </div>
+
 
 </header>
 
 
 
-<!-- SOBRE -->
+<!-- =========================
+     SOBRE
+========================= -->
 
 <section id="sobre">
 
-    <div class="section-number">
-        01 / SOBRE
+
+    <div class="about-section">
+
+
+        <div>
+
+            <div class="section-number">
+                01 / SOBRE
+            </div>
+
+            <h2>
+                Sobre mim
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p class="about-text">
+
+                Sou estudante de Engenharia Eletrónica Industrial e
+                Computadores na Universidade do Minho. Ao longo da
+                licenciatura desenvolvi projetos em programação,
+                eletrónica, sistemas embebidos, automação e controlo.
+
+            </p>
+
+        </div>
+
+
     </div>
-
-    <h2>
-        Engenharia através de projetos.
-    </h2>
-
-    <p class="about-text">
-
-        Sou estudante de Engenharia Eletrónica Industrial e Computadores
-        na Universidade do Minho. Ao longo da licenciatura desenvolvi
-        projetos que envolveram programação, eletrónica, sistemas embebidos,
-        automação e controlo. Neste portfólio mostro alguns desses trabalhos.
-
-
-    </p>
 
 </section>
 
 
 
-<!-- ÁREAS -->
+<!-- =========================
+     ÁREAS DE INTERESSE
+========================= -->
 
 <section>
+
 
     <div class="section-number">
         ÁREAS DE INTERESSE
     </div>
 
+
     <div class="interest-grid">
 
-        <div class="interest">
-            <h3>Eletrónica de Potência</h3>
-        </div>
 
         <div class="interest">
-            <h3>Controlo</h3>
+
+            <h3>
+                Eletrónica de Potência
+            </h3>
+
         </div>
 
-        <div class="interest">
-            <h3>Sistemas Embebidos</h3>
-        </div>
 
         <div class="interest">
-            <h3>Automação</h3>
+
+            <h3>
+                Controlo
+            </h3>
+
         </div>
+
+
+        <div class="interest">
+
+            <h3>
+                Sistemas Embebidos
+            </h3>
+
+        </div>
+
+
+        <div class="interest">
+
+            <h3>
+                Automação
+            </h3>
+
+        </div>
+
 
     </div>
 
@@ -563,61 +892,80 @@
 
 
 
-<!-- PROJETOS -->
+<!-- =========================
+     PROJETOS
+========================= -->
 
 <section id="projetos">
+
 
     <div class="section-number">
         02 / PROJETOS
     </div>
+
 
     <h2>
         Projetos selecionados
     </h2>
 
 
-    <!-- PROJETO 1 -->
+
+    <!-- ROBÔ -->
 
     <article class="project">
 
+
         <div class="project-image">
 
-            <img src="assets/robot.jpg.png"
-                 alt="Robot autónomo desenvolvido durante a licenciatura">
+            <img
+                src="assets/robot.jpg.png"
+                alt="Robô autónomo desenvolvido durante a licenciatura"
+            >
 
         </div>
 
 
         <div class="project-info">
+
 
             <div class="project-number">
                 01 / SISTEMAS EMBEBIDOS
             </div>
 
+
             <h3>
-                Robot Autónomo
+                Robô Autónomo
             </h3>
+
 
             <div class="project-category">
                 Seguidor de linha · Deteção de obstáculos
             </div>
 
+
             <p>
-                Desenvolvimento de um robot cuja Unidade de Controlo é a STM32,
-                com integração de sensores para controlo de direção e
-                sistema de proximidade. Sistema de controlo de motores e sinalização. 
-                
+
+                Desenvolvimento de um robô baseado em microcontrolador
+                STM32, com integração de sensores, controlo de motores
+                e implementação de funcionalidades de navegação autónoma.
+
             </p>
+
 
             <div class="tags">
 
                 <span class="tag">STM32</span>
+
                 <span class="tag">C</span>
+
                 <span class="tag">Sensores</span>
+
                 <span class="tag">PWM</span>
+
                 <span class="tag">Motores</span>
 
             </div>
+
 
         </div>
 
@@ -625,42 +973,63 @@
 
 
 
-    <!-- PROJETO 2 -->
+    <!-- SISTEMA FOTOVOLTAICO -->
 
     <article class="project">
 
+
         <div class="project-image">
-            <div style="font-size: 60px;">☀️</div>
+
+            <div style="font-size: 65px;">
+                ☀️
+            </div>
+
         </div>
 
 
         <div class="project-info">
+
 
             <div class="project-number">
                 02 / ELETRÓNICA DE POTÊNCIA
             </div>
 
+
             <h3>
                 Sistema Fotovoltaico
             </h3>
+
 
             <div class="project-category">
                 Conversão de energia
             </div>
 
+
             <p>
-                Desenvolvimento prático de um conversor aplicado a um
-                sistema fotovoltaico, explorando conceitos de eletrónica
-                de potência e conversão de energia.
+
+                Desenvolvimento prático de um conversor aplicado a
+                um painel fotovoltaico, explorando conceitos de
+                eletrónica de potência e conversão de energia.
+
             </p>
+
 
             <div class="tags">
 
-                <span class="tag">Eletrónica de Potência</span>
-                <span class="tag">Conversores</span>
-                <span class="tag">Fotovoltaico</span>
+                <span class="tag">
+                    Eletrónica de Potência
+                </span>
+
+                <span class="tag">
+                    Conversores
+                </span>
+
+                <span class="tag">
+                    Fotovoltaico
+                </span>
 
             </div>
+
 
         </div>
 
@@ -668,42 +1037,63 @@
 
 
 
-    <!-- PROJETO 3 -->
+    <!-- BOOST -->
 
     <article class="project">
 
+
         <div class="project-image">
-            <div style="font-size: 60px;">🔋</div>
+
+            <div style="font-size: 65px;">
+                🔋
+            </div>
+
         </div>
 
 
         <div class="project-info">
 
+
             <div class="project-number">
-                03 / ELETRÓNICA
+                03 / ELETRÓNICA DE POTÊNCIA
             </div>
+
 
             <h3>
                 Conversor CC-CC Boost
             </h3>
 
+
             <div class="project-category">
                 Projeto e desenvolvimento de PCB
             </div>
 
+
             <p>
+
                 Desenvolvimento de uma PCB baseada num conversor
                 CC-CC Boost, desde o projeto do circuito até à
                 implementação.
+
             </p>
+
 
             <div class="tags">
 
-                <span class="tag">KiCad</span>
-                <span class="tag">PCB</span>
-                <span class="tag">Conversor Boost</span>
+                <span class="tag">
+                    KiCad
+                </span>
+
+                <span class="tag">
+                    PCB
+                </span>
+
+                <span class="tag">
+                    Conversor Boost
+                </span>
 
             </div>
+
 
         </div>
 
@@ -711,41 +1101,62 @@
 
 
 
-    <!-- PROJETO 4 -->
+    <!-- CODESYS -->
 
     <article class="project">
 
+
         <div class="project-image">
-            <div style="font-size: 60px;">⚙️</div>
+
+            <div style="font-size: 65px;">
+                ⚙️
+            </div>
+
         </div>
 
 
         <div class="project-info">
 
+
             <div class="project-number">
                 04 / AUTOMAÇÃO
             </div>
+
 
             <h3>
                 Automação com CODESYS
             </h3>
 
+
             <div class="project-category">
                 Sistemas de Automação
             </div>
 
+
             <p>
-                Desenvolvimento e implementação de um sistema de
-                automação utilizando CODESYS.
+
+                Desenvolvimento e implementação de um sistema
+                de automação utilizando CODESYS.
+
             </p>
+
 
             <div class="tags">
 
-                <span class="tag">CODESYS</span>
-                <span class="tag">PLC</span>
-                <span class="tag">Automação</span>
+                <span class="tag">
+                    CODESYS
+                </span>
+
+                <span class="tag">
+                    PLC
+                </span>
+
+                <span class="tag">
+                    Automação
+                </span>
 
             </div>
+
 
         </div>
 
@@ -756,30 +1167,46 @@
 
 
 
-<!-- COMPETÊNCIAS -->
+<!-- =========================
+     COMPETÊNCIAS
+========================= -->
 
 <section id="competencias">
+
 
     <div class="section-number">
         03 / COMPETÊNCIAS
     </div>
 
+
     <h2>
         Competências técnicas
     </h2>
 
+
     <div class="skills">
 
+
         <span class="skill">C</span>
+
         <span class="skill">C++</span>
+
         <span class="skill">Assembly</span>
+
         <span class="skill">STM32</span>
+
         <span class="skill">8051</span>
+
         <span class="skill">PLC</span>
+
         <span class="skill">CX-Programmer</span>
+
         <span class="skill">CODESYS</span>
+
         <span class="skill">MATLAB</span>
+
         <span class="skill">KiCad</span>
+
 
     </div>
 
@@ -787,7 +1214,9 @@
 
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -795,12 +1224,15 @@
         Catarina Carvalho de Sousa
     </strong>
 
+
     <p>
-        Engenharia Eletrónica Industrial e Computadores · Universidade do Minho
+        Engenharia Eletrónica Industrial e Computadores
+        · Universidade do Minho
     </p>
 
 </footer>
 
 
 </body>
+
 </html>
