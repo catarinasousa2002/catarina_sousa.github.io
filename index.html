@@ -2,17 +2,19 @@
 <html lang="pt">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catarina Carvalho de Sousa | Engenharia Eletrónica</title>
 
+
     <style>
 
-        /* =========================
-           CONFIGURAÇÃO GERAL
-        ========================= */
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+        ===================================================== */
 
         * {
             margin: 0;
@@ -26,17 +28,22 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f8f9fb;
-            color: #15171a;
+            color: #111827;
+            background: #ffffff;
             line-height: 1.6;
         }
 
+        a {
+            color: inherit;
+        }
 
-        /* =========================
-           BARRA SUPERIOR
-        ========================= */
+
+        /* =====================================================
+           CABEÇALHO
+        ===================================================== */
 
         nav {
+
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -44,177 +51,315 @@
             min-height: 82px;
 
             background: rgba(255, 255, 255, 0.97);
-            border-bottom: 1px solid #e5e7ea;
+
+            border-bottom: 1px solid #e2e7ed;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 6%;
+            padding: 0 5.5%;
+
+            backdrop-filter: blur(8px);
         }
+
 
         .brand {
+
             display: flex;
             align-items: center;
-            gap: 18px;
+
+            gap: 20px;
         }
 
+
         .logos {
+
             display: flex;
             align-items: center;
+
             gap: 16px;
         }
 
+
         .logos img {
-            max-height: 48px;
-            max-width: 150px;
 
             width: auto;
-            height: auto;
+            height: 50px;
+
+            max-width: 145px;
 
             object-fit: contain;
+
             display: block;
         }
 
+
         .logo-separator {
+
             width: 1px;
             height: 38px;
 
-            background: #dfe2e6;
+            background: #dce1e7;
         }
 
+
         .institution-name {
-            padding-left: 2px;
 
-            font-size: 13px;
+            font-size: 17px;
+
             font-weight: 600;
-            line-height: 1.35;
 
-            color: #555b62;
+            color: #111827;
+
             white-space: nowrap;
         }
 
-        .institution-name span {
+
+        .institution-name .dot {
+
             color: #1769aa;
+
+            margin: 0 6px;
         }
 
 
-        /* =========================
+        /* =====================================================
            MENU
-        ========================= */
+        ===================================================== */
 
         .nav-links {
+
             display: flex;
+
             align-items: center;
-            gap: 30px;
+
+            gap: 32px;
         }
+
 
         .nav-links a {
+
             text-decoration: none;
 
-            color: #44484e;
-
             font-size: 14px;
+
+            color: #3f4650;
+
             font-weight: 500;
 
-            transition: 0.2s;
+            transition: all 0.2s ease;
         }
+
 
         .nav-links a:hover {
-            color: #1769aa;
+
+            color: #0758b8;
         }
 
-        .nav-links .contact-link {
-            border: 1px solid #1769aa;
-            color: #1769aa;
 
-            padding: 9px 16px;
-            border-radius: 4px;
+        .nav-links .contact-link {
+
+            color: #0758b8;
+
+            border: 1.5px solid #0758b8;
+
+            padding: 10px 19px;
+
+            border-radius: 5px;
 
             font-weight: 600;
         }
 
+
         .nav-links .contact-link:hover {
-            background: #1769aa;
+
+            background: #0758b8;
+
             color: white;
         }
 
 
-        /* =========================
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
 
+            position: relative;
+
             min-height: calc(100vh - 82px);
 
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
+            display: flex;
 
             align-items: center;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 82% 45%,
+                    rgba(126, 184, 238, 0.18),
+                    transparent 34%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #f7fbff 0%,
+                    #eef6ff 48%,
+                    #e8f3ff 100%
+                );
+        }
+
+
+        /* =====================================================
+           PADRÃO DE CIRCUITO ELETRÓNICO
+        ===================================================== */
+
+        .circuit-background {
+
+            position: absolute;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            opacity: 0.42;
+
+            pointer-events: none;
+        }
+
+
+        .circuit-background svg {
+
+            position: absolute;
+
+            width: 75%;
+
+            height: 100%;
+
+            right: -3%;
+
+            top: 0;
+        }
+
+
+        .circuit-line {
+
+            fill: none;
+
+            stroke: #78afe2;
+
+            stroke-width: 1.2;
+
+            opacity: 0.5;
+        }
+
+
+        .circuit-dot {
+
+            fill: #78afe2;
+
+            opacity: 0.65;
+        }
+
+
+        .chip {
+
+            fill: none;
+
+            stroke: #6fa7dc;
+
+            stroke-width: 2;
+
+            opacity: 0.42;
+        }
+
+
+        /* =====================================================
+           CONTEÚDO DO HERO
+        ===================================================== */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
 
             max-width: 1250px;
 
             margin: auto;
 
-            padding: 65px 6%;
-
-            gap: 60px;
-
-            overflow: hidden;
+            padding: 90px 6% 100px;
         }
 
-        .hero-text {
-            position: relative;
-            z-index: 2;
-        }
 
         .eyebrow {
 
-            font-size: 13px;
+            color: #0758b8;
+
+            font-size: 14px;
 
             font-weight: 700;
 
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
 
-            color: #1769aa;
-
-            margin-bottom: 22px;
+            margin-bottom: 30px;
         }
 
-
-        /* NOME */
 
         h1 {
 
-            font-size: clamp(46px, 5vw, 72px);
+            font-size: clamp(54px, 7vw, 88px);
 
-            line-height: 0.95;
+            line-height: 0.98;
 
-            letter-spacing: -2.8px;
-
-            margin-bottom: 28px;
+            letter-spacing: -4px;
 
             font-weight: 700;
+
+            max-width: 900px;
+
+            margin-bottom: 28px;
         }
+
 
         .first-name {
+
             display: block;
+
+            color: #111827;
         }
 
+
         .last-name {
+
             display: block;
 
-            font-size: 0.68em;
+            color: #0758b8;
 
-            letter-spacing: -1.8px;
+            font-size: 0.78em;
 
-            font-weight: 500;
+            letter-spacing: -3px;
 
-            color: #4e535a;
+            margin-top: 7px;
+        }
 
-            margin-top: 8px;
+
+        .hero-line {
+
+            width: 72px;
+
+            height: 4px;
+
+            background: #0758b8;
+
+            margin: 25px 0 28px;
+
+            border-radius: 3px;
         }
 
 
@@ -222,26 +367,35 @@
 
             font-size: 21px;
 
-            color: #4e535a;
+            color: #273444;
 
-            max-width: 600px;
+            max-width: 760px;
 
-            margin-bottom: 18px;
+            margin-bottom: 25px;
         }
+
 
         .interests {
 
-            font-size: 15px;
+            font-size: 16px;
 
-            font-weight: 600;
+            color: #657181;
 
-            color: #30343a;
-
-            margin-bottom: 35px;
+            margin-bottom: 38px;
         }
 
 
-        /* BOTÃO PRINCIPAL */
+        .interests span {
+
+            color: #0758b8;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           BOTÃO
+        ===================================================== */
 
         .button {
 
@@ -249,101 +403,65 @@
 
             text-decoration: none;
 
-            background: #15171a;
+            background: #0758b8;
 
             color: white;
 
-            padding: 13px 25px;
+            padding: 14px 25px;
 
             border-radius: 5px;
 
-            font-size: 14px;
+            font-size: 15px;
 
             font-weight: 600;
 
-            transition: 0.2s;
+            transition: all 0.2s ease;
+
+            box-shadow: 0 5px 16px rgba(7, 88, 184, 0.18);
         }
+
 
         .button:hover {
 
+            background: #064a9c;
+
             transform: translateY(-2px);
 
-            background: #1769aa;
+            box-shadow: 0 8px 20px rgba(7, 88, 184, 0.24);
         }
 
 
-        /* =========================
-           IMAGEM DO ROBÔ
-        ========================= */
-
-        .hero-image {
-
-            position: relative;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            min-height: 500px;
-        }
-
-        .hero-image::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 88%;
-            height: 88%;
-
-            border: 1px solid #dce2e8;
-
-            top: 6%;
-            left: 8%;
-
-            z-index: 0;
-        }
-
-        .hero-image img {
-
-            position: relative;
-
-            z-index: 1;
-
-            width: 100%;
-
-            max-width: 600px;
-
-            max-height: 560px;
-
-            object-fit: contain;
-
-            display: block;
-
-            transform: rotate(0deg);
-        }
-
-
-        /* =========================
-           SECÇÕES
-        ========================= */
+        /* =====================================================
+           SOBRE MIM
+        ===================================================== */
 
         section {
 
-            max-width: 1150px;
+            max-width: 1250px;
 
             margin: auto;
 
             padding: 100px 6%;
         }
 
+
+        .about-section {
+
+            display: grid;
+
+            grid-template-columns: 260px 1fr;
+
+            gap: 65px;
+
+            align-items: start;
+        }
+
+
         .section-number {
 
-            font-size: 13px;
+            color: #0758b8;
 
-            color: #1769aa;
+            font-size: 13px;
 
             font-weight: 700;
 
@@ -352,44 +470,66 @@
             margin-bottom: 12px;
         }
 
+
         h2 {
 
             font-size: 40px;
 
+            line-height: 1.1;
+
             letter-spacing: -1px;
 
-            margin-bottom: 35px;
+            margin-bottom: 30px;
+
+            color: #111827;
         }
 
-
-        /* =========================
-           SOBRE MIM
-        ========================= */
-
-        .about-section {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 80px;
-
-            align-items: start;
-        }
 
         .about-text {
 
             font-size: 18px;
 
-            color: #555b62;
+            line-height: 1.8;
 
-            max-width: 650px;
+            color: #4d5967;
+
+            max-width: 800px;
         }
 
 
-        /* =========================
+        .about-text strong {
+
+            color: #1f2937;
+        }
+
+
+        /* =====================================================
            ÁREAS DE INTERESSE
-        ========================= */
+        ===================================================== */
+
+        .interests-section {
+
+            background: #f7faff;
+
+            max-width: none;
+
+            padding-left: 6%;
+
+            padding-right: 6%;
+
+            border-top: 1px solid #e8eef5;
+
+            border-bottom: 1px solid #e8eef5;
+        }
+
+
+        .interests-inner {
+
+            max-width: 1250px;
+
+            margin: auto;
+        }
+
 
         .interest-grid {
 
@@ -397,16 +537,17 @@
 
             grid-template-columns: repeat(4, 1fr);
 
-            gap: 15px;
+            gap: 18px;
         }
+
 
         .interest {
 
             background: white;
 
-            border: 1px solid #e0e4e8;
+            border: 1px solid #dce5ef;
 
-            padding: 28px 22px;
+            padding: 30px 25px;
 
             min-height: 145px;
 
@@ -414,57 +555,71 @@
 
             align-items: flex-end;
 
-            transition: 0.25s;
+            transition: all 0.25s ease;
         }
+
 
         .interest:hover {
 
             transform: translateY(-4px);
 
-            border-color: #1769aa;
+            border-color: #75aee2;
 
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 28px rgba(23, 72, 119, 0.08);
         }
+
 
         .interest h3 {
 
-            font-size: 17px;
+            font-size: 18px;
 
             line-height: 1.25;
+
+            color: #1d2939;
         }
 
 
-        /* =========================
+        /* =====================================================
            PROJETOS
-        ========================= */
+        ===================================================== */
+
+        .projects-section {
+
+            background: white;
+        }
+
 
         .project {
 
             background: white;
 
-            margin-bottom: 35px;
-
-            border: 1px solid #e2e5e8;
+            border: 1px solid #dfe5eb;
 
             display: grid;
 
-            grid-template-columns: 45% 55%;
+            grid-template-columns: 43% 57%;
 
-            min-height: 330px;
+            min-height: 350px;
 
-            transition: 0.25s;
+            margin-bottom: 35px;
+
+            overflow: hidden;
+
+            transition: all 0.25s ease;
         }
+
 
         .project:hover {
 
             transform: translateY(-3px);
 
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 15px 35px rgba(20, 40, 60, 0.08);
         }
+
 
         .project-image {
 
-            background: #eef1f4;
+            background: #edf4fb;
 
             display: flex;
 
@@ -473,7 +628,10 @@
             justify-content: center;
 
             overflow: hidden;
+
+            min-height: 350px;
         }
+
 
         .project-image img {
 
@@ -482,7 +640,10 @@
             height: 100%;
 
             object-fit: cover;
+
+            display: block;
         }
+
 
         .project-info {
 
@@ -495,11 +656,12 @@
             justify-content: center;
         }
 
+
         .project-number {
 
-            font-size: 12px;
+            color: #0758b8;
 
-            color: #1769aa;
+            font-size: 12px;
 
             font-weight: 700;
 
@@ -508,16 +670,20 @@
             margin-bottom: 12px;
         }
 
+
         .project h3 {
 
-            font-size: 28px;
+            font-size: 29px;
+
+            line-height: 1.15;
 
             margin-bottom: 8px;
         }
 
+
         .project-category {
 
-            color: #1769aa;
+            color: #0758b8;
 
             font-size: 14px;
 
@@ -526,12 +692,18 @@
             margin-bottom: 18px;
         }
 
+
         .project p {
 
-            color: #62676d;
+            color: #5e6976;
+
+            line-height: 1.65;
 
             margin-bottom: 22px;
+
+            max-width: 600px;
         }
+
 
         .tags {
 
@@ -542,21 +714,44 @@
             gap: 7px;
         }
 
+
         .tag {
 
-            border: 1px solid #d9dde1;
+            border: 1px solid #d7dfe8;
 
             padding: 5px 9px;
 
             font-size: 12px;
 
-            color: #555;
+            color: #55606c;
+
+            background: #fafcff;
         }
 
 
-        /* =========================
+        /* =====================================================
            COMPETÊNCIAS
-        ========================= */
+        ===================================================== */
+
+        .skills-section {
+
+            background: #f7faff;
+
+            max-width: none;
+
+            border-top: 1px solid #e8eef5;
+
+            border-bottom: 1px solid #e8eef5;
+        }
+
+
+        .skills-inner {
+
+            max-width: 1250px;
+
+            margin: auto;
+        }
+
 
         .skills {
 
@@ -567,35 +762,42 @@
             gap: 10px;
         }
 
+
         .skill {
 
             background: white;
 
-            border: 1px solid #dfe3e7;
+            border: 1px solid #d9e2eb;
 
             padding: 11px 17px;
 
             font-size: 14px;
 
-            transition: 0.2s;
+            color: #394553;
+
+            transition: all 0.2s ease;
         }
+
 
         .skill:hover {
 
-            border-color: #1769aa;
+            border-color: #0758b8;
 
-            color: #1769aa;
+            color: #0758b8;
+
+            transform: translateY(-2px);
         }
 
 
-        /* =========================
+        /* =====================================================
            CONTACTOS
-        ========================= */
+        ===================================================== */
 
         .contact-section {
 
-            border-top: 1px solid #e1e4e8;
+            border-top: 1px solid #e2e7ed;
         }
+
 
         .contact-content {
 
@@ -605,17 +807,21 @@
 
             gap: 80px;
 
-            align-items: center;
+            align-items: start;
         }
+
 
         .contact-text {
 
             font-size: 18px;
 
-            color: #555b62;
+            color: #5b6672;
 
-            max-width: 500px;
+            line-height: 1.7;
+
+            max-width: 580px;
         }
+
 
         .contact-details {
 
@@ -623,30 +829,33 @@
 
             flex-direction: column;
 
-            gap: 15px;
+            gap: 14px;
         }
+
 
         .contact-item {
 
-            background: white;
+            background: #f7faff;
 
-            border: 1px solid #e0e4e8;
+            border: 1px solid #dce5ef;
 
             padding: 18px 20px;
 
             text-decoration: none;
 
-            color: #15171a;
+            color: #1d2939;
 
-            transition: 0.2s;
+            transition: all 0.2s ease;
         }
+
 
         .contact-item:hover {
 
-            border-color: #1769aa;
+            border-color: #0758b8;
 
             transform: translateX(4px);
         }
+
 
         .contact-label {
 
@@ -658,99 +867,125 @@
 
             letter-spacing: 1.5px;
 
-            color: #1769aa;
+            color: #0758b8;
 
             margin-bottom: 3px;
         }
 
 
-        /* =========================
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
 
-            background: #15171a;
+            background: #101820;
 
             color: white;
 
-            padding: 45px 6%;
+            padding: 48px 6%;
 
             text-align: center;
         }
 
+
         footer strong {
 
-            font-size: 16px;
+            font-size: 17px;
         }
+
 
         footer p {
 
-            color: #aeb3b9;
+            color: #aeb8c3;
 
-            margin-top: 8px;
+            margin-top: 7px;
 
             font-size: 14px;
         }
 
-        .footer-year {
 
-            margin-top: 18px;
+        .footer-email {
 
-            font-size: 12px;
+            color: #d8e8f8;
 
-            color: #747a81;
+            text-decoration: none;
         }
 
 
-        /* =========================
-           TABLET
-        ========================= */
+        .footer-email:hover {
 
-        @media (max-width: 900px) {
+            color: white;
+        }
+
+
+        .footer-year {
+
+            margin-top: 20px;
+
+            font-size: 12px;
+
+            color: #737e89;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 950px) {
 
             nav {
+
                 padding: 0 25px;
             }
 
+
             .institution-name {
+
                 display: none;
             }
 
-            .logos img {
-                max-height: 40px;
-                max-width: 130px;
-            }
 
             .nav-links {
-                gap: 15px;
+
+                gap: 18px;
             }
 
-            .hero {
 
-                grid-template-columns: 1fr;
+            .hero-content {
 
-                padding-top: 60px;
+                padding-left: 7%;
+
+                padding-right: 7%;
             }
 
-            .hero-image {
-
-                order: -1;
-
-                min-height: 350px;
-            }
-
-            .hero-image img {
-
-                max-height: 430px;
-            }
 
             .about-section {
 
                 grid-template-columns: 1fr;
 
-                gap: 40px;
+                gap: 25px;
             }
+
+
+            .interest-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .project {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-image {
+
+                min-height: 330px;
+            }
+
 
             .contact-content {
 
@@ -759,96 +994,132 @@
                 gap: 40px;
             }
 
-            .interest-grid {
-
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .project {
-
-                grid-template-columns: 1fr;
-            }
-
-            .project-image {
-
-                min-height: 280px;
-            }
         }
 
 
-        /* =========================
+        /* =====================================================
            TELEMÓVEL
-        ========================= */
+        ===================================================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
 
             nav {
 
-                height: 70px;
+                min-height: 70px;
 
-                padding: 0 18px;
+                padding: 0 17px;
             }
+
 
             .logos {
 
                 gap: 8px;
             }
 
+
             .logos img {
 
-                max-height: 34px;
+                height: 36px;
 
                 max-width: 105px;
             }
+
 
             .logo-separator {
 
                 height: 28px;
             }
 
+
             .nav-links {
 
                 display: none;
             }
 
+
             .hero {
 
                 min-height: auto;
-
-                padding-top: 50px;
-
-                padding-bottom: 70px;
             }
+
+
+            .hero-content {
+
+                padding: 65px 7% 80px;
+            }
+
+
+            .eyebrow {
+
+                font-size: 12px;
+
+                letter-spacing: 2px;
+            }
+
 
             h1 {
 
-                font-size: 48px;
+                font-size: 52px;
+
+                letter-spacing: -2.5px;
             }
+
+
+            .last-name {
+
+                letter-spacing: -2px;
+            }
+
 
             .degree {
 
                 font-size: 18px;
             }
 
-            .interest-grid {
 
-                grid-template-columns: 1fr;
+            .interests {
+
+                font-size: 14px;
+
+                line-height: 1.8;
             }
+
 
             section {
 
-                padding: 75px 6%;
+                padding: 75px 7%;
             }
+
 
             h2 {
 
                 font-size: 34px;
             }
 
+
+            .about-text {
+
+                font-size: 16px;
+            }
+
+
+            .interest-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
             .project-info {
 
                 padding: 30px;
             }
+
+
+            .project h3 {
+
+                font-size: 25px;
+            }
+
         }
 
     </style>
@@ -856,55 +1127,73 @@
 </head>
 
 
+
 <body>
 
 
-<!-- =========================
-     BARRA SUPERIOR
-========================= -->
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
 
 <nav>
 
+
     <div class="brand">
 
+
         <div class="logos">
+
 
             <img
                 src="assets/logoUM.jpg.jpg"
                 alt="Universidade do Minho"
             >
 
+
             <div class="logo-separator"></div>
+
 
             <img
                 src="assets/logoescolaengenharia.jpg.jpg"
                 alt="Escola de Engenharia da Universidade do Minho"
             >
 
+
         </div>
 
+
         <div class="institution-name">
+
             Universidade do Minho
-            <span>·</span>
+
+            <span class="dot">·</span>
+
             Escola de Engenharia
+
         </div>
+
 
     </div>
 
 
+
     <div class="nav-links">
+
 
         <a href="#sobre">
             Sobre
         </a>
 
+
         <a href="#projetos">
             Projetos
         </a>
 
+
         <a href="#competencias">
             Competências
         </a>
+
 
         <a
             href="#contactos"
@@ -913,20 +1202,201 @@
             Contactos
         </a>
 
+
     </div>
+
 
 </nav>
 
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <header class="hero">
 
 
-    <div class="hero-text">
+    <!-- Fundo inspirado em circuitos eletrónicos -->
+
+    <div class="circuit-background">
+
+
+        <svg
+            viewBox="0 0 1000 700"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+
+            <!-- linhas principais -->
+
+            <path
+                class="circuit-line"
+                d="M80 80 H260 V150 H410 V80 H580 V190 H760 V120 H930"
+            />
+
+
+            <path
+                class="circuit-line"
+                d="M40 260 H180 V330 H340 V270 H500 V360 H670 V300 H850 V380 H980"
+            />
+
+
+            <path
+                class="circuit-line"
+                d="M160 0 V120 H300 V210 H450 V150 H620 V260 H790 V190 H1000"
+            />
+
+
+            <path
+                class="circuit-line"
+                d="M350 700 V580 H470 V490 H620 V550 H760 V460 H900 V520 H1000"
+            />
+
+
+            <path
+                class="circuit-line"
+                d="M600 0 V100 H720 V180 H850 V80 H960 V0"
+            />
+
+
+            <path
+                class="circuit-line"
+                d="M500 700 V620 H650 V650 H820 V570 H940 V630 H1000"
+            />
+
+
+            <!-- pontos -->
+
+            <circle
+                class="circuit-dot"
+                cx="260"
+                cy="80"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="410"
+                cy="150"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="580"
+                cy="80"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="760"
+                cy="190"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="340"
+                cy="270"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="670"
+                cy="300"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="850"
+                cy="380"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="620"
+                cy="550"
+                r="5"
+            />
+
+
+            <circle
+                class="circuit-dot"
+                cx="900"
+                cy="520"
+                r="5"
+            />
+
+
+            <!-- chip -->
+
+            <rect
+                class="chip"
+                x="690"
+                y="270"
+                width="125"
+                height="125"
+                rx="8"
+            />
+
+
+            <rect
+                class="chip"
+                x="715"
+                y="295"
+                width="75"
+                height="75"
+                rx="4"
+            />
+
+
+            <!-- pinos do chip -->
+
+            <path
+                class="chip"
+                d="M705 295 H675 M705 315 H665 M705 335 H675 M705 355 H665 M705 375 H675"
+            />
+
+
+            <path
+                class="chip"
+                d="M800 295 H830 M800 315 H840 M800 335 H830 M800 355 H840 M800 375 H830"
+            />
+
+
+            <path
+                class="chip"
+                d="M715 285 V255 M735 285 V245 M755 285 V255 M775 285 V245"
+            />
+
+
+            <path
+                class="chip"
+                d="M715 380 V410 M735 380 V420 M755 380 V410 M775 380 V420"
+            />
+
+
+        </svg>
+
+
+    </div>
+
+
+
+    <div class="hero-content">
 
 
         <div class="eyebrow">
@@ -947,34 +1417,37 @@
         </h1>
 
 
+        <div class="hero-line"></div>
+
+
         <p class="degree">
-            Licenciatura em Engenharia Eletrónica Industrial e Computadores
+
+            Licenciatura em Engenharia Eletrónica
+            Industrial e Computadores
+
         </p>
 
 
         <p class="interests">
-            Eletrónica de Potência · Sistemas Embebidos · Controlo · Automação
+
+            <span>Eletrónica de Potência</span>
+            &nbsp;·&nbsp;
+            <span>Sistemas Embebidos</span>
+            &nbsp;·&nbsp;
+            <span>Controlo</span>
+            &nbsp;·&nbsp;
+            <span>Automação</span>
+
         </p>
 
 
         <a
-            class="button"
             href="#projetos"
+            class="button"
         >
-            Ver projetos →
+            Ver projetos&nbsp; →
         </a>
 
-
-    </div>
-
-
-
-    <div class="hero-image">
-
-        <img
-            src="assets/robot_original.jpg.jpg"
-            alt="Robô desenvolvido no âmbito de um projeto académico"
-        >
 
     </div>
 
@@ -983,9 +1456,9 @@
 
 
 
-<!-- =========================
-     SOBRE
-========================= -->
+<!-- =====================================================
+     SOBRE MIM
+===================================================== -->
 
 <section id="sobre">
 
@@ -1007,15 +1480,25 @@
         </div>
 
 
-
         <div>
 
             <p class="about-text">
 
                 Sou estudante de Engenharia Eletrónica Industrial e
                 Computadores na Universidade do Minho. Ao longo da
-                licenciatura desenvolvi projetos em programação,
-                eletrónica, sistemas embebidos, automação e controlo.
+                licenciatura desenvolvi projetos que me permitiram
+                aplicar conhecimentos nas áreas de eletrónica de
+                potência, sistemas embebidos, controlo e automação.
+
+                <br><br>
+
+                <strong>
+                    Este portfólio reúne alguns dos trabalhos e
+                    projetos académicos desenvolvidos ao longo da
+                    minha formação, procurando apresentar de forma
+                    resumida as competências e áreas de interesse
+                    exploradas durante a licenciatura.
+                </strong>
 
             </p>
 
@@ -1029,53 +1512,63 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      ÁREAS DE INTERESSE
-========================= -->
+===================================================== -->
 
-<section>
-
-
-    <div class="section-number">
-        ÁREAS DE INTERESSE
-    </div>
+<section class="interests-section">
 
 
-    <div class="interest-grid">
+    <div class="interests-inner">
 
 
-        <div class="interest">
-
-            <h3>
-                Eletrónica de Potência
-            </h3>
-
+        <div class="section-number">
+            ÁREAS DE INTERESSE
         </div>
 
 
-        <div class="interest">
-
-            <h3>
-                Controlo
-            </h3>
-
-        </div>
+        <div class="interest-grid">
 
 
-        <div class="interest">
+            <div class="interest">
 
-            <h3>
-                Sistemas Embebidos
-            </h3>
+                <h3>
+                    Eletrónica<br>
+                    de Potência
+                </h3>
 
-        </div>
+            </div>
 
 
-        <div class="interest">
+            <div class="interest">
 
-            <h3>
-                Automação
-            </h3>
+                <h3>
+                    Sistemas<br>
+                    Embebidos
+                </h3>
+
+            </div>
+
+
+            <div class="interest">
+
+                <h3>
+                    Controlo<br>
+                    e Instrumentação
+                </h3>
+
+            </div>
+
+
+            <div class="interest">
+
+                <h3>
+                    Automação<br>
+                    e Robótica
+                </h3>
+
+            </div>
+
 
         </div>
 
@@ -1087,11 +1580,14 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      PROJETOS
-========================= -->
+===================================================== -->
 
-<section id="projetos">
+<section
+    id="projetos"
+    class="projects-section"
+>
 
 
     <div class="section-number">
@@ -1105,20 +1601,23 @@
 
 
 
-    <!-- ROBÔ -->
+    <!-- =================================================
+         PROJETO 1 — ROBÔ
+    ================================================== -->
 
     <article class="project">
 
 
         <div class="project-image">
 
+
             <img
                 src="assets/robot_original.jpg.jpg"
-                alt="Robô autónomo desenvolvido durante a licenciatura"
+                alt="Robô autónomo desenvolvido no âmbito de um projeto académico"
             >
 
-        </div>
 
+        </div>
 
 
         <div class="project-info">
@@ -1141,9 +1640,9 @@
 
             <p>
 
-                Desenvolvimento de um robô baseado em microcontrolador
-                STM32, com integração de sensores, controlo de motores
-                e implementação de funcionalidades de navegação autónoma.
+                Desenvolvimento de um robô baseado num microcontrolador
+                STM32, integrando sensores, controlo de motores e
+                funcionalidades de navegação autónoma.
 
             </p>
 
@@ -1170,19 +1669,25 @@
 
 
 
-    <!-- SISTEMA FOTOVOLTAICO -->
+    <!-- =================================================
+         PROJETO 2
+    ================================================== -->
 
     <article class="project">
 
 
         <div class="project-image">
 
-            <div style="font-size: 65px;">
+
+            <div style="
+                font-size: 70px;
+                opacity: 0.65;
+            ">
                 ☀️
             </div>
 
-        </div>
 
+        </div>
 
 
         <div class="project-info">
@@ -1199,15 +1704,15 @@
 
 
             <div class="project-category">
-                Conversão de energia
+                Maximum Power Point Tracking
             </div>
 
 
             <p>
 
-                Desenvolvimento prático de um conversor aplicado a
-                um painel fotovoltaico, explorando conceitos de
-                eletrónica de potência e conversão de energia.
+                Desenvolvimento de um sistema de seguimento do ponto
+                de máxima potência de um painel fotovoltaico,
+                explorando técnicas de controlo e conversão de energia.
 
             </p>
 
@@ -1215,15 +1720,19 @@
             <div class="tags">
 
                 <span class="tag">
+                    MPPT
+                </span>
+
+                <span class="tag">
+                    P&O
+                </span>
+
+                <span class="tag">
+                    Conversor DC/DC
+                </span>
+
+                <span class="tag">
                     Eletrónica de Potência
-                </span>
-
-                <span class="tag">
-                    Conversores
-                </span>
-
-                <span class="tag">
-                    Fotovoltaico
                 </span>
 
             </div>
@@ -1236,44 +1745,50 @@
 
 
 
-    <!-- CONVERSOR BOOST -->
+    <!-- =================================================
+         PROJETO 3
+    ================================================== -->
 
     <article class="project">
 
 
         <div class="project-image">
 
-            <div style="font-size: 65px;">
+
+            <div style="
+                font-size: 70px;
+                opacity: 0.65;
+            ">
                 🔋
             </div>
 
-        </div>
 
+        </div>
 
 
         <div class="project-info">
 
 
             <div class="project-number">
-                03 / ELETRÓNICA DE POTÊNCIA
+                03 / ELETRÓNICA
             </div>
 
 
             <h3>
-                Conversor CC-CC Boost
+                Projeto de PCB
             </h3>
 
 
             <div class="project-category">
-                Projeto e desenvolvimento de PCB
+                Projeto e desenvolvimento de circuito
             </div>
 
 
             <p>
 
-                Desenvolvimento de uma PCB baseada num conversor
-                CC-CC Boost, desde o projeto do circuito até à
-                implementação.
+                Desenvolvimento de uma placa de circuito impresso,
+                desde o projeto esquemático e desenho da PCB até à
+                preparação dos ficheiros necessários para produção.
 
             </p>
 
@@ -1289,7 +1804,7 @@
                 </span>
 
                 <span class="tag">
-                    Conversor Boost
+                    Circuitos
                 </span>
 
             </div>
@@ -1302,19 +1817,25 @@
 
 
 
-    <!-- CODESYS -->
+    <!-- =================================================
+         PROJETO 4
+    ================================================== -->
 
     <article class="project">
 
 
         <div class="project-image">
 
-            <div style="font-size: 65px;">
+
+            <div style="
+                font-size: 70px;
+                opacity: 0.65;
+            ">
                 ⚙️
             </div>
 
-        </div>
 
+        </div>
 
 
         <div class="project-info">
@@ -1326,19 +1847,20 @@
 
 
             <h3>
-                Automação com CODESYS
+                Sistema de Automação
             </h3>
 
 
             <div class="project-category">
-                Sistemas de Automação
+                Automação industrial
             </div>
 
 
             <p>
 
-                Desenvolvimento e implementação de um sistema
-                de automação utilizando CODESYS.
+                Desenvolvimento de um sistema de automação envolvendo
+                sensores, atuadores e controlo de uma sequência de
+                funcionamento aplicada a uma linha de produção.
 
             </p>
 
@@ -1346,11 +1868,11 @@
             <div class="tags">
 
                 <span class="tag">
-                    CODESYS
+                    PLC
                 </span>
 
                 <span class="tag">
-                    PLC
+                    CODESYS
                 </span>
 
                 <span class="tag">
@@ -1370,45 +1892,83 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      COMPETÊNCIAS
-========================= -->
+===================================================== -->
 
-<section id="competencias">
-
-
-    <div class="section-number">
-        03 / COMPETÊNCIAS
-    </div>
+<section
+    id="competencias"
+    class="skills-section"
+>
 
 
-    <h2>
-        Competências técnicas
-    </h2>
+    <div class="skills-inner">
 
 
-    <div class="skills">
+        <div class="section-number">
+            03 / COMPETÊNCIAS
+        </div>
 
 
-        <span class="skill">C</span>
+        <h2>
+            Competências técnicas
+        </h2>
 
-        <span class="skill">C++</span>
 
-        <span class="skill">Assembly</span>
+        <div class="skills">
 
-        <span class="skill">STM32</span>
 
-        <span class="skill">8051</span>
+            <span class="skill">
+                C
+            </span>
 
-        <span class="skill">PLC</span>
 
-        <span class="skill">CX-Programmer</span>
+            <span class="skill">
+                C++
+            </span>
 
-        <span class="skill">CODESYS</span>
 
-        <span class="skill">MATLAB</span>
+            <span class="skill">
+                Assembly
+            </span>
 
-        <span class="skill">KiCad</span>
+
+            <span class="skill">
+                STM32
+            </span>
+
+
+            <span class="skill">
+                8051
+            </span>
+
+
+            <span class="skill">
+                PLC
+            </span>
+
+
+            <span class="skill">
+                CX-Programmer
+            </span>
+
+
+            <span class="skill">
+                CODESYS
+            </span>
+
+
+            <span class="skill">
+                MATLAB
+            </span>
+
+
+            <span class="skill">
+                KiCad
+            </span>
+
+
+        </div>
 
 
     </div>
@@ -1418,9 +1978,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      CONTACTOS
-========================= -->
+===================================================== -->
 
 <section
     id="contactos"
@@ -1438,18 +1998,21 @@
 
         <div>
 
+
             <h2>
                 Contactos
             </h2>
+
 
             <p class="contact-text">
 
                 Para informações adicionais sobre este portfólio
                 académico ou sobre os projetos apresentados,
-                poderá contactar-me através do endereço de email
-                institucional.
+                poderá contactar-me através do meu endereço de
+                email institucional.
 
             </p>
+
 
         </div>
 
@@ -1464,7 +2027,7 @@
             >
 
                 <span class="contact-label">
-                    EMAIL INSTITUCIONAL
+                    EMAIL
                 </span>
 
                 a97259@uminho.pt
@@ -1475,7 +2038,7 @@
             <div class="contact-item">
 
                 <span class="contact-label">
-                    AUTORA
+                    NOME
                 </span>
 
                 Catarina Sousa
@@ -1504,9 +2067,9 @@
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -1526,13 +2089,24 @@
     </p>
 
 
+    <p>
+
+        <a
+            class="footer-email"
+            href="mailto:a97259@uminho.pt"
+        >
+            a97259@uminho.pt
+        </a>
+
+    </p>
+
+
     <div class="footer-year">
         © 2026 Catarina Sousa
     </div>
 
 
 </footer>
-
 
 
 </body>
