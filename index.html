@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
+
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,12 +153,7 @@
         grid-template-columns: 53% 47%;
 
         background:
-            linear-gradient(
-                105deg,
-                #ffffff 0%,
-                #ffffff 52%,
-                #f4f8fd 100%
-            );
+            linear-gradient(105deg, #ffffff 0%, #ffffff 49%, #eef5fc 100%);
 
         overflow: hidden;
     }
@@ -264,36 +259,6 @@
 
 
     /* -------------------------
-       ÁREAS
-    ------------------------- */
-
-    .hero-focus {
-
-        display: flex;
-        flex-wrap: wrap;
-
-        gap: 9px;
-
-        margin-bottom: 40px;
-    }
-
-    .focus-item {
-
-        font-size: 13px;
-
-        color: #536075;
-
-        background: rgba(255,255,255,0.8);
-
-        border: 1px solid #dce5ef;
-
-        padding: 7px 13px;
-
-        border-radius: 30px;
-    }
-
-
-    /* -------------------------
        BOTÕES
     ------------------------- */
 
@@ -356,12 +321,12 @@
 
     .hero-circuit {
         position: absolute;
-        width: 900px;
-        height: 680px;
-        right: -65px;
+        width: 860px;
+        height: 650px;
+        right: -55px;
         top: 50%;
         transform: translateY(-50%);
-        opacity: 0.34;
+        opacity: 0.28;
         pointer-events: none;
         z-index: 1;
     }
@@ -374,9 +339,9 @@
         right: 55px;
         top: 50%;
         transform: translateY(-50%);
-        border: 1px solid rgba(126, 166, 210, 0.10);
+        border: 1px solid rgba(82, 135, 190, 0.12);
         border-radius: 50%;
-        box-shadow: 0 0 0 80px rgba(126, 166, 210, 0.025), 0 0 0 160px rgba(126, 166, 210, 0.018);
+        box-shadow: 0 0 0 80px rgba(82, 135, 190, 0.028), 0 0 0 160px rgba(82, 135, 190, 0.018);
         pointer-events: none;
     }
 
@@ -615,11 +580,10 @@
             transform 0.45s ease;
     }
 
-    /* Nos projetos com robôs, mostrar a fotografia completa
-       em vez de a cortar para preencher o cartão. */
+    /* Nos projetos com robôs, usar a fotografia aproximada
+       para preencher todo o cartão. */
     .robot-project-image img {
-        object-fit: contain;
-        padding: 10px;
+        object-fit: cover;
     }
 
     .project-card:hover
@@ -1070,8 +1034,8 @@
         }
 
         .hero-circuit {
-            width: 650px;
-            right: -80px;
+            width: 620px;
+            right: -70px;
         }
 
         .hero-main-image {
@@ -1144,9 +1108,9 @@
         }
 
         .hero-circuit {
-            width: 520px;
-            height: 430px;
-            right: -115px;
+            width: 500px;
+            height: 420px;
+            right: -105px;
             opacity: 0.27;
         }
 
@@ -1225,15 +1189,14 @@
 
 </style>
 
+
 </head>
-
 <body>
-
 <!-- =====================================================
      HEADER
-===================================================== -->
-
+\===================================================== -->
 <header>
+
 
 <div class="brand">
 
@@ -1283,15 +1246,14 @@
 
 </nav>
 
+
 </header>
-
-
 
 <!-- =====================================================
      HERO
-===================================================== -->
-
+\===================================================== -->
 <section class="hero">
+
 
 <div class="hero-content">
 
@@ -1323,25 +1285,7 @@
     </p>
 
 
-    <div class="hero-focus">
 
-        <span class="focus-item">
-            Eletrónica de Potência
-        </span>
-
-        <span class="focus-item">
-            Sistemas Embebidos
-        </span>
-
-        <span class="focus-item">
-            Controlo
-        </span>
-
-        <span class="focus-item">
-            Automação
-        </span>
-
-    </div>
 
 
     <div class="hero-actions">
@@ -1439,16 +1383,15 @@
     </svg>
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      SOBRE
-===================================================== -->
-
+\===================================================== -->
 <section class="section about"
          id="sobre">
+
 
 <div>
 
@@ -1486,16 +1429,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      PROJETOS
-===================================================== -->
-
+\===================================================== -->
 <section class="section"
          id="projetos">
+
 
 <div class="projects-intro">
 
@@ -2081,16 +2023,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 01 — SISTEMAS EMBEBIDOS
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project1">
+
 
 <div class="detail-inner">
 
@@ -2180,16 +2121,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 02 — COLORTRACK
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project2">
+
 
 <div class="detail-inner">
 
@@ -2277,16 +2217,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 03 — PI I
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project3">
+
 
 <div class="detail-inner">
 
@@ -2369,16 +2308,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 04 — MPPT
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project4">
+
 
 <div class="detail-inner">
 
@@ -2458,16 +2396,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 05 — PCB
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project5">
+
 
 <div class="detail-inner">
 
@@ -2547,16 +2484,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 06 — AUTOMAÇÃO
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project6">
+
 
 <div class="detail-inner">
 
@@ -2636,16 +2572,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 07 — 8051
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project7">
+
 
 <div class="detail-inner">
 
@@ -2724,16 +2659,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 08 — MÁQUINAS ELÉTRICAS
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project8">
+
 
 <div class="detail-inner">
 
@@ -2809,16 +2743,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 09 — SPACE INVADERS
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project9">
+
 
 <div class="detail-inner">
 
@@ -2898,16 +2831,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      DETALHE 10 — REDES
-===================================================== -->
-
+\===================================================== -->
 <section class="project-details"
          id="project10">
+
 
 <div class="detail-inner">
 
@@ -2981,16 +2913,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      COMPETÊNCIAS
-===================================================== -->
-
+\===================================================== -->
 <section class="section skills-section"
          id="competencias">
+
 
 <div class="skills">
 
@@ -3040,16 +2971,15 @@
 
 </div>
 
+
 </section>
-
-
 
 <!-- =====================================================
      CONTACTOS
-===================================================== -->
-
+\===================================================== -->
 <section class="contact-section"
          id="contactos">
+
 
 <div class="section-label">
     04 / Contactos
@@ -3075,15 +3005,14 @@
 
 </a>
 
+
 </section>
-
-
 
 <!-- =====================================================
      FOOTER
-===================================================== -->
-
+\===================================================== -->
 <footer>
+
 
 <div>
 
@@ -3102,14 +3031,12 @@
 
 </div>
 
+
 </footer>
-
-
 
 <!-- =====================================================
      JAVASCRIPT
-===================================================== -->
-
+\===================================================== -->
 <script>
 
     function openProject(id) {
@@ -3166,6 +3093,5 @@
     }
 
 </script>
-
 </body>
 </html>
