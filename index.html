@@ -249,9 +249,10 @@
 
         .hero-degree {
 
-            max-width: 540px;
+            max-width: 800px;
+            white-space: nowrap;
 
-            font-size: 19px;
+            font-size: 18px;
 
             line-height: 1.55;
 
@@ -354,12 +355,43 @@
 
         .hero-circuit {
             position: absolute;
-            width: 760px;
-            height: 620px;
-            right: -20px;
+            width: 900px;
+            height: 680px;
+            right: -65px;
             top: 50%;
             transform: translateY(-50%);
             opacity: 0.34;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-visual::before {
+            content: "";
+            position: absolute;
+            width: 620px;
+            height: 620px;
+            right: 55px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid rgba(126, 166, 210, 0.10);
+            border-radius: 50%;
+            box-shadow: 0 0 0 80px rgba(126, 166, 210, 0.025), 0 0 0 160px rgba(126, 166, 210, 0.018);
+            pointer-events: none;
+        }
+
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: 175px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-image: radial-gradient(circle, rgba(22,87,184,0.16) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.22;
+            mask-image: radial-gradient(circle, black 0%, transparent 72%);
+            -webkit-mask-image: radial-gradient(circle, black 0%, transparent 72%);
             pointer-events: none;
         }
 
@@ -1348,6 +1380,12 @@
             <path class="circuit-trace" d="M585 95 H655 V150 H725"/>
             <path class="circuit-trace" d="M355 430 V545 H430 V590"/>
             <path class="circuit-trace" d="M505 510 H570 V455 H655 V405 H735"/>
+            <path class="circuit-trace" d="M600 70 H700 V120 H790 V185 H850"/>
+            <path class="circuit-trace" d="M560 300 H650 V255 H755 V205 H835"/>
+            <path class="circuit-trace" d="M430 590 H520 V625 H660 V600 H810"/>
+            <path class="circuit-trace-fine" d="M700 120 V165 H760 V215"/>
+            <path class="circuit-trace-fine" d="M650 255 V315 H720 V350 H820"/>
+            <path class="circuit-trace-fine" d="M660 600 V545 H745 V500 H835"/>
 
             <!-- pistas secundárias -->
             <path class="circuit-trace-fine" d="M95 145 H155 V190 H215"/>
@@ -1495,7 +1533,7 @@
 
             <div class="project-image robot-project-image">
 
-                <img src="assets/robot.jpg"
+                <img src="assets/robot.jpg.png"
                      alt="Robô seguidor de linha">
 
             </div>
@@ -1551,15 +1589,15 @@
 
             <div class="project-image robot-project-image">
 
-                <img src="assets/robot_original.jpg.jpg"
-                     alt="Robô autónomo ColorTrack">
+                <img src="assets/robot_pi2.jpg"
+                     alt="ColorTrack">
 
             </div>
 
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 02 · PROJETO INTEGRADO II
+                    PROJETO 02 · PROJETO INTEGRADOR II
                 </div>
 
                 <h3 class="project-title">
@@ -1607,7 +1645,7 @@
 
             <div class="project-image robot-project-image">
 
-                <img src="assets/robo_inteligente_autonomo.jpg"
+                <img src="assets/robo_inteligente_autonomo.jpeg"
                      alt="Robô inteligente autónomo">
 
             </div>
@@ -1615,7 +1653,7 @@
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 03 · PROJETO INTEGRADO I
+                    PROJETO 03 · PROJETO INTEGRADOR I
                 </div>
 
                 <h3 class="project-title">
@@ -1625,7 +1663,7 @@
                 <ul class="project-points">
 
                     <li>
-                        Desenvolvimento de um sistema autónomo
+                        Desenvolvimento de um sistema com componentes elétricos
                     </li>
 
                     <li>
@@ -1633,7 +1671,7 @@
                     </li>
 
                     <li>
-                        Deteção de cor vermelha
+                        Deteção de cor da linha
                     </li>
 
                     <li>
@@ -1689,7 +1727,7 @@
                     </li>
 
                     <li>
-                        Conversor DC/DC Boost
+                        Conversor CC/CC Boost
                     </li>
 
                     <li>
@@ -1775,7 +1813,7 @@
 
             <div class="project-image">
 
-                <img src="assets/automacao.jpg"
+                <img src="assets/capa_automacao.jpg"
                      alt="Sistema de automação">
 
             </div>
@@ -1801,7 +1839,7 @@
                     </li>
 
                     <li>
-                        Programação de PLC
+                        Programação CODESYS
                     </li>
 
                     <li>
@@ -1839,7 +1877,7 @@
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 07 · SISTEMAS DIGITAIS
+                    PROJETO 07 · ARQUITETURA E TECNOLOGIA DE COMPUTADORES II
                 </div>
 
                 <h3 class="project-title">
@@ -1999,7 +2037,7 @@
 
             <div class="project-image">
 
-                <img src="assets/redes.jpg"
+                <img src="assets/capa_redes.jpg"
                      alt="Redes de computadores">
 
             </div>
