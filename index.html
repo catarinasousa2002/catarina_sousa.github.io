@@ -343,135 +343,146 @@
 
 
         /* =====================================================
-           HERO — COMPOSIÇÃO DE PROJETOS
+           HERO — IMAGEM PRINCIPAL
 
-           Três elementos visuais reais do portfólio:
-           robô, PCB e sistema fotovoltaico.
+           A imagem hero.jpg funciona como elemento visual único,
+           integrado no lado direito do Hero sem competir com o texto.
         ===================================================== */
 
         .hero-visual {
+
             position: relative;
+
             min-height: 680px;
-            overflow: hidden;
-        }
 
-        /* linhas técnicas muito discretas, mantendo a identidade
-           gráfica do Hero original */
-        .hero-visual::before {
-            content: "";
-            position: absolute;
-            width: 520px;
-            height: 520px;
-            border: 1px solid #d9e5f2;
-            border-radius: 50%;
-            right: -95px;
-            top: 75px;
-            opacity: 0.7;
-        }
-
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            width: 78%;
-            height: 1px;
-            background: #d9e5f2;
-            right: 0;
-            top: 51%;
-            opacity: 0.75;
-        }
-
-        .hero-photo {
-            position: absolute;
-            z-index: 2;
             display: flex;
             align-items: center;
             justify-content: center;
-            pointer-events: none;
+
+            overflow: hidden;
+
+            padding: 45px 5% 45px 2%;
         }
 
-        .hero-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
+        /* detalhe gráfico muito subtil, para manter a linguagem
+           técnica do site sem voltar à composição anterior */
+        .hero-visual::before {
 
-        /* Robô — elemento principal */
-        .hero-photo-robot {
-            width: 52%;
-            height: 52%;
-            left: 1%;
-            bottom: 15%;
-            z-index: 4;
-            transform: rotate(-3deg);
-        }
+            content: "";
 
-        .hero-photo-robot img {
-            filter: drop-shadow(0 18px 22px rgba(24,34,53,0.13));
-        }
-
-        /* PCB — elemento secundário superior */
-        .hero-photo-pcb {
-            width: 46%;
-            height: 39%;
-            right: 1%;
-            top: 10%;
-            z-index: 3;
-            transform: rotate(2deg);
-            background: rgba(255,255,255,0.92);
-            border: 1px solid #e0e7ef;
-            box-shadow: 0 15px 35px rgba(25,50,80,0.08);
-            padding: 9px;
-        }
-
-        /* Painel — elemento secundário inferior */
-        .hero-photo-panel {
-            width: 49%;
-            height: 39%;
-            right: -1%;
-            bottom: 8%;
-            z-index: 2;
-            transform: rotate(-3deg);
-            background: rgba(255,255,255,0.94);
-            border: 1px solid #e0e7ef;
-            box-shadow: 0 15px 35px rgba(25,50,80,0.08);
-            padding: 9px;
-        }
-
-        /* pequenos pontos de ligação */
-        .hero-dot {
             position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            border: 1px solid #dce7f3;
+
+            border-radius: 50%;
+
+            right: -80px;
+            top: 115px;
+
+            opacity: 0.65;
+        }
+
+        .hero-visual::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-top: 1px solid #dce7f3;
+            border-right: 1px solid #dce7f3;
+
+            right: 9%;
+            bottom: 11%;
+
+            opacity: 0.75;
+        }
+
+        .hero-main-image {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+            max-width: 640px;
+            max-height: 590px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-main-image img {
+
+            display: block;
+
+            width: 100%;
+            max-height: 590px;
+
+            object-fit: contain;
+
+            filter: drop-shadow(0 22px 32px rgba(24,34,53,0.12));
+
+            transition: transform 0.35s ease;
+        }
+
+        .hero-main-image img:hover {
+            transform: translateY(-4px);
+        }
+
+        .hero-image-line {
+
+            position: absolute;
+
+            z-index: 3;
+
+            width: 55px;
+            height: 1px;
+
+            background: #8eb4dd;
+
+            left: 3%;
+            bottom: 18%;
+        }
+
+        .hero-image-dot {
+
+            position: absolute;
+
+            z-index: 3;
+
             width: 6px;
             height: 6px;
+
             border-radius: 50%;
+
             background: #8eb4dd;
-            z-index: 5;
-        }
 
-        .hero-dot-1 {
-            right: 49%;
-            top: 28%;
-        }
-
-        .hero-dot-2 {
-            right: 18%;
-            top: 51%;
-        }
-
-        .hero-dot-3 {
-            right: 43%;
-            bottom: 17%;
+            left: calc(3% + 55px);
+            bottom: calc(18% - 2px);
         }
 
         .visual-label {
+
             position: absolute;
+
             right: 7%;
             bottom: 4%;
+
             font-size: 10px;
             letter-spacing: 4px;
+
             color: #9aadc2;
+
             text-transform: uppercase;
-            z-index: 6;
+
+            z-index: 4;
         }
 
         /* =====================================================
@@ -1071,28 +1082,17 @@
             }
 
             .hero-visual {
-                min-height: 470px;
+                min-height: 500px;
+                padding: 35px 8%;
             }
 
-            .hero-photo-robot {
-                width: 52%;
-                height: 53%;
-                left: 1%;
-                bottom: 13%;
+            .hero-main-image {
+                max-width: 650px;
+                max-height: 440px;
             }
 
-            .hero-photo-pcb {
-                width: 45%;
-                height: 39%;
-                right: 1%;
-                top: 8%;
-            }
-
-            .hero-photo-panel {
-                width: 49%;
-                height: 39%;
-                right: -1%;
-                bottom: 7%;
+            .hero-main-image img {
+                max-height: 440px;
             }
 
             .projects-grid {
@@ -1151,36 +1151,48 @@
             }
 
             .hero-visual {
-                min-height: 350px;
+                min-height: 330px;
+                padding: 25px 6% 45px;
             }
 
-            .hero-photo-robot {
-                width: 55%;
-                height: 50%;
-                left: -1%;
-                bottom: 16%;
+            .hero-main-image {
+                max-width: 560px;
+                max-height: 300px;
             }
 
-            .hero-photo-pcb {
-                width: 48%;
-                height: 38%;
-                right: -1%;
-                top: 7%;
-                padding: 6px;
+            .hero-main-image img {
+                max-height: 300px;
             }
 
-            .hero-photo-panel {
-                width: 51%;
-                height: 38%;
-                right: -2%;
-                bottom: 6%;
-                padding: 6px;
+            .hero-visual::before {
+                width: 260px;
+                height: 260px;
+                right: -85px;
+                top: 45px;
+            }
+
+            .hero-visual::after {
+                width: 90px;
+                height: 90px;
+                right: 8%;
+                bottom: 14%;
+            }
+
+            .hero-image-line {
+                left: 4%;
+                bottom: 15%;
+                width: 35px;
+            }
+
+            .hero-image-dot {
+                left: calc(4% + 35px);
+                bottom: calc(15% - 2px);
             }
 
             .visual-label {
                 right: 5%;
-                bottom: 1%;
-                font-size: 8px;
+                bottom: 2%;
+                font-size: 7px;
                 letter-spacing: 2px;
             }
 
@@ -1362,27 +1374,16 @@
 
 
 
-    <!-- COMPOSIÇÃO VISUAL DO HERO -->
+    <!-- IMAGEM PRINCIPAL DO HERO -->
     <div class="hero-visual">
 
-        <div class="hero-photo hero-photo-robot">
-            <img src="assets/robot.jpg"
-                 alt="Robô seguidor de linha">
+        <div class="hero-main-image">
+            <img src="assets/hero.jpg"
+                 alt="Projetos académicos de eletrónica e sistemas embebidos">
         </div>
 
-        <div class="hero-photo hero-photo-pcb">
-            <img src="assets/pcb.jpg"
-                 alt="Projeto de PCB">
-        </div>
-
-        <div class="hero-photo hero-photo-panel">
-            <img src="assets/painel.jpg"
-                 alt="Sistema fotovoltaico">
-        </div>
-
-        <div class="hero-dot hero-dot-1"></div>
-        <div class="hero-dot hero-dot-2"></div>
-        <div class="hero-dot hero-dot-3"></div>
+        <div class="hero-image-line"></div>
+        <div class="hero-image-dot"></div>
 
         <div class="visual-label">
             Electronics · Control · Embedded Systems
@@ -1538,8 +1539,8 @@
 
             <div class="project-image">
 
-                <img src="assets/robot_pi2.jpg"
-                     alt="Robô ColorTrack">
+                <img src="assets/robot_original.jpg.jpg"
+                     alt="Robô autónomo ColorTrack">
 
             </div>
 
@@ -1594,7 +1595,7 @@
 
             <div class="project-image">
 
-                <img src="assets/capa_pi1.jpg"
+                <img src="assets/robo_inteligente_autonomo.jpg"
                      alt="Robô inteligente autónomo">
 
             </div>
@@ -2174,10 +2175,10 @@
 
             <div class="detail-gallery">
 
-                <img src="assets/robot_pi2.jpg"
+                <img src="assets/robot_original.jpg.jpg"
                      alt="ColorTrack">
 
-                <img src="assets/robot_original.jpg.jpeg"
+                <img src="assets/robot_original.jpg.jpg"
                      alt="Robô">
 
             </div>
@@ -2271,7 +2272,7 @@
 
             <div class="detail-gallery">
 
-                <img src="assets/capa_pi1.jpg"
+                <img src="assets/robo_inteligente_autonomo.jpg"
                      alt="Robô inteligente autónomo">
 
                 <img src="assets/robot_pi1.jpg"
