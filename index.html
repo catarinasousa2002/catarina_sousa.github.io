@@ -3,15 +3,13 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Catarina Carvalho de Sousa | Portfólio Académico</title>
+    <title>Catarina Carvalho de Sousa | Portefólio Académico</title>
+
 
     <style>
-
-        /* =====================================================
-           BASE
-        ===================================================== */
 
         * {
             margin: 0;
@@ -19,125 +17,106 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: #182235;
-            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #15171a;
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        :root {
-            --navy: #182235;
-            --blue: #1657b8;
-            --blue-soft: #edf4fc;
-            --grey: #687487;
-            --border: #e2e7ee;
-            --light: #f7f9fc;
-            --white: #ffffff;
-        }
 
 
         /* =====================================================
-           HEADER
+           NAVBAR
         ===================================================== */
 
-        header {
+        nav {
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             height: 82px;
-            padding: 0 6%;
+
+            background: rgba(255,255,255,0.97);
+
+            border-bottom: 1px solid #e4e8ec;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            background: rgba(255,255,255,0.97);
-
-            border-bottom: 1px solid #edf0f4;
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 0 6%;
         }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
 
         .logos {
+
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 20px;
+
+            height: 100%;
         }
+
 
         .logos img {
-            height: 48px;
+
+            max-height: 50px;
+            max-width: 190px;
+
             width: auto;
+            height: auto;
+
             object-fit: contain;
+
+            display: block;
         }
 
-        .brand-divider {
+
+        .logo-separator {
+
             width: 1px;
             height: 38px;
-            background: #dfe4ea;
+
+            background: #dfe3e7;
         }
 
-        .institution {
-            font-size: 17px;
-            font-weight: 500;
-            color: var(--navy);
-            letter-spacing: -0.2px;
-        }
 
-        .institution span {
-            color: #a5adba;
-            margin: 0 7px;
-        }
+        .nav-links {
 
-        nav {
             display: flex;
             align-items: center;
+
             gap: 34px;
         }
 
-        nav a {
-            font-size: 15px;
-            color: #303b4e;
-            transition: 0.2s ease;
-        }
 
-        nav a:hover {
-            color: var(--blue);
-        }
+        .nav-links a {
 
-        .contact-btn {
-            padding: 10px 19px;
+            text-decoration: none;
 
-            border: 1px solid var(--blue);
-            border-radius: 5px;
+            color: #44484e;
 
-            color: var(--blue);
+            font-size: 14px;
+
             font-weight: 500;
+
+            transition: 0.2s;
         }
 
-        .contact-btn:hover {
-            background: var(--blue);
-            color: white;
+
+        .nav-links a:hover {
+
+            color: #1769aa;
         }
+
 
 
         /* =====================================================
@@ -146,417 +125,472 @@
 
         .hero {
 
-            min-height: 680px;
+            min-height: calc(100vh - 82px);
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 60px 6%;
 
             display: grid;
-            grid-template-columns: 53% 47%;
 
-            background:
-                linear-gradient(
-                    105deg,
-                    #ffffff 0%,
-                    #ffffff 52%,
-                    #f4f8fd 100%
-                );
+            grid-template-columns: 0.95fr 1.05fr;
+
+            align-items: center;
+
+            gap: 45px;
 
             overflow: hidden;
         }
 
 
-        /* -------------------------
-           TEXTO
-        ------------------------- */
-
-        .hero-content {
-
-            padding: 110px 5% 100px 10%;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .hero-text {
 
             position: relative;
-            z-index: 5;
+
+            z-index: 3;
         }
+
 
         .eyebrow {
 
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
 
-            letter-spacing: 4px;
-            text-transform: uppercase;
+            font-weight: 700;
 
-            color: var(--blue);
+            letter-spacing: 2.5px;
+
+            color: #1769aa;
+
+            margin-bottom: 22px;
+        }
+
+
+        h1 {
+
+            font-size: clamp(44px, 5vw, 70px);
+
+            line-height: 1.04;
+
+            letter-spacing: -2.5px;
 
             margin-bottom: 25px;
         }
 
-        .eyebrow-line {
 
-            width: 46px;
-            height: 2px;
+        .degree {
 
-            background: var(--blue);
+            font-size: 21px;
 
-            margin-bottom: 30px;
+            color: #4e535a;
+
+            max-width: 600px;
+
+            margin-bottom: 10px;
         }
 
 
-        /* -------------------------
-           NOME
-        ------------------------- */
+        .university {
 
-        .hero h1 {
+            font-size: 16px;
 
-            font-family: Georgia, "Times New Roman", serif;
+            color: #777d84;
 
-            font-weight: 400;
-
-            line-height: 0.98;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 38px;
-        }
-
-        .first-name {
-
-            display: block;
-
-            font-size: clamp(70px, 7vw, 105px);
-
-            color: var(--navy);
-        }
-
-        .last-name {
-
-            display: block;
-
-            margin-top: 8px;
-
-            font-size: clamp(45px, 4.5vw, 68px);
-
-            color: #707b8b;
-
-            letter-spacing: -1.5px;
+            margin-bottom: 28px;
         }
 
 
-        /* -------------------------
-           CURSO
-        ------------------------- */
+        .interests {
 
-        .hero-degree {
+            font-size: 15px;
 
-            max-width: 800px;
-            white-space: nowrap;
+            font-weight: 600;
 
-            font-size: 18px;
+            color: #30343a;
 
-            line-height: 1.55;
-
-            color: #303c4f;
-
-            margin-bottom: 27px;
+            margin-bottom: 35px;
         }
 
 
-        /* -------------------------
-           ÁREAS
-        ------------------------- */
+        .hero-button {
 
-        .hero-focus {
+            display: inline-block;
 
-            display: flex;
-            flex-wrap: wrap;
+            text-decoration: none;
 
-            gap: 9px;
+            background: #15171a;
 
-            margin-bottom: 40px;
-        }
-
-        .focus-item {
-
-            font-size: 13px;
-
-            color: #536075;
-
-            background: rgba(255,255,255,0.8);
-
-            border: 1px solid #dce5ef;
-
-            padding: 7px 13px;
-
-            border-radius: 30px;
-        }
-
-
-        /* -------------------------
-           BOTÕES
-        ------------------------- */
-
-        .hero-actions {
-
-            display: flex;
-            align-items: center;
-
-            gap: 27px;
-        }
-
-        .primary-btn {
-
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-
-            background: var(--blue);
             color: white;
 
-            padding: 13px 24px;
+            padding: 13px 25px;
 
             border-radius: 5px;
 
             font-size: 14px;
-            font-weight: 500;
 
-            transition: 0.25s ease;
+            font-weight: 600;
+
+            transition: 0.2s;
         }
 
-        .primary-btn:hover {
 
-            background: #104b9f;
+        .hero-button:hover {
 
             transform: translateY(-2px);
+
+            background: #1769aa;
         }
 
-        .secondary-link {
-
-            font-size: 14px;
-
-            color: #465367;
-        }
-
-        .secondary-link:hover {
-
-            color: var(--blue);
-        }
 
 
         /* =====================================================
-           HERO — CIRCUITO ELETRÓNICO MINIMALISTA
+           HERO - LADO DIREITO
         ===================================================== */
 
         .hero-visual {
+
             position: relative;
-            min-height: 680px;
+
+            min-height: 560px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
             overflow: hidden;
+
+            border-radius: 3px;
         }
 
-        .hero-circuit {
+
+        /*
+           Fundo azul muito subtil
+        */
+
+        .hero-visual::before {
+
+            content: "";
+
             position: absolute;
-            width: 900px;
-            height: 680px;
-            right: -65px;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0.34;
-            pointer-events: none;
+
+            inset: 5% 0;
+
+            background:
+
+                linear-gradient(
+                    rgba(232,242,250,0.92),
+                    rgba(241,247,252,0.96)
+                );
+
+            border: 1px solid #dce8f1;
+
+            z-index: 0;
+        }
+
+
+        /*
+           Grelha técnica
+        */
+
+        .hero-visual::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 5% 0;
+
+            opacity: 0.32;
+
+            background-image:
+
+                linear-gradient(
+                    #b7cddd 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    #b7cddd 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                transparent,
+                black 20%,
+                black 80%,
+                transparent
+            );
+
             z-index: 1;
         }
 
-        .hero-visual::before {
-            content: "";
+
+        /*
+           Pequenas pistas decorativas
+        */
+
+        .circuit-lines {
+
             position: absolute;
-            width: 620px;
-            height: 620px;
-            right: 55px;
-            top: 50%;
-            transform: translateY(-50%);
-            border: 1px solid rgba(126, 166, 210, 0.10);
-            border-radius: 50%;
-            box-shadow: 0 0 0 80px rgba(126, 166, 210, 0.025), 0 0 0 160px rgba(126, 166, 210, 0.018);
+
+            inset: 0;
+
+            z-index: 2;
+
             pointer-events: none;
-        }
 
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            right: 175px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-image: radial-gradient(circle, rgba(22,87,184,0.16) 1px, transparent 1px);
-            background-size: 24px 24px;
-            opacity: 0.22;
-            mask-image: radial-gradient(circle, black 0%, transparent 72%);
-            -webkit-mask-image: radial-gradient(circle, black 0%, transparent 72%);
-            pointer-events: none;
-        }
-
-        .hero-circuit path,
-        .hero-circuit line,
-        .hero-circuit rect,
-        .hero-circuit circle {
-            vector-effect: non-scaling-stroke;
-        }
-
-        .circuit-trace {
-            fill: none;
-            stroke: #7fa7d2;
-            stroke-width: 1.2;
-            opacity: 0.48;
-        }
-
-        .circuit-trace-fine {
-            fill: none;
-            stroke: #a7bfdc;
-            stroke-width: 0.9;
-            opacity: 0.42;
-        }
-
-        .circuit-pad {
-            fill: #ffffff;
-            stroke: #6f9dcc;
-            stroke-width: 1.1;
-            opacity: 0.52;
-        }
-
-        .circuit-pad-inner {
-            fill: #7fa7d2;
             opacity: 0.45;
         }
 
-        .circuit-chip {
-            fill: rgba(255,255,255,0.28);
-            stroke: #7b9fc6;
-            stroke-width: 1.1;
-            opacity: 0.42;
-        }
 
-        .circuit-chip-line {
-            stroke: #7b9fc6;
-            stroke-width: 0.9;
-            opacity: 0.4;
-        }
+        .circuit-lines span {
 
-        .circuit-resistor {
-            fill: none;
-            stroke: #7b9fc6;
-            stroke-width: 1.1;
-            opacity: 0.43;
-        }
-
-        .hero-circuit::after {
-            content: "";
             position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg,
-                #f4f8fd 0%,
-                rgba(244,248,253,0.55) 10%,
-                transparent 32%,
-                transparent 100%);
-            pointer-events: none;
+
+            height: 1px;
+
+            background: #8fb4cf;
         }
+
+
+        .line-one {
+
+            width: 140px;
+
+            top: 18%;
+
+            right: 4%;
+
+            transform: rotate(25deg);
+        }
+
+
+        .line-two {
+
+            width: 100px;
+
+            bottom: 21%;
+
+            left: 2%;
+
+            transform: rotate(-20deg);
+        }
+
+
+        .line-three {
+
+            width: 70px;
+
+            top: 34%;
+
+            left: 4%;
+
+            transform: rotate(90deg);
+        }
+
+
+        .circuit-dot {
+
+            position: absolute;
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #8fb4cf;
+        }
+
+
+        .dot-one {
+
+            top: 17%;
+
+            right: 3%;
+        }
+
+
+        .dot-two {
+
+            bottom: 20%;
+
+            left: 1%;
+        }
+
+
+        .dot-three {
+
+            top: 34%;
+
+            left: 4%;
+        }
+
+
+        /*
+           A imagem que enviaste.
+           É PNG com transparência.
+        */
+
+        .hero-visual img {
+
+            position: relative;
+
+            z-index: 4;
+
+            width: 94%;
+
+            max-width: 520px;
+
+            max-height: 570px;
+
+            object-fit: contain;
+
+            display: block;
+
+            filter: drop-shadow(
+                0 18px 28px rgba(30,60,80,0.12)
+            );
+
+            transition: transform 0.35s ease;
+        }
+
+
+        .hero-visual:hover img {
+
+            transform: scale(1.025);
+        }
+
+
 
         /* =====================================================
            SECÇÕES
         ===================================================== */
 
-        .section {
+        section {
 
-            padding: 110px 10%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 100px 6%;
         }
+
+
+        .section-number {
+
+            font-size: 13px;
+
+            color: #1769aa;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+
+        h2 {
+
+            font-size: 40px;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 45px;
+        }
+
 
 
         /* =====================================================
            SOBRE
         ===================================================== */
 
-        .about {
+        .about-section {
 
             display: grid;
 
-            grid-template-columns: 250px 1fr;
+            grid-template-columns: 1fr 1fr;
 
             gap: 80px;
 
-            border-bottom: 1px solid var(--border);
+            align-items: start;
         }
 
-        .section-label {
-
-            color: var(--blue);
-
-            font-size: 12px;
-
-            letter-spacing: 3px;
-
-            font-weight: 600;
-
-            text-transform: uppercase;
-        }
-
-        .section-title {
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 42px;
-
-            font-weight: 400;
-
-            line-height: 1.1;
-
-            margin-top: 15px;
-
-            color: var(--navy);
-        }
 
         .about-text {
 
-            max-width: 780px;
+            font-size: 18px;
+
+            color: #555b62;
+
+            max-width: 650px;
+        }
+
+
+
+        /* =====================================================
+           INTERESSES
+        ===================================================== */
+
+        .interest-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .interest {
+
+            background: white;
+
+            border: 1px solid #e0e4e8;
+
+            padding: 28px 22px;
+
+            min-height: 145px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            transition: 0.25s;
+        }
+
+
+        .interest:hover {
+
+            transform: translateY(-4px);
+
+            border-color: #1769aa;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.06);
+        }
+
+
+        .interest h3 {
 
             font-size: 17px;
 
-            color: #4e5b6f;
-
-            line-height: 1.9;
+            line-height: 1.25;
         }
 
-        .about-text p + p {
-
-            margin-top: 18px;
-        }
 
 
         /* =====================================================
            PROJETOS
         ===================================================== */
-
-        #projetos {
-
-            background: #f7f9fc;
-        }
-
-        .projects-intro {
-
-            max-width: 700px;
-
-            margin-bottom: 55px;
-        }
-
-        .projects-intro p {
-
-            margin-top: 18px;
-
-            color: var(--grey);
-
-            font-size: 16px;
-        }
-
-
-        /* grelha */
 
         .projects-grid {
 
@@ -564,452 +598,282 @@
 
             grid-template-columns: repeat(2, 1fr);
 
-            gap: 30px;
+            gap: 28px;
         }
 
-
-        /* cartão */
 
         .project-card {
 
             background: white;
 
-            border: 1px solid var(--border);
+            border: 1px solid #e1e5e9;
 
             overflow: hidden;
 
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
+            transition: 0.25s;
+
+            display: flex;
+
+            flex-direction: column;
         }
+
 
         .project-card:hover {
 
             transform: translateY(-5px);
 
             box-shadow:
-                0 16px 40px rgba(25,50,80,0.08);
+                0 14px 35px rgba(0,0,0,0.08);
+
+            border-color: #cfd6dd;
         }
 
 
-        /* imagem */
+
+        /* =====================================================
+           IMAGENS DOS PROJETOS
+        ===================================================== */
 
         .project-image {
 
             height: 290px;
 
-            overflow: hidden;
-
-            background: #edf2f7;
-        }
-
-        .project-image img {
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            transition:
-                transform 0.45s ease;
-        }
-
-        /* Nos projetos com robôs, mostrar a fotografia completa
-           em vez de a cortar para preencher o cartão. */
-        .robot-project-image img {
-            object-fit: contain;
-            padding: 10px;
-        }
-
-        .project-card:hover
-        .project-image img {
-
-            transform: scale(1.035);
-        }
-
-
-        /* conteúdo */
-
-        .project-content {
-
-            padding: 29px 31px 31px;
-        }
-
-        .project-number {
-
-            font-size: 11px;
-
-            color: var(--blue);
-
-            letter-spacing: 2px;
-
-            font-weight: 600;
-
-            margin-bottom: 10px;
-        }
-
-        .project-title {
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 29px;
-
-            font-weight: 400;
-
-            line-height: 1.2;
-
-            color: var(--navy);
-
-            margin-bottom: 17px;
-        }
-
-        .project-points {
-
-            list-style: none;
-
-            margin-bottom: 26px;
-        }
-
-        .project-points li {
+            background: #eef3f7;
 
             position: relative;
 
-            padding-left: 18px;
+            overflow: hidden;
 
-            margin-bottom: 7px;
+            display: flex;
 
-            font-size: 14px;
+            align-items: center;
 
-            color: #647084;
+            justify-content: center;
         }
 
-        .project-points li::before {
+
+        /*
+           Fundo técnico para os cartões.
+        */
+
+        .project-image::before {
 
             content: "";
 
             position: absolute;
 
-            left: 0;
+            inset: 0;
 
-            top: 10px;
+            opacity: 0.32;
 
-            width: 5px;
-            height: 5px;
+            background-image:
 
-            border-radius: 50%;
+                linear-gradient(
+                    #c5d5e1 1px,
+                    transparent 1px
+                ),
 
-            background: var(--blue);
-        }
+                linear-gradient(
+                    90deg,
+                    #c5d5e1 1px,
+                    transparent 1px
+                );
 
-        .project-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            font-size: 14px;
-
-            font-weight: 500;
-
-            color: var(--blue);
-
-            border-bottom: 1px solid transparent;
-
-            cursor: pointer;
-        }
-
-        .project-button:hover {
-
-            border-bottom-color: var(--blue);
+            background-size: 32px 32px;
         }
 
 
-        /* =====================================================
-           DETALHES
-        ===================================================== */
+        .project-image img {
 
-        .project-details {
+            position: relative;
 
-            display: none;
-
-            background: #ffffff;
-
-            border-top: 1px solid var(--border);
-        }
-
-        .project-details.active {
-
-            display: block;
-        }
-
-        .detail-inner {
-
-            padding: 70px 10%;
-        }
-
-        .detail-top {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-start;
-
-            gap: 30px;
-
-            margin-bottom: 40px;
-        }
-
-        .detail-number {
-
-            font-size: 11px;
-
-            color: var(--blue);
-
-            letter-spacing: 3px;
-
-            font-weight: 600;
-
-            margin-bottom: 10px;
-        }
-
-        .detail-title {
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 42px;
-
-            font-weight: 400;
-
-            color: var(--navy);
-        }
-
-        .close-detail {
-
-            border: 1px solid var(--border);
-
-            background: white;
-
-            padding: 9px 17px;
-
-            cursor: pointer;
-
-            color: #5d6878;
-
-            font-size: 13px;
-        }
-
-        .close-detail:hover {
-
-            border-color: var(--blue);
-
-            color: var(--blue);
-        }
-
-
-        /* layout */
-
-        .detail-layout {
-
-            display: grid;
-
-            grid-template-columns: 1.15fr 0.85fr;
-
-            gap: 60px;
-        }
-
-
-        /* galeria */
-
-        .detail-gallery {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 14px;
-        }
-
-        .detail-gallery img {
+            z-index: 2;
 
             width: 100%;
 
-            height: 220px;
+            height: 100%;
 
             object-fit: cover;
 
-            background: #f2f5f8;
+            display: block;
+
+            transition: 0.35s;
         }
 
 
-        /* descrição */
+        .project-card:hover .project-image img {
 
-        .detail-description {
-
-            color: #5c6879;
-
-            font-size: 15px;
-
-            line-height: 1.85;
-        }
-
-        .detail-description h4 {
-
-            color: var(--navy);
-
-            font-size: 15px;
-
-            margin-bottom: 13px;
-        }
-
-        .detail-description p {
-
-            margin-bottom: 25px;
+            transform: scale(1.025);
         }
 
 
-        /* links */
+        /*
+           MUITO IMPORTANTE:
 
-        .detail-links {
+           Para os projetos dos robôs usamos contain,
+           para mostrar o robô completo.
+        */
+
+        .robot-image img {
+
+            object-fit: contain;
+
+            width: 92%;
+
+            height: 92%;
+
+            padding: 8px;
+        }
+
+
+        .robot-image {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef5f9,
+                    #e5eef4
+                );
+        }
+
+
+
+        /* =====================================================
+           CONTEÚDO DOS CARTÕES
+        ===================================================== */
+
+        .project-content {
+
+            padding: 27px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+
+        .project-category {
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            color: #1769aa;
+
+            margin-bottom: 9px;
+
+            text-transform: uppercase;
+        }
+
+
+        .project-title {
+
+            font-size: 25px;
+
+            line-height: 1.2;
+
+            margin-bottom: 17px;
+        }
+
+
+        .project-topics {
 
             display: flex;
 
             flex-wrap: wrap;
 
-            gap: 10px;
+            gap: 7px;
+
+            margin-bottom: 25px;
         }
 
-        .detail-link {
 
-            display: inline-flex;
+        .topic {
 
-            align-items: center;
+            border: 1px solid #dce1e5;
 
-            gap: 8px;
+            padding: 5px 9px;
 
-            border: 1px solid #d9e1eb;
+            font-size: 12px;
 
-            padding: 9px 14px;
+            color: #555b62;
 
-            font-size: 13px;
+            background: #fafbfc;
+        }
 
-            color: #405067;
+
+        .project-button {
+
+            margin-top: auto;
+
+            display: inline-block;
+
+            width: fit-content;
+
+            text-decoration: none;
+
+            color: #15171a;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            border-bottom: 1px solid #15171a;
+
+            padding-bottom: 3px;
 
             transition: 0.2s;
         }
 
-        .detail-link:hover {
 
-            border-color: var(--blue);
+        .project-button:hover {
 
-            color: var(--blue);
+            color: #1769aa;
+
+            border-color: #1769aa;
         }
+
 
 
         /* =====================================================
            COMPETÊNCIAS
         ===================================================== */
 
-        .skills-section {
-
-            background: white;
-        }
-
         .skills {
-
-            display: grid;
-
-            grid-template-columns: 250px 1fr;
-
-            gap: 80px;
-        }
-
-        .skills-grid {
 
             display: flex;
 
             flex-wrap: wrap;
 
-            gap: 12px;
-
-            max-width: 800px;
+            gap: 10px;
         }
+
 
         .skill {
 
-            border: 1px solid var(--border);
+            background: white;
+
+            border: 1px solid #dfe3e7;
 
             padding: 11px 17px;
 
             font-size: 14px;
 
-            color: #536074;
-
-            background: #fafbfd;
-        }
-
-
-        /* =====================================================
-           CONTACTOS
-        ===================================================== */
-
-        .contact-section {
-
-            background: var(--navy);
-
-            color: white;
-
-            padding: 100px 10%;
-        }
-
-        .contact-section .section-label {
-
-            color: #9bbef0;
-        }
-
-        .contact-section .section-title {
-
-            color: white;
-
-            margin-bottom: 30px;
-        }
-
-        .contact-intro {
-
-            color: #b9c3d2;
-
-            max-width: 620px;
-
-            font-size: 16px;
-
-            margin-bottom: 35px;
-        }
-
-        .contact-email {
-
-            display: inline-block;
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 27px;
-
-            color: white;
-
-            border-bottom: 1px solid #607087;
-
-            padding-bottom: 5px;
-
             transition: 0.2s;
         }
 
-        .contact-email:hover {
 
-            color: #9bbef0;
+        .skill:hover {
 
-            border-color: #9bbef0;
+            border-color: #1769aa;
+
+            color: #1769aa;
         }
+
 
 
         /* =====================================================
@@ -1018,208 +882,191 @@
 
         footer {
 
-            background: #111a29;
+            background: #15171a;
 
-            color: #8591a3;
+            color: white;
 
-            padding: 25px 10%;
+            padding: 55px 6%;
 
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            font-size: 12px;
+            text-align: center;
         }
 
-        footer strong {
 
-            color: #d9e0e9;
+        footer p {
 
-            font-weight: 500;
+            color: #aeb3b9;
+
+            margin-top: 8px;
+
+            font-size: 14px;
         }
+
 
 
         /* =====================================================
            RESPONSIVE
         ===================================================== */
 
-        @media (max-width: 1000px) {
+        @media (max-width: 900px) {
 
-            header {
-                padding: 0 5%;
+            nav {
+
+                padding: 0 25px;
             }
 
-            .institution {
-                display: none;
+
+            .logos img {
+
+                max-height: 40px;
+
+                max-width: 150px;
             }
 
-            .hero {
-                grid-template-columns: 1fr;
-            }
 
-            .hero-content {
-                padding: 90px 8%;
-            }
-
-            .hero-visual {
-                min-height: 500px;
-                padding: 35px 8%;
-            }
-
-            .hero-circuit {
-                width: 650px;
-                right: -80px;
-            }
-
-            .hero-main-image {
-                max-width: 650px;
-                max-height: 440px;
-            }
-
-            .hero-main-image img {
-                max-height: 440px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about,
-            .skills {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .detail-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        @media (max-width: 700px) {
-
-            header {
-
-                height: auto;
-
-                padding: 16px 5%;
+            .nav-links {
 
                 gap: 15px;
             }
 
-            nav {
-                gap: 13px;
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                padding-top: 60px;
             }
 
-            nav a:not(.contact-btn) {
-                display: none;
-            }
-
-            .logos img {
-                height: 40px;
-            }
-
-            .brand-divider {
-                display: none;
-            }
-
-            .first-name {
-                font-size: 64px;
-            }
-
-            .last-name {
-                font-size: 40px;
-            }
-
-            .hero-content {
-                padding: 80px 7%;
-            }
 
             .hero-visual {
-                min-height: 330px;
-                padding: 25px 6% 45px;
+
+                order: -1;
+
+                min-height: 430px;
             }
 
-            .hero-circuit {
-                width: 520px;
-                height: 430px;
-                right: -115px;
-                opacity: 0.27;
+
+            .hero-visual img {
+
+                max-height: 450px;
             }
 
-            .hero-main-image {
-                max-width: 560px;
-                max-height: 300px;
+
+            .about-section {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
             }
 
-            .hero-main-image img {
-                max-height: 300px;
+
+            .interest-grid {
+
+                grid-template-columns: 1fr 1fr;
             }
 
-            .hero-visual::before {
-                width: 260px;
-                height: 260px;
-                right: -85px;
-                top: 45px;
-            }
 
-            .hero-visual::after {
-                width: 90px;
-                height: 90px;
-                right: 8%;
-                bottom: 14%;
-            }
+            .projects-grid {
 
-            .hero-image-line {
-                left: 4%;
-                bottom: 15%;
-                width: 35px;
-            }
-
-            .hero-image-dot {
-                left: calc(4% + 35px);
-                bottom: calc(15% - 2px);
-            }
-
-            .visual-label {
-                right: 5%;
-                bottom: 2%;
-                font-size: 7px;
-                letter-spacing: 2px;
-            }
-
-            .section {
-                padding: 75px 7%;
-            }
-
-            .detail-inner {
-                padding: 60px 7%;
-            }
-
-            .detail-gallery {
                 grid-template-columns: 1fr;
             }
 
-            .contact-section {
-                padding: 75px 7%;
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            nav {
+
+                height: 70px;
             }
 
-            .contact-email {
-                font-size: 21px;
+
+            .logos {
+
+                gap: 10px;
             }
 
-            footer {
 
-                padding: 25px 7%;
+            .logos img {
 
-                flex-direction: column;
+                max-height: 34px;
 
-                gap: 8px;
-
-                align-items: flex-start;
+                max-width: 115px;
             }
+
+
+            .logo-separator {
+
+                height: 28px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .hero {
+
+                min-height: auto;
+
+                padding-top: 50px;
+
+                padding-bottom: 70px;
+            }
+
+
+            .hero-visual {
+
+                min-height: 340px;
+            }
+
+
+            .hero-visual img {
+
+                width: 100%;
+
+                max-height: 350px;
+            }
+
+
+            h1 {
+
+                font-size: 43px;
+            }
+
+
+            .degree {
+
+                font-size: 18px;
+            }
+
+
+            .interest-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            section {
+
+                padding: 75px 6%;
+            }
+
+
+            h2 {
+
+                font-size: 34px;
+            }
+
+
+            .project-image {
+
+                height: 250px;
+            }
+
         }
 
     </style>
@@ -1227,41 +1074,35 @@
 </head>
 
 
+
 <body>
 
 
+
 <!-- =====================================================
-     HEADER
+     NAVBAR
 ===================================================== -->
 
-<header>
+<nav>
 
-    <div class="brand">
+    <div class="logos">
 
-        <div class="logos">
+        <img
+            src="assets/logoUM.jpg.jpg"
+            alt="Universidade do Minho"
+        >
 
-            <img src="assets/logoUM.jpg.jpg"
-                 alt="Universidade do Minho">
+        <div class="logo-separator"></div>
 
-            <div class="brand-divider"></div>
-
-            <img src="assets/logoescolaengenharia.jpg.jpg"
-                 alt="Escola de Engenharia">
-
-        </div>
-
-        <div class="institution">
-
-            Universidade do Minho
-            <span>·</span>
-            Escola de Engenharia
-
-        </div>
+        <img
+            src="assets/logoescolaengenharia.jpg.jpg"
+            alt="Escola de Engenharia da Universidade do Minho"
+        >
 
     </div>
 
 
-    <nav>
+    <div class="nav-links">
 
         <a href="#sobre">
             Sobre
@@ -1275,16 +1116,9 @@
             Competências
         </a>
 
-        <a href="#contactos"
-           class="contact-btn">
+    </div>
 
-            Contactos
-
-        </a>
-
-    </nav>
-
-</header>
+</nav>
 
 
 
@@ -1292,156 +1126,82 @@
      HERO
 ===================================================== -->
 
-<section class="hero">
+<header class="hero">
 
 
-    <div class="hero-content">
+    <div class="hero-text">
+
 
         <div class="eyebrow">
-            Portfólio académico
+            PORTFÓLIO ACADÉMICO
         </div>
-
-        <div class="eyebrow-line"></div>
 
 
         <h1>
-
-            <span class="first-name">
-                Catarina
-            </span>
-
-            <span class="last-name">
-                Carvalho de Sousa
-            </span>
-
+            Catarina<br>
+            Carvalho de Sousa
         </h1>
 
 
-        <p class="hero-degree">
-
-            Licenciatura em Engenharia Eletrónica
-            Industrial e Computadores
-
+        <p class="degree">
+            Licenciatura em Engenharia Eletrónica Industrial e Computadores
         </p>
 
 
-        <div class="hero-focus">
-
-            <span class="focus-item">
-                Eletrónica de Potência
-            </span>
-
-            <span class="focus-item">
-                Sistemas Embebidos
-            </span>
-
-            <span class="focus-item">
-                Controlo
-            </span>
-
-            <span class="focus-item">
-                Automação
-            </span>
-
-        </div>
+        <p class="university">
+            Universidade do Minho
+        </p>
 
 
-        <div class="hero-actions">
+        <p class="interests">
+            Eletrónica de Potência · Controlo · Sistemas Embebidos · Automação
+        </p>
 
-            <a href="#projetos"
-               class="primary-btn">
 
-                Ver projetos →
+        <a
+            class="hero-button"
+            href="#projetos"
+        >
+            Ver projetos →
+        </a>
 
-            </a>
-
-            <a href="#sobre"
-               class="secondary-link">
-
-                Conhecer o percurso ↓
-
-            </a>
-
-        </div>
 
     </div>
 
 
 
-    <!-- ELEMENTO GRÁFICO DO HERO -->
-    <div class="hero-visual" aria-hidden="true">
-        <svg class="hero-circuit" viewBox="0 0 760 620" xmlns="http://www.w3.org/2000/svg">
+    <!-- HERO VISUAL -->
 
-            <!-- pistas principais -->
-            <path class="circuit-trace" d="M80 92 H205 V145 H292 V205 H385 V165 H470 V95 H585"/>
-            <path class="circuit-trace" d="M35 255 H130 V310 H245 V370 H355 V430 H505 V510 H690"/>
-            <path class="circuit-trace" d="M205 25 V92 H260 V120 H330"/>
-            <path class="circuit-trace" d="M470 95 V45 H550 V22"/>
-            <path class="circuit-trace" d="M585 95 H655 V150 H725"/>
-            <path class="circuit-trace" d="M355 430 V545 H430 V590"/>
-            <path class="circuit-trace" d="M505 510 H570 V455 H655 V405 H735"/>
-            <path class="circuit-trace" d="M600 70 H700 V120 H790 V185 H850"/>
-            <path class="circuit-trace" d="M560 300 H650 V255 H755 V205 H835"/>
-            <path class="circuit-trace" d="M430 590 H520 V625 H660 V600 H810"/>
-            <path class="circuit-trace-fine" d="M700 120 V165 H760 V215"/>
-            <path class="circuit-trace-fine" d="M650 255 V315 H720 V350 H820"/>
-            <path class="circuit-trace-fine" d="M660 600 V545 H745 V500 H835"/>
+    <div class="hero-visual">
 
-            <!-- pistas secundárias -->
-            <path class="circuit-trace-fine" d="M95 145 H155 V190 H215"/>
-            <path class="circuit-trace-fine" d="M292 205 V270 H330 V320"/>
-            <path class="circuit-trace-fine" d="M385 165 V235 H450 V285 H520"/>
-            <path class="circuit-trace-fine" d="M130 310 V350 H175 V390 H230"/>
-            <path class="circuit-trace-fine" d="M570 455 V385 H620 V335 H700"/>
-            <path class="circuit-trace-fine" d="M655 150 V210 H700 V250"/>
-            <path class="circuit-trace-fine" d="M430 590 V560 H485 V535"/>
 
-            <!-- chip -->
-            <rect class="circuit-chip" x="300" y="255" width="110" height="100" rx="2"/>
-            <rect class="circuit-chip" x="325" y="280" width="60" height="50" rx="1"/>
-            <line class="circuit-chip-line" x1="300" y1="275" x2="280" y2="275"/>
-            <line class="circuit-chip-line" x1="300" y1="300" x2="280" y2="300"/>
-            <line class="circuit-chip-line" x1="300" y1="325" x2="280" y2="325"/>
-            <line class="circuit-chip-line" x1="410" y1="275" x2="430" y2="275"/>
-            <line class="circuit-chip-line" x1="410" y1="300" x2="430" y2="300"/>
-            <line class="circuit-chip-line" x1="410" y1="325" x2="430" y2="325"/>
+        <div class="circuit-lines">
 
-            <!-- resistências estilizadas -->
-            <path class="circuit-resistor" d="M205 92 l8 -7 8 14 8 -14 8 14 8 -14 8 7"/>
-            <path class="circuit-resistor" d="M505 510 l8 -7 8 14 8 -14 8 14 8 -14 8 7"/>
+            <span class="line-one"></span>
 
-            <!-- pads / nós -->
-            <circle class="circuit-pad" cx="80" cy="92" r="5"/>
-            <circle class="circuit-pad-inner" cx="80" cy="92" r="2"/>
-            <circle class="circuit-pad" cx="205" cy="92" r="5"/>
-            <circle class="circuit-pad-inner" cx="205" cy="92" r="2"/>
-            <circle class="circuit-pad" cx="292" cy="205" r="5"/>
-            <circle class="circuit-pad-inner" cx="292" cy="205" r="2"/>
-            <circle class="circuit-pad" cx="385" cy="165" r="5"/>
-            <circle class="circuit-pad-inner" cx="385" cy="165" r="2"/>
-            <circle class="circuit-pad" cx="585" cy="95" r="5"/>
-            <circle class="circuit-pad-inner" cx="585" cy="95" r="2"/>
-            <circle class="circuit-pad" cx="35" cy="255" r="5"/>
-            <circle class="circuit-pad-inner" cx="35" cy="255" r="2"/>
-            <circle class="circuit-pad" cx="355" cy="430" r="5"/>
-            <circle class="circuit-pad-inner" cx="355" cy="430" r="2"/>
-            <circle class="circuit-pad" cx="690" cy="510" r="5"/>
-            <circle class="circuit-pad-inner" cx="690" cy="510" r="2"/>
-            <circle class="circuit-pad" cx="735" cy="405" r="5"/>
-            <circle class="circuit-pad-inner" cx="735" cy="405" r="2"/>
-            <circle class="circuit-pad" cx="430" cy="590" r="5"/>
-            <circle class="circuit-pad-inner" cx="430" cy="590" r="2"/>
+            <span class="line-two"></span>
 
-            <!-- pequenos pontos técnicos -->
-            <circle class="circuit-pad" cx="245" cy="370" r="3.5"/>
-            <circle class="circuit-pad" cx="450" cy="285" r="3.5"/>
-            <circle class="circuit-pad" cx="620" cy="335" r="3.5"/>
-            <circle class="circuit-pad" cx="700" cy="250" r="3.5"/>
+            <span class="line-three"></span>
 
-        </svg>
+            <span class="circuit-dot dot-one"></span>
+
+            <span class="circuit-dot dot-two"></span>
+
+            <span class="circuit-dot dot-three"></span>
+
+        </div>
+
+
+        <img
+            src="assets/capa_transparente.png"
+            alt="Projetos académicos em eletrónica"
+        >
+
+
     </div>
 
-</section>
+
+</header>
 
 
 
@@ -1449,45 +1209,100 @@
      SOBRE
 ===================================================== -->
 
-<section class="section about"
-         id="sobre">
+<section id="sobre">
 
 
-    <div>
+    <div class="about-section">
 
-        <div class="section-label">
-            01 / Sobre
+
+        <div>
+
+            <div class="section-number">
+                01 / SOBRE
+            </div>
+
+
+            <h2>
+                Sobre mim
+            </h2>
+
         </div>
 
-        <h2 class="section-title">
-            Sobre mim
-        </h2>
+
+        <div>
+
+            <p class="about-text">
+
+                Sou estudante de Engenharia Eletrónica Industrial e
+                Computadores na Universidade do Minho. Ao longo da
+                licenciatura desenvolvi projetos em programação,
+                eletrónica, sistemas embebidos, automação e controlo.
+
+            </p>
+
+        </div>
+
 
     </div>
 
 
-    <div class="about-text">
+</section>
 
-        <p>
-            Sou estudante de Engenharia Eletrónica Industrial
-            e Computadores na Universidade do Minho.
-        </p>
 
-        <p>
-            Ao longo da licenciatura desenvolvi diferentes
-            projetos académicos que me permitiram aplicar
-            conhecimentos de eletrónica, programação,
-            sistemas embebidos, controlo e automação.
-        </p>
 
-        <p>
-            Este portfólio reúne alguns dos trabalhos mais
-            relevantes desenvolvidos durante a minha formação,
-            apresentando de forma resumida as tecnologias,
-            métodos e competências explorados em cada projeto.
-        </p>
+<!-- =====================================================
+     ÁREAS DE INTERESSE
+===================================================== -->
+
+<section>
+
+
+    <div class="section-number">
+        ÁREAS DE INTERESSE
+    </div>
+
+
+    <div class="interest-grid">
+
+
+        <div class="interest">
+
+            <h3>
+                Eletrónica de Potência
+            </h3>
+
+        </div>
+
+
+        <div class="interest">
+
+            <h3>
+                Controlo
+            </h3>
+
+        </div>
+
+
+        <div class="interest">
+
+            <h3>
+                Sistemas Embebidos
+            </h3>
+
+        </div>
+
+
+        <div class="interest">
+
+            <h3>
+                Automação
+            </h3>
+
+        </div>
+
 
     </div>
+
 
 </section>
 
@@ -1497,1493 +1312,489 @@
      PROJETOS
 ===================================================== -->
 
-<section class="section"
-         id="projetos">
+<section id="projetos">
 
 
-    <div class="projects-intro">
-
-        <div class="section-label">
-            02 / Projetos
-        </div>
-
-        <h2 class="section-title">
-            Projetos académicos
-        </h2>
-
-        <p>
-            Uma seleção de trabalhos desenvolvidos ao longo
-            da licenciatura, envolvendo sistemas embebidos,
-            eletrónica de potência, controlo, automação,
-            hardware e programação.
-        </p>
-
+    <div class="section-number">
+        02 / PROJETOS
     </div>
 
+
+    <h2>
+        Projetos selecionados
+    </h2>
 
 
     <div class="projects-grid">
 
 
-        <!-- =================================================
-             PROJETO 01 — SISTEMAS EMBEBIDOS
-        ================================================= -->
+
+        <!-- ===============================================
+             01 - SISTEMA FOTOVOLTAICO
+        ================================================ -->
 
         <article class="project-card">
 
-            <div class="project-image robot-project-image">
-
-                <img src="assets/robot.jpg.png"
-                     alt="Robô seguidor de linha">
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJETO 01 · SISTEMAS EMBEBIDOS
-                </div>
-
-                <h3 class="project-title">
-                    Robô Seguidor de Linha
-                </h3>
-
-                <ul class="project-points">
-
-                    <li>
-                        Seguimento autónomo de uma linha
-                    </li>
-
-                    <li>
-                        Deteção de obstáculos
-                    </li>
-
-                    <li>
-                        Paragem e sinalização através de LED vermelho
-                    </li>
-
-                    <li>
-                        Desenvolvimento com STM32
-                    </li>
-
-                </ul>
-
-                <a class="project-button"
-                   onclick="openProject('project1')">
-
-                    Ver projeto →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             PROJETO 02 — PI II
-        ================================================= -->
-
-        <article class="project-card">
-
-            <div class="project-image robot-project-image">
-
-                <img src="assets/robot_pi2.jpg"
-                     alt="ColorTrack">
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJETO 02 · PROJETO INTEGRADOR II
-                </div>
-
-                <h3 class="project-title">
-                    ColorTrack
-                </h3>
-
-                <ul class="project-points">
-
-                    <li>
-                        Robô autónomo seguidor de linha
-                    </li>
-
-                    <li>
-                        Deteção de cor através de sensor RGB
-                    </li>
-
-                    <li>
-                        Controlo de motores através de PWM
-                    </li>
-
-                    <li>
-                        Implementação com STM32
-                    </li>
-
-                </ul>
-
-                <a class="project-button"
-                   onclick="openProject('project2')">
-
-                    Ver projeto →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             PROJETO 03 — PI I
-        ================================================= -->
-
-        <article class="project-card">
-
-            <div class="project-image robot-project-image">
-
-                <img src="assets/robo_inteligente_autonomo.jpeg"
-                     alt="Robô inteligente autónomo">
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJETO 03 · PROJETO INTEGRADOR I
-                </div>
-
-                <h3 class="project-title">
-                    Robô Inteligente Autónomo
-                </h3>
-
-                <ul class="project-points">
-
-                    <li>
-                        Desenvolvimento de um sistema com componentes elétricos
-                    </li>
-
-                    <li>
-                        Seguimento de linha
-                    </li>
-
-                    <li>
-                        Deteção de cor da linha
-                    </li>
-
-                    <li>
-                        Integração de sensores e atuadores
-                    </li>
-
-                </ul>
-
-                <a class="project-button"
-                   onclick="openProject('project3')">
-
-                    Ver projeto →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =================================================
-             PROJETO 04 — RENOVÁVEIS
-        ================================================= -->
-
-        <article class="project-card">
 
             <div class="project-image">
 
-                <img src="assets/painel.jpg"
-                     alt="Sistema fotovoltaico">
+                <img
+                    src="assets/painel.jpg"
+                    alt="Sistema fotovoltaico"
+                >
 
             </div>
+
 
             <div class="project-content">
 
-                <div class="project-number">
-                    PROJETO 04 · ENERGIAS RENOVÁVEIS
+
+                <div class="project-category">
+                    Eletrónica de Potência
                 </div>
 
+
                 <h3 class="project-title">
-                    MPPT Fotovoltaico
+                    Sistema Fotovoltaico
                 </h3>
 
-                <ul class="project-points">
 
-                    <li>
-                        Maximum Power Point Tracking
-                    </li>
+                <div class="project-topics">
 
-                    <li>
-                        Algoritmo Perturb and Observe
-                    </li>
+                    <span class="topic">
+                        Conversão de energia
+                    </span>
 
-                    <li>
-                        Conversor CC/CC Boost
-                    </li>
+                    <span class="topic">
+                        Eletrónica de potência
+                    </span>
 
-                    <li>
-                        Implementação e análise experimental
-                    </li>
+                </div>
 
-                </ul>
 
-                <a class="project-button"
-                   onclick="openProject('project4')">
-
+                <a
+                    href="#"
+                    class="project-button"
+                >
                     Ver projeto →
-
                 </a>
 
+
             </div>
+
 
         </article>
 
 
 
-        <!-- =================================================
-             PROJETO 05 — ELETRÓNICA II
-        ================================================= -->
+        <!-- ===============================================
+             02 - CONVERSOR BOOST
+        ================================================ -->
 
         <article class="project-card">
 
+
             <div class="project-image">
 
-                <img src="assets/pcb.jpg"
-                     alt="Projeto de PCB">
+                <img
+                    src="assets/pcb.jpg"
+                    alt="PCB do conversor Boost"
+                >
 
             </div>
+
 
             <div class="project-content">
 
-                <div class="project-number">
-                    PROJETO 05 · ELETRÓNICA
+
+                <div class="project-category">
+                    Eletrónica de Potência
                 </div>
 
+
                 <h3 class="project-title">
-                    Projeto de PCB
+                    Conversor Boost
                 </h3>
 
-                <ul class="project-points">
 
-                    <li>
-                        Desenvolvimento de circuito eletrónico
-                    </li>
+                <div class="project-topics">
 
-                    <li>
-                        Projeto e desenho de PCB
-                    </li>
+                    <span class="topic">
+                        Conversor CC-CC
+                    </span>
 
-                    <li>
-                        Utilização do KiCad
-                    </li>
+                    <span class="topic">
+                        Projeto de PCB
+                    </span>
 
-                    <li>
-                        Preparação para fabrico e montagem
-                    </li>
+                </div>
 
-                </ul>
 
-                <a class="project-button"
-                   onclick="openProject('project5')">
-
+                <a
+                    href="#"
+                    class="project-button"
+                >
                     Ver projeto →
-
                 </a>
 
+
             </div>
+
 
         </article>
 
 
 
-        <!-- =================================================
-             PROJETO 06 — AUTOMAÇÃO
-        ================================================= -->
+        <!-- ===============================================
+             03 - ROBÔ
+        ================================================ -->
 
         <article class="project-card">
 
-            <div class="project-image">
 
-                <img src="assets/capa_automacao.jpg"
-                     alt="Sistema de automação">
+            <div class="project-image robot-image">
+
+                <img
+                    src="assets/robot_pi1.jpg"
+                    alt="Robô desenvolvido em Sistemas Embebidos"
+                >
 
             </div>
+
 
             <div class="project-content">
 
-                <div class="project-number">
-                    PROJETO 06 · AUTOMAÇÃO
+
+                <div class="project-category">
+                    Sistemas Embebidos
                 </div>
 
+
                 <h3 class="project-title">
-                    Sistema de Automação
+                    Robô Autónomo
                 </h3>
 
-                <ul class="project-points">
 
-                    <li>
-                        Automação de uma linha industrial
-                    </li>
+                <div class="project-topics">
 
-                    <li>
-                        Sensores e atuadores
-                    </li>
+                    <span class="topic">
+                        STM32
+                    </span>
 
-                    <li>
-                        Programação CODESYS
-                    </li>
+                    <span class="topic">
+                        Sensores
+                    </span>
 
-                    <li>
-                        Implementação da sequência de funcionamento
-                    </li>
+                </div>
 
-                </ul>
 
-                <a class="project-button"
-                   onclick="openProject('project6')">
-
+                <a
+                    href="#"
+                    class="project-button"
+                >
                     Ver projeto →
-
                 </a>
 
+
             </div>
+
 
         </article>
 
 
 
-        <!-- =================================================
-             PROJETO 07 — 8051
-        ================================================= -->
+        <!-- ===============================================
+             04 - ROBÔ SEGUIDOR DE LINHA
+        ================================================ -->
 
         <article class="project-card">
 
-            <div class="project-image">
 
-                <img src="assets/micro_8051_atc2.jpg"
-                     alt="Microcontrolador 8051">
+            <div class="project-image robot-image">
+
+                <img
+                    src="assets/robot_pi2.jpg"
+                    alt="Robô seguidor de linha"
+                >
 
             </div>
+
 
             <div class="project-content">
 
-                <div class="project-number">
-                    PROJETO 07 · ARQUITETURA E TECNOLOGIA DE COMPUTADORES II
+
+                <div class="project-category">
+                    Sistemas Embebidos · Controlo
                 </div>
 
+
                 <h3 class="project-title">
-                    Sistemas com Microcontrolador 8051
+                    Seguidor de Linha e Deteção de Obstáculos
                 </h3>
 
-                <ul class="project-points">
 
-                    <li>
-                        Desenvolvimento com microcontrolador 8051
-                    </li>
+                <div class="project-topics">
 
-                    <li>
-                        Programação e controlo de periféricos
-                    </li>
+                    <span class="topic">
+                        Microcontroladores
+                    </span>
 
-                    <li>
-                        Desenvolvimento de lógica embebida
-                    </li>
+                    <span class="topic">
+                        Sensores
+                    </span>
 
-                    <li>
-                        Aplicação prática de microcontroladores
-                    </li>
+                </div>
 
-                </ul>
 
-                <a class="project-button"
-                   onclick="openProject('project7')">
-
+                <a
+                    href="#"
+                    class="project-button"
+                >
                     Ver projeto →
-
                 </a>
 
+
             </div>
+
 
         </article>
 
 
 
-        <!-- =================================================
-             PROJETO 08 — MÁQUINAS ELÉTRICAS
-        ================================================= -->
+        <!-- ===============================================
+             05 - CODESYS
+        ================================================ -->
 
         <article class="project-card">
 
+
             <div class="project-image">
 
-                <img src="assets/capa_maquinaseletricas.jpg"
-                     alt="Máquinas elétricas">
+                <img
+                    src="assets/automacao.jpg"
+                    alt="Projeto de automação"
+                >
 
             </div>
+
 
             <div class="project-content">
 
-                <div class="project-number">
-                    PROJETO 08 · MÁQUINAS ELÉTRICAS
+
+                <div class="project-category">
+                    Automação
                 </div>
 
+
                 <h3 class="project-title">
-                    Máquinas Elétricas
+                    Sistema de Automação com CODESYS
                 </h3>
 
-                <ul class="project-points">
 
-                    <li>
-                        Estudo de máquinas síncronas e assíncronas
-                    </li>
+                <div class="project-topics">
 
-                    <li>
-                        Análise de transformadores
-                    </li>
+                    <span class="topic">
+                        CODESYS
+                    </span>
 
-                    <li>
-                        Princípios de funcionamento e características
-                    </li>
+                    <span class="topic">
+                        PLC
+                    </span>
 
-                    <li>
-                        Análise dos diferentes tipos de máquinas
-                    </li>
+                </div>
 
-                </ul>
 
-                <a class="project-button"
-                   onclick="openProject('project8')">
-
+                <a
+                    href="#"
+                    class="project-button"
+                >
                     Ver projeto →
-
                 </a>
 
+
             </div>
+
 
         </article>
 
 
 
-        <!-- =================================================
-             PROJETO 09 — SPACE INVADERS
-        ================================================= -->
+        <!-- ===============================================
+             06 - 8051
+        ================================================ -->
 
         <article class="project-card">
 
+
             <div class="project-image">
 
-                <img src="assets/space_invaders.PNG"
-                     alt="Space Invaders">
+                <img
+                    src="assets/micro_8051_atc2.jpg"
+                    alt="Projeto com microcontrolador 8051"
+                >
 
             </div>
 
+
             <div class="project-content">
 
-                <div class="project-number">
-                    PROJETO 09 · PROGRAMAÇÃO
+
+                <div class="project-category">
+                    Sistemas Embebidos
                 </div>
+
+
+                <h3 class="project-title">
+                    Microcontrolador 8051
+                </h3>
+
+
+                <div class="project-topics">
+
+                    <span class="topic">
+                        C
+                    </span>
+
+                    <span class="topic">
+                        PWM / Duty Cycle
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-button"
+                >
+                    Ver projeto →
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- ===============================================
+             07 - REDES
+        ================================================ -->
+
+        <article class="project-card">
+
+
+            <div class="project-image">
+
+                <img
+                    src="assets/redes.jpg"
+                    alt="Projeto de redes"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-category">
+                    Redes
+                </div>
+
+
+                <h3 class="project-title">
+                    Introdução às Redes
+                </h3>
+
+
+                <div class="project-topics">
+
+                    <span class="topic">
+                        Redes de computadores
+                    </span>
+
+                    <span class="topic">
+                        Comunicação
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="project-button"
+                >
+                    Ver projeto →
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- ===============================================
+             08 - SPACE INVADERS
+        ================================================ -->
+
+        <article class="project-card">
+
+
+            <div class="project-image">
+
+                <img
+                    src="assets/space_invaders.PNG"
+                    alt="Jogo Space Invaders"
+                >
+
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-category">
+                    Programação
+                </div>
+
 
                 <h3 class="project-title">
                     Space Invaders
                 </h3>
 
-                <ul class="project-points">
 
-                    <li>
-                        Desenvolvimento de uma aplicação interativa
-                    </li>
+                <div class="project-topics">
 
-                    <li>
-                        Implementação da lógica do jogo
-                    </li>
+                    <span class="topic">
+                        C
+                    </span>
 
-                    <li>
-                        Aplicação de conceitos de programação
-                    </li>
+                    <span class="topic">
+                        Programação
+                    </span>
 
-                    <li>
-                        Desenvolvimento de software
-                    </li>
+                </div>
 
-                </ul>
 
-                <a class="project-button"
-                   onclick="openProject('project9')">
-
+                <a
+                    href="#"
+                    class="project-button"
+                >
                     Ver projeto →
-
                 </a>
 
+
             </div>
+
 
         </article>
 
 
 
-        <!-- =================================================
-             PROJETO 10 — REDES
-        ================================================= -->
-
-        <article class="project-card">
-
-            <div class="project-image">
-
-                <img src="assets/capa_redes.jpg"
-                     alt="Redes de computadores">
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJETO 10 · REDES
-                </div>
-
-                <h3 class="project-title">
-                    Redes de Computadores
-                </h3>
-
-                <ul class="project-points">
-
-                    <li>
-                        Configuração e análise de redes
-                    </li>
-
-                    <li>
-                        Comunicação entre dispositivos
-                    </li>
-
-                    <li>
-                        Implementação e testes
-                    </li>
-
-                    <li>
-                        Análise do funcionamento da rede
-                    </li>
-
-                </ul>
-
-                <a class="project-button"
-                   onclick="openProject('project10')">
-
-                    Ver projeto →
-
-                </a>
-
-            </div>
-
-        </article>
-
     </div>
 
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 01 — SISTEMAS EMBEBIDOS
-===================================================== -->
-
-<section class="project-details"
-         id="project1">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 01 · SISTEMAS EMBEBIDOS
-                </div>
-
-                <h2 class="detail-title">
-                    Robô Seguidor de Linha
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project1')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery robot-detail-gallery">
-
-                <img src="assets/robot.jpg"
-                     alt="Robô seguidor de linha">
-
-                <img src="assets/robot_original.jpg.jpeg"
-                     alt="Projeto do robô">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de um robô seguidor de
-                    linha baseado num microcontrolador STM32.
-                    O sistema permite detetar obstáculos,
-                    interromper o movimento e sinalizar a sua
-                    presença através de um LED vermelho,
-                    retomando posteriormente o percurso.
-                </p>
-
-                <h4>
-                    Tecnologias
-                </h4>
-
-                <p>
-                    STM32 · C · Sensores · LED · Motores DC ·
-                    Controlo · Sistemas embebidos
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Vídeo
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Código
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 02 — COLORTRACK
-===================================================== -->
-
-<section class="project-details"
-         id="project2">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 02 · PROJETO INTEGRADO II
-                </div>
-
-                <h2 class="detail-title">
-                    ColorTrack
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project2')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery robot-detail-gallery">
-
-                <img src="assets/robot_original.jpg.jpg"
-                     alt="ColorTrack">
-
-                <img src="assets/robot_original.jpg.jpg"
-                     alt="Robô">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de um robô autónomo capaz
-                    de seguir uma linha e interpretar informação
-                    de cor através de sensores, utilizando um
-                    microcontrolador STM32.
-                </p>
-
-                <h4>
-                    Tecnologias
-                </h4>
-
-                <p>
-                    STM32 · C · Sensores IR · TCS3200 · PWM ·
-                    Motores DC · Pontes H
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Vídeo
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Código
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 03 — PI I
-===================================================== -->
-
-<section class="project-details"
-         id="project3">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 03 · PROJETO INTEGRADO I
-                </div>
-
-                <h2 class="detail-title">
-                    Robô Inteligente Autónomo
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project3')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery robot-detail-gallery">
-
-                <img src="assets/robo_inteligente_autonomo.jpg"
-                     alt="Robô inteligente autónomo">
-
-                <img src="assets/robot_pi1.jpg"
-                     alt="Robô">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de um robô inteligente
-                    autónomo, com capacidade de seguir uma
-                    linha e responder à deteção de determinadas
-                    condições através dos seus sensores.
-                </p>
-
-                <h4>
-                    Tecnologias
-                </h4>
-
-                <p>
-                    Sensores · Motores · Controlo ·
-                    Sistemas embebidos
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Vídeo
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 04 — MPPT
-===================================================== -->
-
-<section class="project-details"
-         id="project4">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 04 · ENERGIAS RENOVÁVEIS
-                </div>
-
-                <h2 class="detail-title">
-                    MPPT Fotovoltaico
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project4')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/painel.jpg"
-                     alt="Sistema fotovoltaico">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de um sistema de
-                    Maximum Power Point Tracking para
-                    maximizar a potência extraída de um
-                    sistema fotovoltaico.
-                </p>
-
-                <h4>
-                    Tecnologias
-                </h4>
-
-                <p>
-                    P&O MPPT · Conversor Boost ·
-                    Microcontrolador · Eletrónica de potência
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Código
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 05 — PCB
-===================================================== -->
-
-<section class="project-details"
-         id="project5">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 05 · ELETRÓNICA
-                </div>
-
-                <h2 class="detail-title">
-                    Projeto de PCB
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project5')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/pcb.jpg"
-                     alt="Projeto de PCB">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de uma placa de circuito
-                    impresso, incluindo desenho do esquemático,
-                    definição do layout e preparação dos
-                    ficheiros para fabrico.
-                </p>
-
-                <h4>
-                    Ferramentas
-                </h4>
-
-                <p>
-                    KiCad · Esquemático · PCB Layout ·
-                    Gerbers
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Projeto KiCad
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 06 — AUTOMAÇÃO
-===================================================== -->
-
-<section class="project-details"
-         id="project6">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 06 · AUTOMAÇÃO
-                </div>
-
-                <h2 class="detail-title">
-                    Sistema de Automação
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project6')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/automacao.jpg"
-                     alt="Sistema de automação">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de uma solução de
-                    automação industrial baseada numa
-                    sequência de operações e controlo
-                    através de PLC.
-                </p>
-
-                <h4>
-                    Tecnologias
-                </h4>
-
-                <p>
-                    PLC · Sensores · Atuadores ·
-                    Programação industrial
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Vídeo
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 07 — 8051
-===================================================== -->
-
-<section class="project-details"
-         id="project7">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 07 · SISTEMAS DIGITAIS
-                </div>
-
-                <h2 class="detail-title">
-                    Sistemas com Microcontrolador 8051
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project7')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/micro_8051_atc2.jpg"
-                     alt="Microcontrolador 8051">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Aplicação de conceitos de programação e
-                    desenvolvimento de sistemas baseados no
-                    microcontrolador 8051.
-                </p>
-
-                <h4>
-                    Competências
-                </h4>
-
-                <p>
-                    Microcontroladores · Programação ·
-                    Periféricos · Sistemas embebidos
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Código
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 08 — MÁQUINAS ELÉTRICAS
-===================================================== -->
-
-<section class="project-details"
-         id="project8">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 08 · MÁQUINAS ELÉTRICAS
-                </div>
-
-                <h2 class="detail-title">
-                    Máquinas Elétricas
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project8')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/capa_maquinaseletricas.jpg"
-                     alt="Máquinas elétricas">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Trabalho académico dedicado ao estudo
-                    das principais máquinas elétricas,
-                    incluindo máquinas síncronas, máquinas
-                    assíncronas e transformadores.
-                </p>
-
-                <h4>
-                    Conteúdos
-                </h4>
-
-                <p>
-                    Máquinas síncronas · Máquinas assíncronas ·
-                    Transformadores · Princípios de funcionamento
-                    · Características das máquinas
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 09 — SPACE INVADERS
-===================================================== -->
-
-<section class="project-details"
-         id="project9">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 09 · PROGRAMAÇÃO
-                </div>
-
-                <h2 class="detail-title">
-                    Space Invaders
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project9')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/space_invaders.PNG"
-                     alt="Space Invaders">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Desenvolvimento de uma aplicação
-                    interativa inspirada no jogo Space
-                    Invaders, aplicando conceitos de
-                    programação e desenvolvimento de software.
-                </p>
-
-                <h4>
-                    Competências
-                </h4>
-
-                <p>
-                    Programação · Lógica · Estruturas de dados ·
-                    Desenvolvimento de aplicações
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                    <a href="#"
-                       class="detail-link">
-                        Código
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DETALHE 10 — REDES
-===================================================== -->
-
-<section class="project-details"
-         id="project10">
-
-    <div class="detail-inner">
-
-        <div class="detail-top">
-
-            <div>
-
-                <div class="detail-number">
-                    PROJETO 10 · REDES
-                </div>
-
-                <h2 class="detail-title">
-                    Redes de Computadores
-                </h2>
-
-            </div>
-
-            <button class="close-detail"
-                    onclick="closeProject('project10')">
-
-                Fechar ×
-
-            </button>
-
-        </div>
-
-
-        <div class="detail-layout">
-
-            <div class="detail-gallery">
-
-                <img src="assets/redes.jpg"
-                     alt="Redes de computadores">
-
-            </div>
-
-
-            <div class="detail-description">
-
-                <h4>
-                    Sobre o projeto
-                </h4>
-
-                <p>
-                    Trabalho académico dedicado ao estudo,
-                    configuração e análise de redes de
-                    computadores.
-                </p>
-
-                <h4>
-                    Competências
-                </h4>
-
-                <p>
-                    Redes · Comunicação · Configuração ·
-                    Análise e testes
-                </p>
-
-                <div class="detail-links">
-
-                    <a href="#"
-                       class="detail-link">
-                        Relatório
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
 
 </section>
 
@@ -2993,93 +1804,74 @@
      COMPETÊNCIAS
 ===================================================== -->
 
-<section class="section skills-section"
-         id="competencias">
+<section id="competencias">
+
+
+    <div class="section-number">
+        03 / COMPETÊNCIAS
+    </div>
+
+
+    <h2>
+        Competências técnicas
+    </h2>
 
 
     <div class="skills">
 
-        <div>
 
-            <div class="section-label">
-                03 / Competências
-            </div>
-
-            <h2 class="section-title">
-                Competências
-            </h2>
-
-        </div>
+        <span class="skill">
+            C
+        </span>
 
 
-        <div class="skills-grid">
+        <span class="skill">
+            C++
+        </span>
 
-            <div class="skill">C</div>
-            <div class="skill">C++</div>
-            <div class="skill">Assembly</div>
-            <div class="skill">STM32</div>
-            <div class="skill">8051</div>
-            <div class="skill">PLC</div>
-            <div class="skill">CX-Programmer</div>
-            <div class="skill">CODESYS</div>
-            <div class="skill">MATLAB</div>
-            <div class="skill">KiCad</div>
 
-            <div class="skill">
-                Eletrónica de Potência
-            </div>
+        <span class="skill">
+            Assembly
+        </span>
 
-            <div class="skill">
-                Sistemas Embebidos
-            </div>
 
-            <div class="skill">
-                Controlo
-            </div>
+        <span class="skill">
+            STM32
+        </span>
 
-            <div class="skill">
-                Automação
-            </div>
 
-        </div>
+        <span class="skill">
+            Microcontroladores 8051
+        </span>
+
+
+        <span class="skill">
+            PLC
+        </span>
+
+
+        <span class="skill">
+            CX-Programmer
+        </span>
+
+
+        <span class="skill">
+            CODESYS
+        </span>
+
+
+        <span class="skill">
+            MATLAB
+        </span>
+
+
+        <span class="skill">
+            KiCad
+        </span>
+
 
     </div>
 
-</section>
-
-
-
-<!-- =====================================================
-     CONTACTOS
-===================================================== -->
-
-<section class="contact-section"
-         id="contactos">
-
-
-    <div class="section-label">
-        04 / Contactos
-    </div>
-
-    <h2 class="section-title">
-        Contactos
-    </h2>
-
-    <p class="contact-intro">
-
-        Para questões relacionadas com o meu percurso
-        académico ou com os projetos apresentados neste
-        portfólio, pode ser utilizado o seguinte contacto.
-
-    </p>
-
-
-    <a href="mailto:a97259@uminho.pt"
-       class="contact-email">
-
-        a97259@uminho.pt
-
-    </a>
 
 </section>
 
@@ -3091,88 +1883,22 @@
 
 <footer>
 
-    <div>
 
-        <strong>
-            Catarina Carvalho de Sousa
-        </strong>
-
-        · Engenharia Eletrónica Industrial e Computadores
-
-    </div>
+    <strong>
+        Catarina Carvalho de Sousa
+    </strong>
 
 
-    <div>
+    <p>
+        Engenharia Eletrónica Industrial e Computadores
+        · Universidade do Minho
+    </p>
 
-        Universidade do Minho · 2026
-
-    </div>
 
 </footer>
 
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-    function openProject(id) {
-
-        const projects =
-            document.querySelectorAll(".project-details");
-
-
-        projects.forEach(function(project) {
-
-            project.classList.remove("active");
-
-        });
-
-
-        const selected =
-            document.getElementById(id);
-
-
-        selected.classList.add("active");
-
-
-        setTimeout(function() {
-
-            selected.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
-            });
-
-        }, 50);
-
-    }
-
-
-    function closeProject(id) {
-
-        const selected =
-            document.getElementById(id);
-
-
-        selected.classList.remove("active");
-
-
-        document.getElementById("projetos")
-            .scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-    }
-
-</script>
-
-
 </body>
+
 </html>
