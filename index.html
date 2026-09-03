@@ -343,302 +343,136 @@
 
 
         /* =====================================================
-           HERO — ELEMENTO GRÁFICO
-           
-           Sem fotografia.
-           Desenho técnico abstrato.
+           HERO — COMPOSIÇÃO DE PROJETOS
+
+           Três elementos visuais reais do portfólio:
+           robô, PCB e sistema fotovoltaico.
         ===================================================== */
 
         .hero-visual {
-
             position: relative;
-
             min-height: 680px;
-
             overflow: hidden;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
         }
 
-
-        /* grande círculo */
-
-        .visual-circle {
-
+        /* linhas técnicas muito discretas, mantendo a identidade
+           gráfica do Hero original */
+        .hero-visual::before {
+            content: "";
             position: absolute;
-
-            width: 480px;
-            height: 480px;
-
-            border: 1px solid #cbdcf0;
-
+            width: 520px;
+            height: 520px;
+            border: 1px solid #d9e5f2;
             border-radius: 50%;
+            right: -95px;
+            top: 75px;
+            opacity: 0.7;
+        }
 
-            right: 4%;
-            top: 14%;
-
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            width: 78%;
+            height: 1px;
+            background: #d9e5f2;
+            right: 0;
+            top: 51%;
             opacity: 0.75;
         }
 
-
-        /* círculo interior */
-
-        .visual-circle-small {
-
+        .hero-photo {
             position: absolute;
-
-            width: 235px;
-            height: 235px;
-
-            border: 1px solid #b9d0e9;
-
-            border-radius: 50%;
-
-            right: 27%;
-            top: 32%;
-
-            opacity: 0.8;
-        }
-
-
-        /* linhas verticais */
-
-        .visual-vertical {
-
-            position: absolute;
-
-            width: 1px;
-
-            height: 100%;
-
-            background: #d4e2f1;
-
-            right: 28%;
-
-            top: 0;
-        }
-
-
-        .visual-vertical-2 {
-
-            position: absolute;
-
-            width: 1px;
-
-            height: 72%;
-
-            background: #d4e2f1;
-
-            right: 49%;
-
-            top: 14%;
-        }
-
-
-        /* linhas horizontais */
-
-        .visual-horizontal {
-
-            position: absolute;
-
-            height: 1px;
-
-            width: 75%;
-
-            background: #d4e2f1;
-
-            right: 0;
-
-            top: 51%;
-        }
-
-
-        .visual-horizontal-2 {
-
-            position: absolute;
-
-            height: 1px;
-
-            width: 55%;
-
-            background: #d4e2f1;
-
-            right: 12%;
-
-            top: 32%;
-        }
-
-
-        /* pequenos pontos */
-
-        .node {
-
-            position: absolute;
-
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: #8eb4dd;
-        }
-
-        .node-1 {
-            right: 23%;
-            top: 31%;
-        }
-
-        .node-2 {
-            right: 49%;
-            top: 51%;
-        }
-
-        .node-3 {
-            right: 15%;
-            top: 67%;
-        }
-
-        .node-4 {
-            right: 42%;
-            top: 74%;
-        }
-
-        .node-5 {
-            right: 34%;
-            top: 20%;
-        }
-
-
-        /* pequeno quadrado central */
-
-        .chip {
-
-            position: absolute;
-
-            width: 135px;
-            height: 135px;
-
-            right: 22%;
-            top: 40%;
-
-            border: 1px solid #9fbfe0;
-
-            background: rgba(255,255,255,0.35);
-
+            z-index: 2;
             display: flex;
-
             align-items: center;
             justify-content: center;
+            pointer-events: none;
         }
 
-        .chip-inner {
-
-            width: 72px;
-            height: 72px;
-
-            border: 2px solid #7da7d4;
-
-            position: relative;
-        }
-
-        .chip-inner::before,
-        .chip-inner::after {
-
-            content: "";
-
-            position: absolute;
-
-            background: #7da7d4;
-        }
-
-        .chip-inner::before {
-
+        .hero-photo img {
             width: 100%;
-            height: 1px;
-
-            top: 50%;
-            left: 0;
-        }
-
-        .chip-inner::after {
-
             height: 100%;
-            width: 1px;
-
-            left: 50%;
-            top: 0;
+            object-fit: contain;
+            display: block;
         }
 
+        /* Robô — elemento principal */
+        .hero-photo-robot {
+            width: 52%;
+            height: 52%;
+            left: 1%;
+            bottom: 15%;
+            z-index: 4;
+            transform: rotate(-3deg);
+        }
 
-        /* pequenos terminais do chip */
+        .hero-photo-robot img {
+            filter: drop-shadow(0 18px 22px rgba(24,34,53,0.13));
+        }
 
-        .pin {
+        /* PCB — elemento secundário superior */
+        .hero-photo-pcb {
+            width: 46%;
+            height: 39%;
+            right: 1%;
+            top: 10%;
+            z-index: 3;
+            transform: rotate(2deg);
+            background: rgba(255,255,255,0.92);
+            border: 1px solid #e0e7ef;
+            box-shadow: 0 15px 35px rgba(25,50,80,0.08);
+            padding: 9px;
+        }
 
+        /* Painel — elemento secundário inferior */
+        .hero-photo-panel {
+            width: 49%;
+            height: 39%;
+            right: -1%;
+            bottom: 8%;
+            z-index: 2;
+            transform: rotate(-3deg);
+            background: rgba(255,255,255,0.94);
+            border: 1px solid #e0e7ef;
+            box-shadow: 0 15px 35px rgba(25,50,80,0.08);
+            padding: 9px;
+        }
+
+        /* pequenos pontos de ligação */
+        .hero-dot {
             position: absolute;
-
-            width: 20px;
-            height: 1px;
-
-            background: #9fbfe0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #8eb4dd;
+            z-index: 5;
         }
 
-        .pin-1 {
-            left: -20px;
-            top: 30px;
+        .hero-dot-1 {
+            right: 49%;
+            top: 28%;
         }
 
-        .pin-2 {
-            left: -20px;
-            top: 68px;
+        .hero-dot-2 {
+            right: 18%;
+            top: 51%;
         }
 
-        .pin-3 {
-            right: -20px;
-            top: 30px;
+        .hero-dot-3 {
+            right: 43%;
+            bottom: 17%;
         }
-
-        .pin-4 {
-            right: -20px;
-            top: 68px;
-        }
-
-        .pin-5 {
-            top: -20px;
-            left: 25px;
-            width: 1px;
-            height: 20px;
-        }
-
-        .pin-6 {
-            bottom: -20px;
-            left: 48px;
-            width: 1px;
-            height: 20px;
-        }
-
-
-        /* texto decorativo */
 
         .visual-label {
-
             position: absolute;
-
-            right: 12%;
-            bottom: 18%;
-
+            right: 7%;
+            bottom: 4%;
             font-size: 10px;
-
             letter-spacing: 4px;
-
             color: #9aadc2;
-
             text-transform: uppercase;
+            z-index: 6;
         }
-
 
         /* =====================================================
            SECÇÕES
@@ -1237,7 +1071,28 @@
             }
 
             .hero-visual {
-                min-height: 400px;
+                min-height: 470px;
+            }
+
+            .hero-photo-robot {
+                width: 52%;
+                height: 53%;
+                left: 1%;
+                bottom: 13%;
+            }
+
+            .hero-photo-pcb {
+                width: 45%;
+                height: 39%;
+                right: 1%;
+                top: 8%;
+            }
+
+            .hero-photo-panel {
+                width: 49%;
+                height: 39%;
+                right: -1%;
+                bottom: 7%;
             }
 
             .projects-grid {
@@ -1296,7 +1151,37 @@
             }
 
             .hero-visual {
-                min-height: 320px;
+                min-height: 350px;
+            }
+
+            .hero-photo-robot {
+                width: 55%;
+                height: 50%;
+                left: -1%;
+                bottom: 16%;
+            }
+
+            .hero-photo-pcb {
+                width: 48%;
+                height: 38%;
+                right: -1%;
+                top: 7%;
+                padding: 6px;
+            }
+
+            .hero-photo-panel {
+                width: 51%;
+                height: 38%;
+                right: -2%;
+                bottom: 6%;
+                padding: 6px;
+            }
+
+            .visual-label {
+                right: 5%;
+                bottom: 1%;
+                font-size: 8px;
+                letter-spacing: 2px;
             }
 
             .section {
@@ -1477,45 +1362,27 @@
 
 
 
-    <!-- ELEMENTO GRÁFICO DO HERO -->
-
+    <!-- COMPOSIÇÃO VISUAL DO HERO -->
     <div class="hero-visual">
 
-        <div class="visual-circle"></div>
-
-        <div class="visual-circle-small"></div>
-
-        <div class="visual-vertical"></div>
-
-        <div class="visual-vertical-2"></div>
-
-        <div class="visual-horizontal"></div>
-
-        <div class="visual-horizontal-2"></div>
-
-
-        <div class="node node-1"></div>
-        <div class="node node-2"></div>
-        <div class="node node-3"></div>
-        <div class="node node-4"></div>
-        <div class="node node-5"></div>
-
-
-        <div class="chip">
-
-            <div class="chip-inner">
-
-                <div class="pin pin-1"></div>
-                <div class="pin pin-2"></div>
-                <div class="pin pin-3"></div>
-                <div class="pin pin-4"></div>
-                <div class="pin pin-5"></div>
-                <div class="pin pin-6"></div>
-
-            </div>
-
+        <div class="hero-photo hero-photo-robot">
+            <img src="assets/robot.jpg"
+                 alt="Robô seguidor de linha">
         </div>
 
+        <div class="hero-photo hero-photo-pcb">
+            <img src="assets/pcb.jpg"
+                 alt="Projeto de PCB">
+        </div>
+
+        <div class="hero-photo hero-photo-panel">
+            <img src="assets/painel.jpg"
+                 alt="Sistema fotovoltaico">
+        </div>
+
+        <div class="hero-dot hero-dot-1"></div>
+        <div class="hero-dot hero-dot-2"></div>
+        <div class="hero-dot hero-dot-3"></div>
 
         <div class="visual-label">
             Electronics · Control · Embedded Systems
