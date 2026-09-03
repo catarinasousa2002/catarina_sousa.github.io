@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Catarina Carvalho de Sousa | Portefólio Académico</title>
-
+    <title>Catarina Carvalho de Sousa | Portfólio Académico</title>
 
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
 
         * {
             margin: 0;
@@ -17,827 +18,863 @@
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8f9fb;
-            color: #15171a;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #182235;
+            background: #ffffff;
             line-height: 1.6;
         }
 
-
-
-        /* =========================
-           BARRA SUPERIOR
-        ========================= */
-
-        nav {
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 1000;
-
-            height: 82px;
-
-            background: rgba(255,255,255,0.97);
-
-            border-bottom: 1px solid #e5e7ea;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            padding: 0 6%;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-
-        .logos {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-            height: 100%;
-        }
-
-
-        .logos img {
-
-            max-height: 50px;
-
-            max-width: 190px;
-
-            width: auto;
-
-            height: auto;
-
-            object-fit: contain;
-
+        img {
+            max-width: 100%;
             display: block;
         }
 
 
-        .logo-separator {
+        /* =====================================================
+           CORES
+        ===================================================== */
 
-            width: 1px;
-
-            height: 38px;
-
-            background: #dfe2e6;
+        :root {
+            --navy: #182235;
+            --blue: #1657b8;
+            --blue-light: #eaf2fc;
+            --blue-soft: #f4f8fd;
+            --grey: #667085;
+            --border: #e2e7ee;
+            --white: #ffffff;
         }
 
 
-        .nav-links {
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
+        header {
+            height: 82px;
+            padding: 0 6%;
             display: flex;
-
             align-items: center;
+            justify-content: space-between;
 
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #edf0f4;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logos img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 38px;
+            background: #dfe4ea;
+            margin-right: 3px;
+        }
+
+        .institution {
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            color: var(--navy);
+        }
+
+        .institution span {
+            color: #a3acba;
+            margin: 0 7px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
             gap: 34px;
         }
 
+        nav a {
+            font-size: 15px;
+            color: #303b4e;
+            transition: 0.2s ease;
+        }
 
-        .nav-links a {
+        nav a:hover {
+            color: var(--blue);
+        }
 
-            text-decoration: none;
-
-            color: #44484e;
-
-            font-size: 14px;
-
+        .contact-btn {
+            padding: 10px 19px;
+            border: 1px solid var(--blue);
+            border-radius: 5px;
+            color: var(--blue);
             font-weight: 500;
+        }
 
-            transition: 0.2s;
+        .contact-btn:hover {
+            background: var(--blue);
+            color: white;
         }
 
 
-        .nav-links a:hover {
-
-            color: #1769aa;
-        }
-
-
-
-        /* =========================
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
-
-            min-height: calc(100vh - 82px);
+            min-height: 690px;
 
             display: grid;
+            grid-template-columns: 48% 52%;
+            align-items: stretch;
 
-            grid-template-columns: 1fr 1fr;
-
-            align-items: center;
-
-            max-width: 1250px;
-
-            margin: auto;
-
-            padding: 65px 6%;
-
-            gap: 60px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #ffffff 43%,
+                    #f5f9fe 72%,
+                    #edf5fc 100%
+                );
 
             overflow: hidden;
         }
 
-
-        .hero-text {
-
+        .hero-content {
+            padding: 120px 0 100px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 28px;
+        }
+
+        .eyebrow-line {
+            width: 48px;
+            height: 2px;
+            background: var(--blue);
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            line-height: 0.98;
+            letter-spacing: -2px;
+            margin-bottom: 35px;
+        }
+
+        .first-name {
+            display: block;
+            font-size: clamp(68px, 7vw, 108px);
+            color: var(--navy);
+        }
+
+        .last-name {
+            display: block;
+            font-size: clamp(44px, 4.5vw, 70px);
+            color: #64748b;
+            margin-top: 8px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-degree {
+            font-size: 19px;
+            line-height: 1.55;
+            color: #303c4f;
+            max-width: 520px;
+            margin-bottom: 27px;
+        }
+
+        .hero-focus {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 40px;
+        }
+
+        .focus-item {
+            font-size: 13px;
+            color: #4e5b6f;
+            border: 1px solid #dce5ef;
+            background: rgba(255,255,255,0.7);
+            padding: 7px 13px;
+            border-radius: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            background: var(--blue);
+            color: white;
+
+            padding: 13px 24px;
+            border-radius: 5px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: 0.25s ease;
+        }
+
+        .primary-btn:hover {
+            background: #104b9f;
+            transform: translateY(-2px);
+        }
+
+        .secondary-link {
+            font-size: 14px;
+            color: #465367;
+        }
+
+        .secondary-link:hover {
+            color: var(--blue);
+        }
+
+
+        /* HERO IMAGE */
+
+        .hero-image {
+            position: relative;
+            min-height: 690px;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #f8fbff 0%,
+                    rgba(248,251,255,0.25) 30%,
+                    rgba(248,251,255,0) 70%
+                );
 
             z-index: 2;
         }
 
-
-        .eyebrow {
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            letter-spacing: 2.5px;
-
-            color: #1769aa;
-
-            margin-bottom: 22px;
-        }
-
-
-        h1 {
-
-            font-size: clamp(44px, 5vw, 70px);
-
-            line-height: 1.04;
-
-            letter-spacing: -2.5px;
-
-            margin-bottom: 25px;
-        }
-
-
-        .degree {
-
-            font-size: 21px;
-
-            color: #4e535a;
-
-            max-width: 600px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .university {
-
-            font-size: 16px;
-
-            color: #777d84;
-
-            margin-bottom: 28px;
-        }
-
-
-        .interests {
-
-            font-size: 15px;
-
-            font-weight: 600;
-
-            color: #30343a;
-
-            margin-bottom: 35px;
-        }
-
-
-        .button {
-
-            display: inline-block;
-
-            text-decoration: none;
-
-            background: #15171a;
-
-            color: white;
-
-            padding: 13px 25px;
-
-            border-radius: 5px;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            transition: 0.2s;
-        }
-
-
-        .button:hover {
-
-            transform: translateY(-2px);
-
-            background: #1769aa;
-        }
-
-
-
-        /* =========================
-           IMAGEM HERO
-        ========================= */
-
-        .hero-image {
-
-            position: relative;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            min-height: 500px;
-        }
-
-
         .hero-image img {
-
-            position: relative;
-
-            z-index: 1;
-
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
 
-            max-height: 580px;
+            filter: saturate(0.65) contrast(0.95);
+        }
 
-            object-fit: contain;
+        /* detalhe gráfico discreto */
 
-            display: block;
+        .hero-circle {
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            border: 1px solid rgba(255,255,255,0.65);
+            border-radius: 50%;
 
-            mix-blend-mode: multiply;
+            right: 11%;
+            top: 18%;
+
+            z-index: 3;
+        }
+
+        .hero-line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: rgba(255,255,255,0.55);
+
+            right: 25%;
+            top: 0;
+
+            z-index: 3;
+        }
+
+        .hero-line-horizontal {
+            position: absolute;
+            height: 1px;
+            width: 60%;
+            background: rgba(255,255,255,0.55);
+
+            right: 0;
+            top: 55%;
+
+            z-index: 3;
         }
 
 
-
-        /* =========================
-           SECÇÕES
-        ========================= */
-
-        section {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding: 100px 6%;
-        }
-
-
-        .section-number {
-
-            font-size: 13px;
-
-            color: #1769aa;
-
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 12px;
-        }
-
-
-        h2 {
-
-            font-size: 40px;
-
-            letter-spacing: -1px;
-
-            margin-bottom: 45px;
-        }
-
-
-
-        /* =========================
+        /* =====================================================
            SOBRE
-        ========================= */
+        ===================================================== */
 
-        .about-section {
+        .section {
+            padding: 110px 10%;
+        }
 
+        .about {
             display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
+            grid-template-columns: 250px 1fr;
             gap: 80px;
 
-            align-items: start;
+            border-bottom: 1px solid var(--border);
         }
 
-
-        .about-text {
-
-            font-size: 18px;
-
-            color: #555b62;
-
-            max-width: 650px;
-        }
-
-
-
-        /* =========================
-           ÁREAS DE INTERESSE
-        ========================= */
-
-        .interest-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 15px;
-        }
-
-
-        .interest {
-
-            background: white;
-
-            border: 1px solid #e0e4e8;
-
-            padding: 28px 22px;
-
-            min-height: 145px;
-
-            display: flex;
-
-            align-items: flex-end;
-
-            transition: 0.25s;
-        }
-
-
-        .interest:hover {
-
-            transform: translateY(-4px);
-
-            border-color: #1769aa;
-
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
-
-
-        .interest h3 {
-
-            font-size: 17px;
-
-            line-height: 1.25;
-        }
-
-
-
-        /* =========================
-           PROJETOS
-        ========================= */
-
-        .projects-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 28px;
-        }
-
-
-        .project-card {
-
-            background: white;
-
-            border: 1px solid #e1e5e9;
-
-            overflow: hidden;
-
-            transition: 0.25s;
-
-            display: flex;
-
-            flex-direction: column;
-        }
-
-
-        .project-card:hover {
-
-            transform: translateY(-5px);
-
-            box-shadow: 0 14px 35px rgba(0,0,0,0.08);
-
-            border-color: #cfd6dd;
-        }
-
-
-        .project-image {
-
-            height: 270px;
-
-            background: #eef1f4;
-
-            overflow: hidden;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-        }
-
-
-        .project-image img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            transition: 0.35s;
-        }
-
-
-        .project-card:hover .project-image img {
-
-            transform: scale(1.03);
-        }
-
-
-        .project-content {
-
-            padding: 27px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            flex: 1;
-        }
-
-
-        .project-category {
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-
-            color: #1769aa;
-
-            margin-bottom: 9px;
-
+        .section-label {
+            color: var(--blue);
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
+        .section-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 42px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-top: 15px;
+            color: var(--navy);
+        }
+
+        .about-text {
+            max-width: 780px;
+            font-size: 17px;
+            color: #4e5b6f;
+            line-height: 1.9;
+        }
+
+        .about-text p + p {
+            margin-top: 18px;
+        }
+
+
+        /* =====================================================
+           PROJETOS
+        ===================================================== */
+
+        #projetos {
+            background: #f8fafc;
+        }
+
+        .projects-intro {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+
+        .projects-intro p {
+            margin-top: 18px;
+            color: var(--grey);
+            font-size: 16px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(25,50,80,0.08);
+        }
+
+        .project-image {
+            height: 290px;
+            overflow: hidden;
+            background: #edf2f7;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: transform 0.45s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.035);
+        }
+
+        .project-content {
+            padding: 29px 31px 31px;
+        }
+
+        .project-number {
+            font-size: 11px;
+            color: var(--blue);
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
 
         .project-title {
-
-            font-size: 25px;
-
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 29px;
+            font-weight: 400;
             line-height: 1.2;
-
+            color: var(--navy);
             margin-bottom: 17px;
         }
 
+        .project-points {
+            list-style: none;
+            margin-bottom: 26px;
+        }
 
-        .project-topics {
+        .project-points li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 7px;
+            font-size: 14px;
+            color: #647084;
+        }
 
+        .project-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+            background: var(--blue);
+        }
+
+        .project-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            color: var(--blue);
+
+            border-bottom: 1px solid transparent;
+
+            cursor: pointer;
+        }
+
+        .project-button:hover {
+            border-bottom-color: var(--blue);
+        }
+
+
+        /* =====================================================
+           DETALHES DOS PROJETOS
+        ===================================================== */
+
+        .project-details {
+            display: none;
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-details.active {
+            display: block;
+        }
+
+        .detail-inner {
+            padding: 70px 10%;
+        }
+
+        .detail-top {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-            flex-wrap: wrap;
+        .detail-number {
+            font-size: 11px;
+            color: var(--blue);
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
 
-            gap: 7px;
+        .detail-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--navy);
+        }
 
+        .close-detail {
+            border: 1px solid var(--border);
+            background: white;
+            padding: 9px 17px;
+            cursor: pointer;
+            color: #5d6878;
+            font-size: 13px;
+        }
+
+        .close-detail:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+        }
+
+        .detail-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .detail-gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #f2f5f8;
+        }
+
+        .detail-description {
+            color: #5c6879;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .detail-description h4 {
+            color: var(--navy);
+            font-size: 15px;
+            margin-bottom: 13px;
+        }
+
+        .detail-description p {
             margin-bottom: 25px;
         }
 
-
-        .topic {
-
-            border: 1px solid #dce1e5;
-
-            padding: 5px 9px;
-
-            font-size: 12px;
-
-            color: #555b62;
-
-            background: #fafbfc;
-        }
-
-
-        .project-button {
-
-            margin-top: auto;
-
-            display: inline-block;
-
-            width: fit-content;
-
-            text-decoration: none;
-
-            color: #15171a;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            border-bottom: 1px solid #15171a;
-
-            padding-bottom: 3px;
-
-            transition: 0.2s;
-        }
-
-
-        .project-button:hover {
-
-            color: #1769aa;
-
-            border-color: #1769aa;
-        }
-
-
-
-        /* =========================
-           COMPETÊNCIAS
-        ========================= */
-
-        .skills {
-
+        .detail-links {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 10px;
         }
 
+        .detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
 
-        .skill {
+            border: 1px solid #d9e1eb;
+            padding: 9px 14px;
 
-            background: white;
-
-            border: 1px solid #dfe3e7;
-
-            padding: 11px 17px;
-
-            font-size: 14px;
+            font-size: 13px;
+            color: #405067;
 
             transition: 0.2s;
         }
 
-
-        .skill:hover {
-
-            border-color: #1769aa;
-
-            color: #1769aa;
+        .detail-link:hover {
+            border-color: var(--blue);
+            color: var(--blue);
         }
 
 
+        /* =====================================================
+           COMPETÊNCIAS
+        ===================================================== */
 
-        /* =========================
+        .skills-section {
+            background: white;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 80px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 800px;
+        }
+
+        .skill {
+            border: 1px solid var(--border);
+            padding: 11px 17px;
+            font-size: 14px;
+            color: #536074;
+            background: #fafbfd;
+        }
+
+
+        /* =====================================================
+           CONTACTOS
+        ===================================================== */
+
+        .contact-section {
+            background: var(--navy);
+            color: white;
+            padding: 100px 10%;
+        }
+
+        .contact-section .section-label {
+            color: #9bbef0;
+        }
+
+        .contact-section .section-title {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .contact-intro {
+            color: #b9c3d2;
+            max-width: 620px;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            color: white;
+            border-bottom: 1px solid #607087;
+            padding-bottom: 5px;
+            transition: 0.2s;
+        }
+
+        .contact-email:hover {
+            color: #9bbef0;
+            border-color: #9bbef0;
+        }
+
+
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
+            background: #111a29;
+            color: #8591a3;
 
-            background: #15171a;
+            padding: 25px 10%;
 
-            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            padding: 55px 6%;
+            font-size: 12px;
+        }
 
-            text-align: center;
+        footer strong {
+            color: #d9e0e9;
+            font-weight: 500;
         }
 
 
-        footer p {
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
 
-            color: #aeb3b9;
+        @media (max-width: 1000px) {
 
-            margin-top: 8px;
-
-            font-size: 14px;
-        }
-
-
-
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            nav {
-                padding: 0 25px;
+            header {
+                padding: 0 5%;
             }
 
-
-            .logos img {
-
-                max-height: 40px;
-
-                max-width: 150px;
-            }
-
-
-            .nav-links {
-
-                gap: 15px;
-            }
-
-
-            .hero {
-
-                grid-template-columns: 1fr;
-
-                padding-top: 60px;
-            }
-
-
-            .hero-image {
-
-                order: -1;
-
-                min-height: 350px;
-            }
-
-
-            .hero-image img {
-
-                max-height: 400px;
-            }
-
-
-            .about-section {
-
-                grid-template-columns: 1fr;
-
-                gap: 40px;
-            }
-
-
-            .interest-grid {
-
-                grid-template-columns: 1fr 1fr;
-            }
-
-
-            .projects-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-
-
-        /* =========================
-           TELEMÓVEL
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            nav {
-
-                height: 70px;
-            }
-
-
-            .logos {
-
-                gap: 10px;
-            }
-
-
-            .logos img {
-
-                max-height: 34px;
-
-                max-width: 115px;
-            }
-
-
-            .logo-separator {
-
-                height: 28px;
-            }
-
-
-            .nav-links {
-
+            .institution {
                 display: none;
             }
 
-
             .hero {
-
-                min-height: auto;
-
-                padding-top: 50px;
-
-                padding-bottom: 70px;
-            }
-
-
-            h1 {
-
-                font-size: 43px;
-            }
-
-
-            .degree {
-
-                font-size: 18px;
-            }
-
-
-            .interest-grid {
-
                 grid-template-columns: 1fr;
             }
 
-
-            section {
-
-                padding: 75px 6%;
+            .hero-content {
+                padding: 90px 8%;
             }
 
-
-            h2 {
-
-                font-size: 34px;
+            .hero-image {
+                min-height: 400px;
             }
 
-
-            .project-image {
-
-                height: 230px;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
+            .about,
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .detail-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+                padding: 16px 5%;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 13px;
+            }
+
+            nav a:not(.contact-btn) {
+                display: none;
+            }
+
+            .logos img {
+                height: 40px;
+            }
+
+            .brand-divider {
+                display: none;
+            }
+
+            .first-name {
+                font-size: 64px;
+            }
+
+            .last-name {
+                font-size: 40px;
+            }
+
+            .hero-content {
+                padding: 80px 7%;
+            }
+
+            .hero-image {
+                min-height: 320px;
+            }
+
+            .section {
+                padding: 75px 7%;
+            }
+
+            .detail-inner {
+                padding: 60px 7%;
+            }
+
+            .detail-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 75px 7%;
+            }
+
+            .contact-email {
+                font-size: 21px;
+            }
+
+            footer {
+                padding: 25px 7%;
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
         }
 
     </style>
-
 </head>
-
 
 
 <body>
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<!-- =========================
-     BARRA SUPERIOR
-========================= -->
+<header>
 
-<nav>
+    <div class="brand">
 
+        <div class="logos">
 
-    <div class="logos">
+            <img src="assets/logoUM.jpg.jpg"
+                 alt="Universidade do Minho">
 
+            <div class="brand-divider"></div>
 
-        <img
-            src="assets/logoUM.jpg.jpg"
-            alt="Universidade do Minho"
-        >
+            <img src="assets/logoescolaengenharia.jpg.jpg"
+                 alt="Escola de Engenharia">
 
+        </div>
 
-        <div class="logo-separator"></div>
-
-
-        <img
-            src="assets/logoescolaengenharia.jpg.jpg"
-            alt="Escola de Engenharia da Universidade do Minho"
-        >
-
+        <div class="institution">
+            Universidade do Minho
+            <span>·</span>
+            Escola de Engenharia
+        </div>
 
     </div>
 
 
-
-    <div class="nav-links">
+    <nav>
 
         <a href="#sobre">Sobre</a>
 
@@ -845,751 +882,1474 @@
 
         <a href="#competencias">Competências</a>
 
-    </div>
-
-
-</nav>
-
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<header class="hero">
-
-
-    <div class="hero-text">
-
-
-        <div class="eyebrow">
-            PORTFÓLIO ACADÉMICO
-        </div>
-
-
-        <h1>
-            Catarina<br>
-            Carvalho de Sousa
-        </h1>
-
-
-        <p class="degree">
-            Licenciatura em Engenharia Eletrónica Industrial e Computadores
-        </p>
-
-
-        <p class="university">
-            Universidade do Minho
-        </p>
-
-
-        <p class="interests">
-            Eletrónica de Potência · Controlo · Sistemas Embebidos · Automação
-        </p>
-
-
-        <a
-            class="button"
-            href="#projetos"
-        >
-            Ver projetos →
+        <a href="#contactos" class="contact-btn">
+            Contactos
         </a>
 
-
-    </div>
-
-
-
-    <div class="hero-image">
-
-
-        <img
-            src="assets/robot.jpg"
-            alt="Robô desenvolvido no âmbito de um projeto académico"
-        >
-
-
-    </div>
-
+    </nav>
 
 </header>
 
 
 
-<!-- =========================
-     SOBRE
-========================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section id="sobre">
-
-
-    <div class="about-section">
+<section class="hero" id="inicio">
 
 
-        <div>
+    <div class="hero-content">
 
-            <div class="section-number">
-                01 / SOBRE
-            </div>
-
-
-            <h2>
-                Sobre mim
-            </h2>
-
+        <div class="eyebrow">
+            Portfólio académico
         </div>
 
-
-        <div>
-
-            <p class="about-text">
-
-                Sou estudante de Engenharia Eletrónica Industrial e
-                Computadores na Universidade do Minho. Ao longo da
-                licenciatura desenvolvi projetos em programação,
-                eletrónica, sistemas embebidos, automação e controlo.
-
-            </p>
-
-        </div>
+        <div class="eyebrow-line"></div>
 
 
-    </div>
+        <h1>
+
+            <span class="first-name">
+                Catarina
+            </span>
+
+            <span class="last-name">
+                Carvalho de Sousa
+            </span>
+
+        </h1>
 
 
-</section>
+        <p class="hero-degree">
+
+            Licenciatura em Engenharia Eletrónica
+            Industrial e Computadores
+
+        </p>
 
 
+        <div class="hero-focus">
 
-<!-- =========================
-     ÁREAS DE INTERESSE
-========================= -->
-
-<section>
-
-
-    <div class="section-number">
-        ÁREAS DE INTERESSE
-    </div>
-
-
-    <div class="interest-grid">
-
-
-        <div class="interest">
-
-            <h3>
+            <span class="focus-item">
                 Eletrónica de Potência
-            </h3>
+            </span>
 
-        </div>
-
-
-        <div class="interest">
-
-            <h3>
-                Controlo
-            </h3>
-
-        </div>
-
-
-        <div class="interest">
-
-            <h3>
+            <span class="focus-item">
                 Sistemas Embebidos
-            </h3>
+            </span>
 
-        </div>
+            <span class="focus-item">
+                Controlo
+            </span>
 
-
-        <div class="interest">
-
-            <h3>
+            <span class="focus-item">
                 Automação
-            </h3>
+            </span>
 
         </div>
 
+
+        <div class="hero-actions">
+
+            <a href="#projetos" class="primary-btn">
+                Ver projetos →
+            </a>
+
+            <a href="#sobre" class="secondary-link">
+                Conhecer o percurso ↓
+            </a>
+
+        </div>
 
     </div>
 
+
+
+    <!-- IMAGEM REAL DE ELETRÓNICA -->
+
+    <div class="hero-image">
+
+        <img src="assets/pcb.jpg"
+             alt="Projeto de eletrónica">
+
+        <div class="hero-circle"></div>
+
+        <div class="hero-line"></div>
+
+        <div class="hero-line-horizontal"></div>
+
+    </div>
 
 </section>
 
 
 
-<!-- =========================
-     PROJETOS
-========================= -->
+<!-- =====================================================
+     SOBRE
+===================================================== -->
 
-<section id="projetos">
+<section class="section about" id="sobre">
 
 
-    <div class="section-number">
-        02 / PROJETOS
+    <div>
+
+        <div class="section-label">
+            01 / Sobre
+        </div>
+
+        <h2 class="section-title">
+            Sobre mim
+        </h2>
+
     </div>
 
 
-    <h2>
-        Projetos selecionados
-    </h2>
+    <div class="about-text">
+
+        <p>
+            Sou estudante de Engenharia Eletrónica Industrial
+            e Computadores na Universidade do Minho.
+        </p>
+
+        <p>
+            Ao longo da licenciatura desenvolvi diferentes
+            projetos académicos que me permitiram aplicar
+            conhecimentos de eletrónica, programação,
+            sistemas embebidos, controlo e automação.
+        </p>
+
+        <p>
+            Este portfólio reúne alguns dos trabalhos mais
+            relevantes desenvolvidos durante a minha formação,
+            apresentando de forma resumida as tecnologias,
+            métodos e competências explorados em cada projeto.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJETOS
+===================================================== -->
+
+<section class="section" id="projetos">
+
+
+    <div class="projects-intro">
+
+        <div class="section-label">
+            02 / Projetos
+        </div>
+
+        <h2 class="section-title">
+            Projetos académicos
+        </h2>
+
+        <p>
+            Uma seleção de projetos desenvolvidos ao longo
+            da licenciatura, desde sistemas embebidos e
+            controlo até eletrónica de potência, automação
+            e programação.
+        </p>
+
+    </div>
 
 
 
     <div class="projects-grid">
 
 
-
-        <!-- =====================
-             FOTOVOLTAICO
-        ====================== -->
+        <!-- =================================================
+             PROJETO 01
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/painel.jpg"
-                    alt="Sistema fotovoltaico"
-                >
+                <img src="assets/robot_pi2.jpg"
+                     alt="Robô ColorTrack">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Eletrónica de Potência
+                <div class="project-number">
+                    PROJETO 01
                 </div>
-
 
                 <h3 class="project-title">
-                    Sistema Fotovoltaico
+                    ColorTrack
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Robô autónomo seguidor de linha
+                    </li>
 
-                    <span class="topic">
-                        Conversão de energia
-                    </span>
+                    <li>
+                        Deteção de cor através de sensor RGB
+                    </li>
 
-                    <span class="topic">
-                        Eletrónica de potência
-                    </span>
+                    <li>
+                        Controlo de motores através de PWM
+                    </li>
 
-                </div>
+                    <li>
+                        Implementação com STM32
+                    </li>
 
+                </ul>
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
+                <a class="project-button"
+                   onclick="openProject('project1')">
+
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-        <!-- =====================
-             BOOST / PCB
-        ====================== -->
+        <!-- =================================================
+             PROJETO 02
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/pcb.jpg"
-                    alt="PCB de um conversor Boost"
-                >
+                <img src="assets/robot_pi1.jpg"
+                     alt="Robô inteligente autónomo">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Eletrónica de Potência
+                <div class="project-number">
+                    PROJETO 02
                 </div>
-
 
                 <h3 class="project-title">
-                    Conversor Boost
+                    Robô Inteligente Autónomo
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Sistema autónomo de seguimento de linha
+                    </li>
 
-                    <span class="topic">
-                        Conversor CC-CC
-                    </span>
+                    <li>
+                        Deteção de objetos e obstáculos
+                    </li>
 
-                    <span class="topic">
-                        Projeto de PCB
-                    </span>
+                    <li>
+                        Sensores e controlo de motores
+                    </li>
 
-                </div>
+                    <li>
+                        Desenvolvimento em ambiente de prototipagem
+                    </li>
 
+                </ul>
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
+                <a class="project-button"
+                   onclick="openProject('project2')">
+
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-        <!-- =====================
-             ROBÔ
-        ====================== -->
+        <!-- =================================================
+             PROJETO 03
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/robot_pi1.jpg"
-                    alt="Robô desenvolvido em Sistemas Embebidos"
-                >
+                <img src="assets/painel.jpg"
+                     alt="Projeto de energia fotovoltaica">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Sistemas Embebidos
+                <div class="project-number">
+                    PROJETO 03
                 </div>
-
 
                 <h3 class="project-title">
-                    Robô Autónomo
+                    MPPT Fotovoltaico
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Sistema de Maximum Power Point Tracking
+                    </li>
 
-                    <span class="topic">
-                        STM32
-                    </span>
+                    <li>
+                        Algoritmo Perturb and Observe
+                    </li>
 
-                    <span class="topic">
-                        Sensores
-                    </span>
+                    <li>
+                        Conversor DC/DC Boost
+                    </li>
 
-                    <span class="topic">
-                        Controlo de motores
-                    </span>
+                    <li>
+                        Implementação e análise experimental
+                    </li>
 
-                </div>
+                </ul>
 
+                <a class="project-button"
+                   onclick="openProject('project3')">
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-        <!-- =====================
-             ROBÔ — SEGUE LINHA
-        ====================== -->
+        <!-- =================================================
+             PROJETO 04
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/robot_pi2.jpg"
-                    alt="Robô seguidor de linha"
-                >
+                <img src="assets/pcb.jpg"
+                     alt="Projeto de PCB">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Sistemas Embebidos
+                <div class="project-number">
+                    PROJETO 04
                 </div>
-
 
                 <h3 class="project-title">
-                    Seguidor de Linha e Deteção de Obstáculos
+                    Projeto de PCB
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Desenvolvimento de circuito eletrónico
+                    </li>
 
-                    <span class="topic">
-                        Microcontroladores
-                    </span>
+                    <li>
+                        Projeto e desenho de PCB
+                    </li>
 
-                    <span class="topic">
-                        Sensores
-                    </span>
+                    <li>
+                        Utilização do KiCad
+                    </li>
 
-                </div>
+                    <li>
+                        Preparação para fabrico e montagem
+                    </li>
 
+                </ul>
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
+                <a class="project-button"
+                   onclick="openProject('project4')">
+
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-        <!-- =====================
-             CODESYS
-        ====================== -->
+        <!-- =================================================
+             PROJETO 05
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/automacao.jpg"
-                    alt="Projeto de automação em CODESYS"
-                >
+                <img src="assets/automacao.jpg"
+                     alt="Sistema de automação">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Automação
+                <div class="project-number">
+                    PROJETO 05
                 </div>
-
 
                 <h3 class="project-title">
-                    Sistema de Automação com CODESYS
+                    Sistema de Automação
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Automação de uma linha industrial
+                    </li>
 
-                    <span class="topic">
-                        CODESYS
-                    </span>
+                    <li>
+                        Sensores e atuadores
+                    </li>
 
-                    <span class="topic">
-                        PLC
-                    </span>
+                    <li>
+                        Programação de PLC
+                    </li>
 
-                </div>
+                    <li>
+                        Implementação da sequência de funcionamento
+                    </li>
 
+                </ul>
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
+                <a class="project-button"
+                   onclick="openProject('project5')">
+
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-        <!-- =====================
-             8051
-        ====================== -->
+        <!-- =================================================
+             PROJETO 06
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/micro_8051_atc2.jpg"
-                    alt="Projeto com microcontrolador 8051"
-                >
+                <img src="assets/micro_8051_atc2.jpg"
+                     alt="Microcontrolador 8051">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Sistemas Embebidos
+                <div class="project-number">
+                    PROJETO 06
                 </div>
-
 
                 <h3 class="project-title">
-                    Programação de Microcontrolador 8051
+                    Sistemas com 8051
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Desenvolvimento com microcontrolador 8051
+                    </li>
 
-                    <span class="topic">
-                        8051
-                    </span>
+                    <li>
+                        Programação e controlo de periféricos
+                    </li>
 
-                    <span class="topic">
-                        C
-                    </span>
+                    <li>
+                        Desenvolvimento de lógica embebida
+                    </li>
 
-                    <span class="topic">
-                        PWM / Duty Cycle
-                    </span>
+                    <li>
+                        Aplicação prática de microcontroladores
+                    </li>
 
-                </div>
+                </ul>
 
+                <a class="project-button"
+                   onclick="openProject('project6')">
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-        <!-- =====================
-             REDES
-        ====================== -->
+        <!-- =================================================
+             PROJETO 07
+        ================================================= -->
 
         <article class="project-card">
 
-
             <div class="project-image">
 
-                <img
-                    src="assets/redes.jpg"
-                    alt="Projeto de introdução às redes"
-                >
+                <img src="assets/space_invaders.PNG"
+                     alt="Space Invaders">
 
             </div>
-
 
             <div class="project-content">
 
-
-                <div class="project-category">
-                    Redes
+                <div class="project-number">
+                    PROJETO 07
                 </div>
-
-
-                <h3 class="project-title">
-                    Introdução às Redes
-                </h3>
-
-
-                <div class="project-topics">
-
-                    <span class="topic">
-                        Redes de computadores
-                    </span>
-
-                    <span class="topic">
-                        Comunicação
-                    </span>
-
-                </div>
-
-
-                <a
-                    href="#"
-                    class="project-button"
-                >
-                    Ver projeto →
-                </a>
-
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- =====================
-             SPACE INVADERS
-        ====================== -->
-
-        <article class="project-card">
-
-
-            <div class="project-image">
-
-                <img
-                    src="assets/space_invaders.PNG"
-                    alt="Jogo Space Invaders desenvolvido em C"
-                >
-
-            </div>
-
-
-            <div class="project-content">
-
-
-                <div class="project-category">
-                    Programação
-                </div>
-
 
                 <h3 class="project-title">
                     Space Invaders
                 </h3>
 
+                <ul class="project-points">
 
-                <div class="project-topics">
+                    <li>
+                        Desenvolvimento de uma aplicação interativa
+                    </li>
 
-                    <span class="topic">
-                        C
-                    </span>
+                    <li>
+                        Programação em ambiente de desenvolvimento
+                    </li>
 
-                    <span class="topic">
-                        Programação
-                    </span>
+                    <li>
+                        Implementação da lógica do jogo
+                    </li>
 
-                </div>
+                    <li>
+                        Aplicação de conceitos de programação
+                    </li>
 
+                </ul>
 
-                <a
-                    href="#"
-                    class="project-button"
-                >
+                <a class="project-button"
+                   onclick="openProject('project7')">
+
                     Ver projeto →
+
                 </a>
 
-
             </div>
-
 
         </article>
 
 
 
-    </div>
+        <!-- =================================================
+             PROJETO 08
+        ================================================= -->
 
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img src="assets/redes.jpg"
+                     alt="Projeto de redes">
+
+            </div>
+
+            <div class="project-content">
+
+                <div class="project-number">
+                    PROJETO 08
+                </div>
+
+                <h3 class="project-title">
+                    Redes de Computadores
+                </h3>
+
+                <ul class="project-points">
+
+                    <li>
+                        Configuração e análise de redes
+                    </li>
+
+                    <li>
+                        Comunicação entre dispositivos
+                    </li>
+
+                    <li>
+                        Implementação e testes
+                    </li>
+
+                    <li>
+                        Análise do funcionamento da rede
+                    </li>
+
+                </ul>
+
+                <a class="project-button"
+                   onclick="openProject('project8')">
+
+                    Ver projeto →
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
 
 </section>
 
 
 
-<!-- =========================
-     COMPETÊNCIAS
-========================= -->
-
-<section id="competencias">
+<!-- =====================================================
+     DETALHES DOS PROJETOS
+===================================================== -->
 
 
-    <div class="section-number">
-        03 / COMPETÊNCIAS
+<!-- PROJETO 1 -->
+
+<section class="project-details" id="project1">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 01
+                </div>
+
+                <h2 class="detail-title">
+                    ColorTrack
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project1')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/robot_pi2.jpg"
+                     alt="ColorTrack">
+
+                <img src="assets/robot_original.jpg.jpeg"
+                     alt="Robô">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Desenvolvimento de um robô capaz de seguir
+                    uma linha e interpretar informação de cor,
+                    recorrendo a sensores e a um microcontrolador
+                    STM32.
+                </p>
+
+                <h4>
+                    Tecnologias
+                </h4>
+
+                <p>
+                    STM32 · C · Sensores IR · TCS3200 · PWM ·
+                    Motores DC · Pontes H
+                </p>
+
+                <div class="detail-links">
+
+                    <!-- SUBSTITUIR QUANDO OS FICHEIROS FOREM ADICIONADOS -->
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Vídeo
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Código
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
+</section>
 
-    <h2>
-        Competências técnicas
-    </h2>
+
+
+<!-- PROJETO 2 -->
+
+<section class="project-details" id="project2">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 02
+                </div>
+
+                <h2 class="detail-title">
+                    Robô Inteligente Autónomo
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project2')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/robot_pi1.jpg"
+                     alt="Robô">
+
+                <img src="assets/robot.jpg"
+                     alt="Robô autónomo">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Desenvolvimento de um robô autónomo capaz
+                    de seguir uma linha e reagir à presença
+                    de obstáculos.
+                </p>
+
+                <h4>
+                    Tecnologias
+                </h4>
+
+                <p>
+                    Sensores · Motores DC · Controlo ·
+                    Sistemas embebidos
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Vídeo
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Código
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJETO 3 -->
+
+<section class="project-details" id="project3">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 03
+                </div>
+
+                <h2 class="detail-title">
+                    MPPT Fotovoltaico
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project3')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/painel.jpg"
+                     alt="Painel fotovoltaico">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Desenvolvimento de um sistema de
+                    Maximum Power Point Tracking para
+                    aproveitamento da potência disponível
+                    num sistema fotovoltaico.
+                </p>
+
+                <h4>
+                    Tecnologias
+                </h4>
+
+                <p>
+                    P&O MPPT · Conversor Boost ·
+                    Microcontrolador · Eletrónica de potência
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Código
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJETO 4 -->
+
+<section class="project-details" id="project4">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 04
+                </div>
+
+                <h2 class="detail-title">
+                    Projeto de PCB
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project4')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/pcb.jpg"
+                     alt="PCB">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Desenvolvimento de uma placa de circuito
+                    impresso, desde o desenho do circuito
+                    até à preparação da PCB.
+                </p>
+
+                <h4>
+                    Ferramentas
+                </h4>
+
+                <p>
+                    KiCad · Esquemático · PCB Layout ·
+                    Gerbers
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Projeto KiCad
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJETO 5 -->
+
+<section class="project-details" id="project5">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 05
+                </div>
+
+                <h2 class="detail-title">
+                    Sistema de Automação
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project5')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/automacao.jpg"
+                     alt="Automação">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Desenvolvimento de uma solução de
+                    automação industrial baseada numa
+                    sequência de operações e controlo
+                    através de PLC.
+                </p>
+
+                <h4>
+                    Tecnologias
+                </h4>
+
+                <p>
+                    PLC · Sensores · Atuadores ·
+                    Programação industrial
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Vídeo
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJETO 6 -->
+
+<section class="project-details" id="project6">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 06
+                </div>
+
+                <h2 class="detail-title">
+                    Sistemas com 8051
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project6')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/micro_8051_atc2.jpg"
+                     alt="Microcontrolador 8051">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Aplicação de conceitos de programação e
+                    desenvolvimento de sistemas baseados no
+                    microcontrolador 8051.
+                </p>
+
+                <h4>
+                    Competências
+                </h4>
+
+                <p>
+                    Microcontroladores · Programação ·
+                    Periféricos · Sistemas embebidos
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Código
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJETO 7 -->
+
+<section class="project-details" id="project7">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 07
+                </div>
+
+                <h2 class="detail-title">
+                    Space Invaders
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project7')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/space_invaders.PNG"
+                     alt="Space Invaders">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Desenvolvimento de uma aplicação
+                    inspirada no jogo Space Invaders,
+                    aplicando conceitos de programação
+                    e desenvolvimento de software.
+                </p>
+
+                <h4>
+                    Competências
+                </h4>
+
+                <p>
+                    Programação · Lógica · Estruturas
+                    de dados · Desenvolvimento de aplicações
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                    <a href="#"
+                       class="detail-link">
+                        Código
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJETO 8 -->
+
+<section class="project-details" id="project8">
+
+    <div class="detail-inner">
+
+        <div class="detail-top">
+
+            <div>
+                <div class="detail-number">
+                    PROJETO 08
+                </div>
+
+                <h2 class="detail-title">
+                    Redes de Computadores
+                </h2>
+            </div>
+
+            <button class="close-detail"
+                    onclick="closeProject('project8')">
+                Fechar ×
+            </button>
+
+        </div>
+
+
+        <div class="detail-layout">
+
+            <div class="detail-gallery">
+
+                <img src="assets/redes.jpg"
+                     alt="Redes">
+
+            </div>
+
+
+            <div class="detail-description">
+
+                <h4>
+                    Sobre o projeto
+                </h4>
+
+                <p>
+                    Trabalho académico dedicado ao estudo,
+                    configuração e análise de redes de
+                    computadores.
+                </p>
+
+                <h4>
+                    Competências
+                </h4>
+
+                <p>
+                    Redes · Comunicação · Configuração ·
+                    Análise de funcionamento
+                </p>
+
+                <div class="detail-links">
+
+                    <a href="#"
+                       class="detail-link">
+                        Relatório
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COMPETÊNCIAS
+===================================================== -->
+
+<section class="section skills-section" id="competencias">
 
 
     <div class="skills">
 
+        <div>
 
-        <span class="skill">C</span>
+            <div class="section-label">
+                03 / Competências
+            </div>
 
-        <span class="skill">C++</span>
+            <h2 class="section-title">
+                Competências
+            </h2>
 
-        <span class="skill">Assembly</span>
+        </div>
 
-        <span class="skill">STM32</span>
 
-        <span class="skill">Microcontroladores 8051</span>
+        <div class="skills-grid">
 
-        <span class="skill">PLC</span>
+            <div class="skill">C</div>
 
-        <span class="skill">CX-Programmer</span>
+            <div class="skill">C++</div>
 
-        <span class="skill">CODESYS</span>
+            <div class="skill">Assembly</div>
 
-        <span class="skill">MATLAB</span>
+            <div class="skill">STM32</div>
 
-        <span class="skill">KiCad</span>
+            <div class="skill">8051</div>
 
+            <div class="skill">PLC</div>
+
+            <div class="skill">CX-Programmer</div>
+
+            <div class="skill">CODESYS</div>
+
+            <div class="skill">MATLAB</div>
+
+            <div class="skill">KiCad</div>
+
+            <div class="skill">Eletrónica de Potência</div>
+
+            <div class="skill">Sistemas Embebidos</div>
+
+            <div class="skill">Controlo</div>
+
+            <div class="skill">Automação</div>
+
+        </div>
 
     </div>
-
 
 </section>
 
 
 
-<!-- =========================
+<!-- =====================================================
+     CONTACTOS
+===================================================== -->
+
+<section class="contact-section" id="contactos">
+
+    <div class="section-label">
+        04 / Contactos
+    </div>
+
+    <h2 class="section-title">
+        Contactos
+    </h2>
+
+    <p class="contact-intro">
+        Para questões relacionadas com o meu percurso
+        académico ou com os projetos apresentados neste
+        portfólio, pode ser utilizado o seguinte contacto.
+    </p>
+
+    <a href="mailto:a97259@uminho.pt"
+       class="contact-email">
+
+        a97259@uminho.pt
+
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
+    <div>
+        <strong>Catarina Carvalho de Sousa</strong>
+        · Engenharia Eletrónica Industrial e Computadores
+    </div>
 
-    <strong>
-        Catarina Carvalho de Sousa
-    </strong>
-
-
-    <p>
-        Engenharia Eletrónica Industrial e Computadores
-        · Universidade do Minho
-    </p>
-
+    <div>
+        Universidade do Minho · 2026
+    </div>
 
 </footer>
 
 
 
-</body>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
+<script>
+
+    function openProject(id) {
+
+        // Fecha todos os projetos
+        const projects =
+            document.querySelectorAll(".project-details");
+
+        projects.forEach(function(project) {
+            project.classList.remove("active");
+        });
+
+
+        // Abre o projeto escolhido
+        const selected =
+            document.getElementById(id);
+
+        selected.classList.add("active");
+
+
+        // Faz scroll até ao detalhe
+        setTimeout(function() {
+
+            selected.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 50);
+
+    }
+
+
+    function closeProject(id) {
+
+        const selected =
+            document.getElementById(id);
+
+        selected.classList.remove("active");
+
+
+        // Volta para a zona dos projetos
+        document.getElementById("projetos")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+</script>
+
+
+</body>
 </html>
