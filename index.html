@@ -152,10 +152,22 @@
         display: grid;
         grid-template-columns: 53% 47%;
 
+        position: relative;
+
         background:
-            linear-gradient(105deg, #ffffff 0%, #ffffff 49%, #eef5fc 100%);
+            radial-gradient(circle at 78% 45%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0) 34%),
+            linear-gradient(120deg, #edf5fc 0%, #eef6fc 52%, #e7f1fa 100%);
 
         overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04) 58%, transparent);
+        pointer-events: none;
+        z-index: 0;
     }
 
 
@@ -314,19 +326,22 @@
     ===================================================== */
 
     .hero-visual {
-        position: relative;
+        position: absolute;
+        inset: 0;
         min-height: 680px;
         overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
     }
 
     .hero-circuit {
         position: absolute;
-        width: 860px;
-        height: 650px;
+        width: 1120px;
+        height: 720px;
         right: -55px;
         top: 50%;
         transform: translateY(-50%);
-        opacity: 0.28;
+        opacity: 0.23;
         pointer-events: none;
         z-index: 1;
     }
@@ -334,97 +349,36 @@
     .hero-visual::before {
         content: "";
         position: absolute;
-        width: 620px;
-        height: 620px;
-        right: 55px;
+        width: 720px;
+        height: 720px;
+        right: 45px;
         top: 50%;
         transform: translateY(-50%);
-        border: 1px solid rgba(82, 135, 190, 0.12);
+        border: 1px solid rgba(82,135,190,0.10);
         border-radius: 50%;
-        box-shadow: 0 0 0 80px rgba(82, 135, 190, 0.028), 0 0 0 160px rgba(82, 135, 190, 0.018);
-        pointer-events: none;
+        box-shadow: 0 0 0 85px rgba(82,135,190,0.022), 0 0 0 170px rgba(82,135,190,0.014);
     }
 
     .hero-visual::after {
         content: "";
         position: absolute;
-        width: 420px;
-        height: 420px;
-        right: 175px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-image: radial-gradient(circle, rgba(22,87,184,0.16) 1px, transparent 1px);
-        background-size: 24px 24px;
-        opacity: 0.22;
-        mask-image: radial-gradient(circle, black 0%, transparent 72%);
-        -webkit-mask-image: radial-gradient(circle, black 0%, transparent 72%);
-        pointer-events: none;
-    }
-
-    .hero-circuit path,
-    .hero-circuit line,
-    .hero-circuit rect,
-    .hero-circuit circle {
-        vector-effect: non-scaling-stroke;
-    }
-
-    .circuit-trace {
-        fill: none;
-        stroke: #7fa7d2;
-        stroke-width: 1.2;
-        opacity: 0.48;
-    }
-
-    .circuit-trace-fine {
-        fill: none;
-        stroke: #a7bfdc;
-        stroke-width: 0.9;
-        opacity: 0.42;
-    }
-
-    .circuit-pad {
-        fill: #ffffff;
-        stroke: #6f9dcc;
-        stroke-width: 1.1;
-        opacity: 0.52;
-    }
-
-    .circuit-pad-inner {
-        fill: #7fa7d2;
-        opacity: 0.45;
-    }
-
-    .circuit-chip {
-        fill: rgba(255,255,255,0.28);
-        stroke: #7b9fc6;
-        stroke-width: 1.1;
-        opacity: 0.42;
-    }
-
-    .circuit-chip-line {
-        stroke: #7b9fc6;
-        stroke-width: 0.9;
-        opacity: 0.4;
-    }
-
-    .circuit-resistor {
-        fill: none;
-        stroke: #7b9fc6;
-        stroke-width: 1.1;
-        opacity: 0.43;
-    }
-
-    .hero-circuit::after {
-        content: "";
-        position: absolute;
         inset: 0;
-        background: linear-gradient(90deg,
-            #f4f8fd 0%,
-            rgba(244,248,253,0.55) 10%,
-            transparent 32%,
-            transparent 100%);
-        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(22,87,184,0.13) 1px, transparent 1px);
+        background-size: 25px 25px;
+        opacity: 0.15;
+        mask-image: linear-gradient(90deg, transparent 0%, black 30%, black 100%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 30%, black 100%);
     }
+
+    .hero-circuit path, .hero-circuit line, .hero-circuit rect, .hero-circuit circle { vector-effect: non-scaling-stroke; }
+    .circuit-trace { fill: none; stroke: #6f9dcc; stroke-width: 1.2; opacity: 0.43; }
+    .circuit-trace-fine { fill: none; stroke: #9db9d5; stroke-width: 0.9; opacity: 0.38; }
+    .circuit-pad { fill: #f8fbfe; stroke: #6f9dcc; stroke-width: 1.1; opacity: 0.46; }
+    .circuit-pad-inner { fill: #6f9dcc; opacity: 0.38; }
+    .circuit-chip { fill: rgba(255,255,255,0.20); stroke: #789fc7; stroke-width: 1.1; opacity: 0.38; }
+    .circuit-chip-line { stroke: #789fc7; stroke-width: 0.9; opacity: 0.36; }
+    .circuit-resistor { fill: none; stroke: #789fc7; stroke-width: 1.1; opacity: 0.39; }
+
 
     /* =====================================================
        SECÇÕES
@@ -524,13 +478,25 @@
 
     /* grelha */
 
-    .projects-grid {
-
+    .projects-featured {
         display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-bottom: 42px;
+    }
 
-        grid-template-columns: repeat(2, 1fr);
+    .projects-featured .project-card {
+        border-top: 3px solid rgba(22,87,184,0.65);
+    }
 
-        gap: 30px;
+    .projects-featured .project-image {
+        height: 220px;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
     }
 
 
@@ -562,7 +528,7 @@
 
     .project-image {
 
-        height: 290px;
+        height: 220px;
 
         overflow: hidden;
 
@@ -597,7 +563,7 @@
 
     .project-content {
 
-        padding: 29px 31px 31px;
+        padding: 23px 24px 25px;
     }
 
     .project-number {
@@ -617,7 +583,7 @@
 
         font-family: Georgia, "Times New Roman", serif;
 
-        font-size: 29px;
+        font-size: 24px;
 
         font-weight: 400;
 
@@ -1460,182 +1426,9 @@
 
 
 
-<div class="projects-grid">
+<div class="projects-featured">
 
-
-    <!-- =================================================
-         PROJETO 01 — SISTEMAS EMBEBIDOS
-    ================================================= -->
-
-    <article class="project-card">
-
-        <div class="project-image robot-project-image">
-
-            <img src="assets/robot.jpg.png"
-                 alt="Robô seguidor de linha">
-
-        </div>
-
-        <div class="project-content">
-
-            <div class="project-number">
-                PROJETO 01 · SISTEMAS EMBEBIDOS
-            </div>
-
-            <h3 class="project-title">
-                Robô Seguidor de Linha
-            </h3>
-
-            <ul class="project-points">
-
-                <li>
-                    Seguimento autónomo de uma linha
-                </li>
-
-                <li>
-                    Deteção de obstáculos
-                </li>
-
-                <li>
-                    Paragem e sinalização através de LED vermelho
-                </li>
-
-                <li>
-                    Desenvolvimento com STM32
-                </li>
-
-            </ul>
-
-            <a class="project-button"
-               onclick="openProject('project1')">
-
-                Ver projeto →
-
-            </a>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- =================================================
-         PROJETO 02 — PI II
-    ================================================= -->
-
-    <article class="project-card">
-
-        <div class="project-image robot-project-image">
-
-            <img src="assets/robot_pi2.jpg"
-                 alt="ColorTrack">
-
-        </div>
-
-        <div class="project-content">
-
-            <div class="project-number">
-                PROJETO 02 · PROJETO INTEGRADOR II
-            </div>
-
-            <h3 class="project-title">
-                ColorTrack
-            </h3>
-
-            <ul class="project-points">
-
-                <li>
-                    Robô autónomo seguidor de linha
-                </li>
-
-                <li>
-                    Deteção de cor através de sensor RGB
-                </li>
-
-                <li>
-                    Controlo de motores através de PWM
-                </li>
-
-                <li>
-                    Implementação com STM32
-                </li>
-
-            </ul>
-
-            <a class="project-button"
-               onclick="openProject('project2')">
-
-                Ver projeto →
-
-            </a>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- =================================================
-         PROJETO 03 — PI I
-    ================================================= -->
-
-    <article class="project-card">
-
-        <div class="project-image robot-project-image">
-
-            <img src="assets/robo_inteligente_autonomo.jpeg"
-                 alt="Robô inteligente autónomo">
-
-        </div>
-
-        <div class="project-content">
-
-            <div class="project-number">
-                PROJETO 03 · PROJETO INTEGRADOR I
-            </div>
-
-            <h3 class="project-title">
-                Robô Inteligente Autónomo
-            </h3>
-
-            <ul class="project-points">
-
-                <li>
-                    Desenvolvimento de um sistema com componentes elétricos
-                </li>
-
-                <li>
-                    Seguimento de linha
-                </li>
-
-                <li>
-                    Deteção de cor da linha
-                </li>
-
-                <li>
-                    Integração de sensores e atuadores
-                </li>
-
-            </ul>
-
-            <a class="project-button"
-               onclick="openProject('project3')">
-
-                Ver projeto →
-
-            </a>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- =================================================
-         PROJETO 04 — RENOVÁVEIS
-    ================================================= -->
-
-    <article class="project-card">
+<article class="project-card">
 
         <div class="project-image">
 
@@ -1685,13 +1478,57 @@
 
     </article>
 
+<article class="project-card">
 
+        <div class="project-image robot-project-image">
 
-    <!-- =================================================
-         PROJETO 05 — ELETRÓNICA II
-    ================================================= -->
+            <img src="assets/robot.jpg.png"
+                 alt="Robô seguidor de linha">
 
-    <article class="project-card">
+        </div>
+
+        <div class="project-content">
+
+            <div class="project-number">
+                PROJETO 01 · SISTEMAS EMBEBIDOS
+            </div>
+
+            <h3 class="project-title">
+                Robô Seguidor de Linha
+            </h3>
+
+            <ul class="project-points">
+
+                <li>
+                    Seguimento autónomo de uma linha
+                </li>
+
+                <li>
+                    Deteção de obstáculos
+                </li>
+
+                <li>
+                    Paragem e sinalização através de LED vermelho
+                </li>
+
+                <li>
+                    Desenvolvimento com STM32
+                </li>
+
+            </ul>
+
+            <a class="project-button"
+               onclick="openProject('project1')">
+
+                Ver projeto →
+
+            </a>
+
+        </div>
+
+    </article>
+
+<article class="project-card">
 
         <div class="project-image">
 
@@ -1741,13 +1578,111 @@
 
     </article>
 
+</div>
 
+<div class="projects-grid">
 
-    <!-- =================================================
-         PROJETO 06 — AUTOMAÇÃO
-    ================================================= -->
+<article class="project-card">
 
-    <article class="project-card">
+        <div class="project-image robot-project-image">
+
+            <img src="assets/robot_pi2.jpg"
+                 alt="ColorTrack">
+
+        </div>
+
+        <div class="project-content">
+
+            <div class="project-number">
+                PROJETO 02 · PROJETO INTEGRADOR II
+            </div>
+
+            <h3 class="project-title">
+                ColorTrack
+            </h3>
+
+            <ul class="project-points">
+
+                <li>
+                    Robô autónomo seguidor de linha
+                </li>
+
+                <li>
+                    Deteção de cor através de sensor RGB
+                </li>
+
+                <li>
+                    Controlo de motores através de PWM
+                </li>
+
+                <li>
+                    Implementação com STM32
+                </li>
+
+            </ul>
+
+            <a class="project-button"
+               onclick="openProject('project2')">
+
+                Ver projeto →
+
+            </a>
+
+        </div>
+
+    </article>
+
+<article class="project-card">
+
+        <div class="project-image robot-project-image">
+
+            <img src="assets/robo_inteligente_autonomo.jpeg"
+                 alt="Robô inteligente autónomo">
+
+        </div>
+
+        <div class="project-content">
+
+            <div class="project-number">
+                PROJETO 03 · PROJETO INTEGRADOR I
+            </div>
+
+            <h3 class="project-title">
+                Robô Inteligente Autónomo
+            </h3>
+
+            <ul class="project-points">
+
+                <li>
+                    Desenvolvimento de um sistema com componentes elétricos
+                </li>
+
+                <li>
+                    Seguimento de linha
+                </li>
+
+                <li>
+                    Deteção de cor da linha
+                </li>
+
+                <li>
+                    Integração de sensores e atuadores
+                </li>
+
+            </ul>
+
+            <a class="project-button"
+               onclick="openProject('project3')">
+
+                Ver projeto →
+
+            </a>
+
+        </div>
+
+    </article>
+
+<article class="project-card">
 
         <div class="project-image">
 
@@ -1797,13 +1732,7 @@
 
     </article>
 
-
-
-    <!-- =================================================
-         PROJETO 07 — 8051
-    ================================================= -->
-
-    <article class="project-card">
+<article class="project-card">
 
         <div class="project-image">
 
@@ -1853,13 +1782,7 @@
 
     </article>
 
-
-
-    <!-- =================================================
-         PROJETO 08 — MÁQUINAS ELÉTRICAS
-    ================================================= -->
-
-    <article class="project-card">
+<article class="project-card">
 
         <div class="project-image">
 
@@ -1909,13 +1832,7 @@
 
     </article>
 
-
-
-    <!-- =================================================
-         PROJETO 09 — SPACE INVADERS
-    ================================================= -->
-
-    <article class="project-card">
+<article class="project-card">
 
         <div class="project-image">
 
@@ -1965,13 +1882,7 @@
 
     </article>
 
-
-
-    <!-- =================================================
-         PROJETO 10 — REDES
-    ================================================= -->
-
-    <article class="project-card">
+<article class="project-card">
 
         <div class="project-image">
 
@@ -2020,6 +1931,10 @@
         </div>
 
     </article>
+
+</div>
+
+
 
 </div>
 
