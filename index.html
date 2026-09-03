@@ -343,146 +343,89 @@
 
 
         /* =====================================================
-           HERO — IMAGEM PRINCIPAL
-
-           A imagem hero.jpg funciona como elemento visual único,
-           integrado no lado direito do Hero sem competir com o texto.
+           HERO — CIRCUITO ELETRÓNICO MINIMALISTA
         ===================================================== */
 
         .hero-visual {
-
             position: relative;
-
             min-height: 680px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
             overflow: hidden;
-
-            padding: 45px 5% 45px 2%;
         }
 
-        /* detalhe gráfico muito subtil, para manter a linguagem
-           técnica do site sem voltar à composição anterior */
-        .hero-visual::before {
+        .hero-circuit {
+            position: absolute;
+            width: 760px;
+            height: 620px;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.34;
+            pointer-events: none;
+        }
 
+        .hero-circuit path,
+        .hero-circuit line,
+        .hero-circuit rect,
+        .hero-circuit circle {
+            vector-effect: non-scaling-stroke;
+        }
+
+        .circuit-trace {
+            fill: none;
+            stroke: #7fa7d2;
+            stroke-width: 1.2;
+            opacity: 0.48;
+        }
+
+        .circuit-trace-fine {
+            fill: none;
+            stroke: #a7bfdc;
+            stroke-width: 0.9;
+            opacity: 0.42;
+        }
+
+        .circuit-pad {
+            fill: #ffffff;
+            stroke: #6f9dcc;
+            stroke-width: 1.1;
+            opacity: 0.52;
+        }
+
+        .circuit-pad-inner {
+            fill: #7fa7d2;
+            opacity: 0.45;
+        }
+
+        .circuit-chip {
+            fill: rgba(255,255,255,0.28);
+            stroke: #7b9fc6;
+            stroke-width: 1.1;
+            opacity: 0.42;
+        }
+
+        .circuit-chip-line {
+            stroke: #7b9fc6;
+            stroke-width: 0.9;
+            opacity: 0.4;
+        }
+
+        .circuit-resistor {
+            fill: none;
+            stroke: #7b9fc6;
+            stroke-width: 1.1;
+            opacity: 0.43;
+        }
+
+        .hero-circuit::after {
             content: "";
-
             position: absolute;
-
-            width: 430px;
-            height: 430px;
-
-            border: 1px solid #dce7f3;
-
-            border-radius: 50%;
-
-            right: -80px;
-            top: 115px;
-
-            opacity: 0.65;
-        }
-
-        .hero-visual::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 150px;
-            height: 150px;
-
-            border-top: 1px solid #dce7f3;
-            border-right: 1px solid #dce7f3;
-
-            right: 9%;
-            bottom: 11%;
-
-            opacity: 0.75;
-        }
-
-        .hero-main-image {
-
-            position: relative;
-
-            z-index: 2;
-
-            width: 100%;
-            max-width: 640px;
-            max-height: 590px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-main-image img {
-
-            display: block;
-
-            width: 100%;
-            max-height: 590px;
-
-            object-fit: contain;
-
-            filter: drop-shadow(0 22px 32px rgba(24,34,53,0.12));
-
-            transition: transform 0.35s ease;
-        }
-
-        .hero-main-image img:hover {
-            transform: translateY(-4px);
-        }
-
-        .hero-image-line {
-
-            position: absolute;
-
-            z-index: 3;
-
-            width: 55px;
-            height: 1px;
-
-            background: #8eb4dd;
-
-            left: 3%;
-            bottom: 18%;
-        }
-
-        .hero-image-dot {
-
-            position: absolute;
-
-            z-index: 3;
-
-            width: 6px;
-            height: 6px;
-
-            border-radius: 50%;
-
-            background: #8eb4dd;
-
-            left: calc(3% + 55px);
-            bottom: calc(18% - 2px);
-        }
-
-        .visual-label {
-
-            position: absolute;
-
-            right: 7%;
-            bottom: 4%;
-
-            font-size: 10px;
-            letter-spacing: 4px;
-
-            color: #9aadc2;
-
-            text-transform: uppercase;
-
-            z-index: 4;
+            inset: 0;
+            background: linear-gradient(90deg,
+                #f4f8fd 0%,
+                rgba(244,248,253,0.55) 10%,
+                transparent 32%,
+                transparent 100%);
+            pointer-events: none;
         }
 
         /* =====================================================
@@ -637,6 +580,13 @@
 
             transition:
                 transform 0.45s ease;
+        }
+
+        /* Nos projetos com robôs, mostrar a fotografia completa
+           em vez de a cortar para preencher o cartão. */
+        .robot-project-image img {
+            object-fit: contain;
+            padding: 10px;
         }
 
         .project-card:hover
@@ -1086,6 +1036,11 @@
                 padding: 35px 8%;
             }
 
+            .hero-circuit {
+                width: 650px;
+                right: -80px;
+            }
+
             .hero-main-image {
                 max-width: 650px;
                 max-height: 440px;
@@ -1153,6 +1108,13 @@
             .hero-visual {
                 min-height: 330px;
                 padding: 25px 6% 45px;
+            }
+
+            .hero-circuit {
+                width: 520px;
+                height: 430px;
+                right: -115px;
+                opacity: 0.27;
             }
 
             .hero-main-image {
@@ -1374,21 +1336,71 @@
 
 
 
-    <!-- IMAGEM PRINCIPAL DO HERO -->
-    <div class="hero-visual">
+    <!-- ELEMENTO GRÁFICO DO HERO -->
+    <div class="hero-visual" aria-hidden="true">
+        <svg class="hero-circuit" viewBox="0 0 760 620" xmlns="http://www.w3.org/2000/svg">
 
-        <div class="hero-main-image">
-            <img src="assets/hero.jpg"
-                 alt="Projetos académicos de eletrónica e sistemas embebidos">
-        </div>
+            <!-- pistas principais -->
+            <path class="circuit-trace" d="M80 92 H205 V145 H292 V205 H385 V165 H470 V95 H585"/>
+            <path class="circuit-trace" d="M35 255 H130 V310 H245 V370 H355 V430 H505 V510 H690"/>
+            <path class="circuit-trace" d="M205 25 V92 H260 V120 H330"/>
+            <path class="circuit-trace" d="M470 95 V45 H550 V22"/>
+            <path class="circuit-trace" d="M585 95 H655 V150 H725"/>
+            <path class="circuit-trace" d="M355 430 V545 H430 V590"/>
+            <path class="circuit-trace" d="M505 510 H570 V455 H655 V405 H735"/>
 
-        <div class="hero-image-line"></div>
-        <div class="hero-image-dot"></div>
+            <!-- pistas secundárias -->
+            <path class="circuit-trace-fine" d="M95 145 H155 V190 H215"/>
+            <path class="circuit-trace-fine" d="M292 205 V270 H330 V320"/>
+            <path class="circuit-trace-fine" d="M385 165 V235 H450 V285 H520"/>
+            <path class="circuit-trace-fine" d="M130 310 V350 H175 V390 H230"/>
+            <path class="circuit-trace-fine" d="M570 455 V385 H620 V335 H700"/>
+            <path class="circuit-trace-fine" d="M655 150 V210 H700 V250"/>
+            <path class="circuit-trace-fine" d="M430 590 V560 H485 V535"/>
 
-        <div class="visual-label">
-            Electronics · Control · Embedded Systems
-        </div>
+            <!-- chip -->
+            <rect class="circuit-chip" x="300" y="255" width="110" height="100" rx="2"/>
+            <rect class="circuit-chip" x="325" y="280" width="60" height="50" rx="1"/>
+            <line class="circuit-chip-line" x1="300" y1="275" x2="280" y2="275"/>
+            <line class="circuit-chip-line" x1="300" y1="300" x2="280" y2="300"/>
+            <line class="circuit-chip-line" x1="300" y1="325" x2="280" y2="325"/>
+            <line class="circuit-chip-line" x1="410" y1="275" x2="430" y2="275"/>
+            <line class="circuit-chip-line" x1="410" y1="300" x2="430" y2="300"/>
+            <line class="circuit-chip-line" x1="410" y1="325" x2="430" y2="325"/>
 
+            <!-- resistências estilizadas -->
+            <path class="circuit-resistor" d="M205 92 l8 -7 8 14 8 -14 8 14 8 -14 8 7"/>
+            <path class="circuit-resistor" d="M505 510 l8 -7 8 14 8 -14 8 14 8 -14 8 7"/>
+
+            <!-- pads / nós -->
+            <circle class="circuit-pad" cx="80" cy="92" r="5"/>
+            <circle class="circuit-pad-inner" cx="80" cy="92" r="2"/>
+            <circle class="circuit-pad" cx="205" cy="92" r="5"/>
+            <circle class="circuit-pad-inner" cx="205" cy="92" r="2"/>
+            <circle class="circuit-pad" cx="292" cy="205" r="5"/>
+            <circle class="circuit-pad-inner" cx="292" cy="205" r="2"/>
+            <circle class="circuit-pad" cx="385" cy="165" r="5"/>
+            <circle class="circuit-pad-inner" cx="385" cy="165" r="2"/>
+            <circle class="circuit-pad" cx="585" cy="95" r="5"/>
+            <circle class="circuit-pad-inner" cx="585" cy="95" r="2"/>
+            <circle class="circuit-pad" cx="35" cy="255" r="5"/>
+            <circle class="circuit-pad-inner" cx="35" cy="255" r="2"/>
+            <circle class="circuit-pad" cx="355" cy="430" r="5"/>
+            <circle class="circuit-pad-inner" cx="355" cy="430" r="2"/>
+            <circle class="circuit-pad" cx="690" cy="510" r="5"/>
+            <circle class="circuit-pad-inner" cx="690" cy="510" r="2"/>
+            <circle class="circuit-pad" cx="735" cy="405" r="5"/>
+            <circle class="circuit-pad-inner" cx="735" cy="405" r="2"/>
+            <circle class="circuit-pad" cx="430" cy="590" r="5"/>
+            <circle class="circuit-pad-inner" cx="430" cy="590" r="2"/>
+
+            <!-- pequenos pontos técnicos -->
+            <circle class="circuit-pad" cx="245" cy="370" r="3.5"/>
+            <circle class="circuit-pad" cx="450" cy="285" r="3.5"/>
+            <circle class="circuit-pad" cx="620" cy="335" r="3.5"/>
+            <circle class="circuit-pad" cx="700" cy="250" r="3.5"/>
+
+        </svg>
     </div>
 
 </section>
@@ -1481,9 +1493,9 @@
 
         <article class="project-card">
 
-            <div class="project-image">
+            <div class="project-image robot-project-image">
 
-                <img src="assets/robot.jpg.png"
+                <img src="assets/robot.jpg"
                      alt="Robô seguidor de linha">
 
             </div>
@@ -1495,7 +1507,7 @@
                 </div>
 
                 <h3 class="project-title">
-                    Robô Seguidor de Linha com deteção de obstáculos
+                    Robô Seguidor de Linha
                 </h3>
 
                 <ul class="project-points">
@@ -1537,17 +1549,17 @@
 
         <article class="project-card">
 
-            <div class="project-image">
+            <div class="project-image robot-project-image">
 
-                <img src="assets/robot_pi2.jpg"
-                     alt="ColorTrack">
+                <img src="assets/robot_original.jpg.jpg"
+                     alt="Robô autónomo ColorTrack">
 
             </div>
 
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 02 · PROJETO INTEGRADOR II
+                    PROJETO 02 · PROJETO INTEGRADO II
                 </div>
 
                 <h3 class="project-title">
@@ -1561,7 +1573,7 @@
                     </li>
 
                     <li>
-                        Deteção de cor da linha através de sensor RGB
+                        Deteção de cor através de sensor RGB
                     </li>
 
                     <li>
@@ -1593,9 +1605,9 @@
 
         <article class="project-card">
 
-            <div class="project-image">
+            <div class="project-image robot-project-image">
 
-                <img src="assets/robo_inteligente_autonomo.jpeg"
+                <img src="assets/robo_inteligente_autonomo.jpg"
                      alt="Robô inteligente autónomo">
 
             </div>
@@ -1603,7 +1615,7 @@
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 03 · PROJETO INTEGRADOR I
+                    PROJETO 03 · PROJETO INTEGRADO I
                 </div>
 
                 <h3 class="project-title">
@@ -1613,7 +1625,7 @@
                 <ul class="project-points">
 
                     <li>
-                        Sistema apenas com componentes eletrónicos
+                        Desenvolvimento de um sistema autónomo
                     </li>
 
                     <li>
@@ -1621,7 +1633,7 @@
                     </li>
 
                     <li>
-                        Deteção de cor da linha com TCS3200
+                        Deteção de cor vermelha
                     </li>
 
                     <li>
@@ -1677,7 +1689,7 @@
                     </li>
 
                     <li>
-                        Conversor CC/CC Boost
+                        Conversor DC/DC Boost
                     </li>
 
                     <li>
@@ -1763,7 +1775,7 @@
 
             <div class="project-image">
 
-                <img src="assets/capa_automacao.jpg"
+                <img src="assets/automacao.jpg"
                      alt="Sistema de automação">
 
             </div>
@@ -1789,7 +1801,7 @@
                     </li>
 
                     <li>
-                        Programação CODESYS
+                        Programação de PLC
                     </li>
 
                     <li>
@@ -1827,7 +1839,7 @@
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 07 · Arquitetura e Tecnologias de Computadores II
+                    PROJETO 07 · SISTEMAS DIGITAIS
                 </div>
 
                 <h3 class="project-title">
@@ -1987,7 +1999,7 @@
 
             <div class="project-image">
 
-                <img src="assets/capa_redes.jpg"
+                <img src="assets/redes.jpg"
                      alt="Redes de computadores">
 
             </div>
@@ -1995,7 +2007,7 @@
             <div class="project-content">
 
                 <div class="project-number">
-                    PROJETO 10 · REDES DE COMPUTADORES
+                    PROJETO 10 · REDES
                 </div>
 
                 <h3 class="project-title">
@@ -2005,7 +2017,7 @@
                 <ul class="project-points">
 
                     <li>
-                        Configuração e análise de redes de computadores
+                        Configuração e análise de redes
                     </li>
 
                     <li>
@@ -2074,7 +2086,7 @@
 
         <div class="detail-layout">
 
-            <div class="detail-gallery">
+            <div class="detail-gallery robot-detail-gallery">
 
                 <img src="assets/robot.jpg"
                      alt="Robô seguidor de linha">
@@ -2173,7 +2185,7 @@
 
         <div class="detail-layout">
 
-            <div class="detail-gallery">
+            <div class="detail-gallery robot-detail-gallery">
 
                 <img src="assets/robot_original.jpg.jpg"
                      alt="ColorTrack">
@@ -2270,7 +2282,7 @@
 
         <div class="detail-layout">
 
-            <div class="detail-gallery">
+            <div class="detail-gallery robot-detail-gallery">
 
                 <img src="assets/robo_inteligente_autonomo.jpg"
                      alt="Robô inteligente autónomo">
